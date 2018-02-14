@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ReleaseService} from '../release.service';
+import {CollectionViewer, DataSource} from '@angular/cdk/collections';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-release-list',
@@ -7,10 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReleaseListComponent implements OnInit {
   displayedColumns = ['version', 'channel', 'changenotes', 'platforms'];
-  dataSource = RELEASE_DATA;
-  constructor() { }
+  dataSource = new ReleaseDataSource(this.releaseService)
+
+  constructor(private releaseService: ReleaseService) {
+  }
 
   ngOnInit() {
+
   }
 
 }
@@ -32,3 +38,18 @@ const RELEASE_DATA: ReleaseData[] = [
   {version: '6.0.0', channel: 'stable', changeNotes: 'Sixth Release!', platforms: ['Win x64', 'macOS', 'Linux x64']},
   {version: '7.0.0', channel: 'stable', changeNotes: 'Seventh Release!', platforms: ['Win x64', 'macOS', 'Linux x64']}
 ];
+
+export class ReleaseDataSource extends DataSource<any> {
+  connect(): Observable<any[]> {
+    return this.releaseService.getReleases();
+  }
+
+  disconnect(): void {
+  }
+
+  constructor(private releaseService: ReleaseService) {
+    super();
+  }
+
+
+}
