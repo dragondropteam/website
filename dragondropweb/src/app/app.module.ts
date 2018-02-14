@@ -7,6 +7,8 @@ import {AppRoutingModule} from './app-routing.module';
 import {ReleaseListComponent} from './release-list/release-list.component';
 import {ReleaseComponent} from './release/release.component';
 import {MatChipsModule, MatTableModule} from '@angular/material';
+import {HttpClientModule} from '@angular/common/http';
+import {ReleaseService} from './release.service';
 
 @NgModule({
   declarations: [
@@ -17,11 +19,12 @@ import {MatChipsModule, MatTableModule} from '@angular/material';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     MatChipsModule,
     MatTableModule
   ],
-  providers: [],
+  providers: [ReleaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
