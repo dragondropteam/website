@@ -24,7 +24,9 @@
       <mat-header-cell *matHeaderCellDef> Files </mat-header-cell>
       <mat-cell *matCellDef="let element">
         <mat-chip-list>
-          <mat-chip color="primary" selected="true" *ngFor="let platform of element.platforms">{{platform}}</mat-chip>
+          <mat-chip color="primary" selected="true" *ngIf="element.platforms.windows.length > 0">Windows</mat-chip>
+          <mat-chip color="primary" selected="true" *ngIf="element.platforms.mac.length > 0">macOS</mat-chip>
+          <mat-chip color="primary" selected="true" *ngIf="element.platforms.linux.length > 0">Linux</mat-chip>
         </mat-chip-list>
       </mat-cell>
     </ng-container>
@@ -33,3 +35,4 @@
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
 </div>
+<button mat-fab color="primary">+</button>

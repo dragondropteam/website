@@ -9,4 +9,8 @@ router.get('/healthcheck', (req, res) => {
 
 router.use('/release', releaseRoutes);
 
+router.get('/download', (req, res) =>{
+  res.download('/Users/lukepowell/Documents/Uploads/Dragon Drop Setup 2.0.0-beta2.exe');
+});
+
 module.exports = router;

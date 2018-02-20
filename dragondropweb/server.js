@@ -1,10 +1,11 @@
 const express = require('express');
 const app = express();
+const formidable = require('express-formidable');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
 const apiRoutes = require('./server/routes/api.route');
-
+const downloadRoutes = require('./server/routes/download.route');
 const mongoURI = 'mongodb://localhost/dragondrop';
 mongoose.connect(mongoURI, {server: {socketOptions: {keepAlive: 1}}})
   .then(() =>{
@@ -22,6 +23,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use('/api', apiRoutes);
+
+app.use(downloadRoutes);
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
