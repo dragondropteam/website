@@ -6,7 +6,7 @@ import {HomeComponent} from './home/home.component';
 import {AppRoutingModule} from './app-routing.module';
 import {ReleaseListComponent} from './release-list/release-list.component';
 import {ReleaseComponent} from './release/release.component';
-import {MatChipsModule, MatTableModule} from '@angular/material';
+import {MatButtonModule, MatChipsModule, MatDialogModule, MatTableModule} from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import {ReleaseService} from './release.service';
 
@@ -22,7 +22,9 @@ import {ReleaseService} from './release.service';
     HttpClientModule,
     AppRoutingModule,
     MatChipsModule,
-    MatTableModule
+    MatTableModule,
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [ReleaseService],
   bootstrap: [AppComponent]
