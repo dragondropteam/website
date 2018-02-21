@@ -1,32 +1,33 @@
 const express = require('express');
-
 const router = express.Router();
+const releaseController = require('../controllers/release.controller');
 
-router.get('/download/latest', (req, res) => {
-  res.download('/Users/lukepowell/Documents/Uploads/Dragon Drop Setup 2.0.0-beta2.exe');
+router.route('/latest')
+  .get((req, res, next) => {
+    releaseController.downloadLatest(req, res, next, 'windows');
+  });
+
+router.get('/latest/:platform', (req, res, next) =>{
+  releaseController.downloadLatest(req, res, next, req.params.platform);
 });
 
-router.get('/download/latest/:platform', (req, res) =>{
+router.get('/:version', (req, res) => {
   res.sendStatus(404);
 });
 
-router.get('/download/:version', (req, res) => {
+router.get('/:version/:platform', (req, res) => {
   res.sendStatus(404);
 });
 
-router.get('/download/:version/:platform', (req, res) => {
+router.get('/:version/:platform/:filename', (req, res) => {
   res.sendStatus(404);
 });
 
-router.get('/download/:version/:platform/:filename', (req, res) => {
+router.get('/channel/:channel', (req, res) => {
   res.sendStatus(404);
 });
 
-router.get('/download/channel/:channel', (req, res) => {
-  res.sendStatus(404);
-});
-
-router.get('/download/channel/:channel/:platform', (req, res) => {
+router.get('/channel/:channel/:platform', (req, res) => {
   res.sendStatus(404);
 });
 

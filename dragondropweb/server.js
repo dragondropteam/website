@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use('/api', apiRoutes);
 
-app.use(downloadRoutes);
+app.use('/download', downloadRoutes);
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/index.html'));

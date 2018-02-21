@@ -39,26 +39,32 @@ router.route('/')
   });
 
 
-router.route('/:id')
+router.route('/latest/:platform')
   .get((req, res, next) => {
     releaseController
-      .get(req.params)
-      .then(release => {
-        res.json(release)
-      })
-      .catch(err => next(err))
+      .getLatest(req, res, next, 'windows');
   });
-
-router.route('/:id/files')
-  .get((req, res, next) => {
-    releaseController
-      .get(req.params)
-      .then(release => {
-        res.json(release.files)
-      })
-      .catch(err => next(err))
-  })
-  .post(upload.single('file'), (req, res, next) => {
-    releaseController.addFile(req, res, next)
-  });
+//
+// router.route('/id/:id')
+//   .get((req, res, next) => {
+//     releaseController
+//       .get(req.params)
+//       .then(release => {
+//         res.json(release)
+//       })
+//       .catch(err => next(err))
+//   });
+//
+// router.route('/id/:id/files')
+//   .get((req, res, next) => {
+//     releaseController
+//       .get(req.params)
+//       .then(release => {
+//         res.json(release.files)
+//       })
+//       .catch(err => next(err))
+//   })
+//   .post(upload.single('file'), (req, res, next) => {
+//     releaseController.addFile(req, res, next)
+//   });
 module.exports = router;
