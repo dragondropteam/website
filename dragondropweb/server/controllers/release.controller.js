@@ -13,7 +13,8 @@ function create(params) {
   const release = new Release({
     version: params.version,
     channel: params.channel,
-    changeNotes: params.changeNotes
+    changeNotes: params.changeNotes,
+    published: Date.now()
   });
   return release.save()
 }
@@ -51,6 +52,30 @@ function addFile(req, res, next) {
     })
 }
 
+
+function getLatest(req, res, next, platform = "windows") {
+  console.log('getLatest');
+  Release.getPlatformLatest(platform)
+    .then(release => {
+      console.log('latest', release);
+      res.status(200).json(release);
+    })
+    .catch(err => next(err));
+}
+
+function downloadLatest(req, res, next, platform = "windows") {
+  console.log('getLatest');
+  Release.getPlatformLatest(platform)
+    .then(release => {
+      if (release.length > 0) {
+        res.download(release[0].file);
+      }else{
+        res.status(404).json({'error': `No downloads available for ${platform}`});
+      }
+    })
+    .catch(err => next(err));
+}
+
 module.exports = {
   load,
   get,
@@ -58,5 +83,7 @@ module.exports = {
   update,
   list,
   remove,
-  addFile
+  addFile,
+  getLatest,
+  downloadLatest
 };

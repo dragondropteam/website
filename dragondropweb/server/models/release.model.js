@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const semver = require('semver');
 
 /*const validWindowsFormats = ['exe', 'msi'];
 const validMacFormats = ['app', 'dmg', 'pkg'];
@@ -36,6 +37,7 @@ const ReleaseSchema = new Schema({
     type: String,
     required: true
   },
+  published: Date,
   platforms: {
     windows: [ReleaseFileSchema],
     linux: [ReleaseFileSchema],
@@ -60,6 +62,7 @@ ReleaseSchema.statics = {
     return this.find()
       .skip(skip)
       .limit(limit)
+      .sort({published: -1})
       .exec()
       .then(releases => {
         if (releases){
@@ -67,6 +70,22 @@ ReleaseSchema.statics = {
         }
 
         return Promise.reject(new Error('No releases'))
+      })
+  },
+
+  getPlatformLatest(platform = 'windows') {
+    return this.find()
+      .exec()
+      .then(releases => {
+        if(releases){
+
+          releases.sort((a, b) => {
+            return semver.compare(a.version, b.version);
+          });
+
+          return releases[0].platforms[platform];
+        }
+        return Promise.reject(new Error('No Releases'))
       })
   }
 };
