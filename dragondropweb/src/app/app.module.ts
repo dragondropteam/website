@@ -6,17 +6,30 @@ import {HomeComponent} from './home/home.component';
 import {AppRoutingModule} from './app-routing.module';
 import {ReleaseListComponent} from './release-list/release-list.component';
 import {ReleaseComponent} from './release/release.component';
-import {MatButtonModule, MatChipsModule, MatDialogModule, MatTableModule} from '@angular/material';
+import {
+  MatButtonModule, MatChipsModule, MatDialogModule, MatFormFieldModule, MatIconModule, MatInputModule, MatSelectModule,
+  MatTableModule
+} from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import {ReleaseService} from './release.service';
+import {NewReleaseDialogComponent} from './new-release-dialog/new-release-dialog.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FormsModule} from '@angular/forms';
+import {NgxEditorModule} from 'ngx-editor';
+import {QuillModule} from 'ngx-quill';
+import {FroalaEditorModule, FroalaViewModule} from 'angular-froala-wysiwyg';
+import { QuilljsComponent } from './quilljs/quilljs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ReleaseListComponent,
-    ReleaseComponent
+    ReleaseComponent,
+    NewReleaseDialogComponent,
+    QuilljsComponent
   ],
+  entryComponents: [NewReleaseDialogComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -24,7 +37,15 @@ import {ReleaseService} from './release.service';
     MatChipsModule,
     MatTableModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    MatIconModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    NgxEditorModule,
+    QuillModule
   ],
   providers: [ReleaseService],
   bootstrap: [AppComponent]
