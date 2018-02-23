@@ -1,5 +1,9 @@
 export class Release {
   _id?: string;
+  version: string;
+  channel: string;
+  changeNotes: string;
+  published: Date;
   platforms: {
     windows: [{
       _id?: string;

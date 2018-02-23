@@ -1,0 +1,20 @@
+<div class="container">
+  <mat-dialog-content>
+    <mat-form-field>
+      <input matInput placeholder="Version">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Channel">
+        <mat-option *ngFor="let channel of channels" [value]="channel">
+          {{ channel }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="quill-container">
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="release" color="primary">Create</button>
+    <button mat-button color="primary">Delete</button>
+  </mat-dialog-actions>
+</div>

@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+mat-dialog-actions {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.quill-container {
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
