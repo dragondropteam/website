@@ -43,9 +43,4 @@ export class NewReleaseDialogComponent implements OnInit {
     //   theme: 'snow'
     // });
   }
-
-  close() {
-    // this.release.changeNotes = JSON.stringify(this.quill.getContents());
-    // this.dialogRef.close(this.release);
-  }
 }

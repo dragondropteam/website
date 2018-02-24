@@ -11,16 +11,12 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <!--<div class="quill-container">-->
-    <!--<p>Change Log</p>-->
-    <!--</div>-->
-    <!--<p-splitButton label="Save" icon="fa-check" (onClick)="save()" [model]="items"></p-splitButton>-->
     <div class="quill-container">
-      <p-editor style="width: 100%" [style]="{'display': 'flex', 'flex-direction': 'column', 'width': '100%'}"></p-editor>
+      <p-editor [(ngModel)]="release.changeNotes" style="width: 100%" [style]="{'display': 'flex', 'flex-direction': 'column', 'width': '100%'}"></p-editor>
     </div>
   </mat-dialog-content>
   <mat-dialog-actions>
-    <button mat-button (click)="close()" color="primary">Create</button>
+    <button mat-button [mat-dialog-close]="release" color="primary">Create</button>
     <button mat-button color="primary">Delete</button>
   </mat-dialog-actions>
 </div>
