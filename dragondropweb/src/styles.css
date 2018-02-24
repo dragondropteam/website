@@ -9,3 +9,8 @@ html {
 body {
   height: 100%;
 }
+
+.button-bar {
+  display: flex;
+  flex-direction: row;
+}

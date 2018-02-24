@@ -19,6 +19,8 @@ import {NgxEditorModule} from 'ngx-editor';
 import {QuillModule} from 'ngx-quill';
 import {FroalaEditorModule, FroalaViewModule} from 'angular-froala-wysiwyg';
 import { QuilljsComponent } from './quilljs/quilljs.component';
+import {EditorModule} from 'primeng/editor';
+import {SplitButtonModule} from 'primeng/primeng';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { QuilljsComponent } from './quilljs/quilljs.component';
     BrowserAnimationsModule,
     FormsModule,
     NgxEditorModule,
-    QuillModule
+    QuillModule,
+    EditorModule,
+    SplitButtonModule
   ],
   providers: [ReleaseService],
   bootstrap: [AppComponent]
