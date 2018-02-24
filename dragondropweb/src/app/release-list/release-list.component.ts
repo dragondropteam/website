@@ -22,19 +22,6 @@ export class ReleaseListComponent implements OnInit {
 
   }
 
-  getHTML(release) {
-    try {
-      const releaseJSON = JSON.parse(release.changeNotes);
-      console.log(releaseJSON);
-      const html = new QuillDeltaToHtmlConverter(releaseJSON.ops, {}).convert();
-      console.log(`raw html ${html}`);
-      return html;
-    } catch (ex) {
-      // console.error(ex);
-      return release.changeNotes;
-    }
-  }
-
   createRelease() {
     const dialogRef = this.dialog.open(NewReleaseDialogComponent, {
       height: '89%',
