@@ -16,7 +16,18 @@ mat-dialog-actions {
 }
 
 .quill-container {
-  flex: 1 1 auto;
+  display: flex;
+
+  flex-grow: 1;
   overflow: auto;
 }
 
+:host ::ng-deep .ui-editor-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-grow: 1;
+}
+/*:host {*/
+  /*display: flex;*/
+/*}*/

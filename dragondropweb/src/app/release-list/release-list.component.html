@@ -2,12 +2,12 @@
   <mat-table #table [dataSource]="dataSource">
 
     <ng-container matColumnDef="version">
-      <mat-header-cell *matHeaderCellDef> Version </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Version</mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.version}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="channel">
-      <mat-header-cell *matHeaderCellDef> Channel </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Channel</mat-header-cell>
       <mat-cell *matCellDef="let element">
         <mat-chip-list>
           <mat-chip selected="true" color="primary">{{element.channel}}</mat-chip>
@@ -16,12 +16,12 @@
     </ng-container>
 
     <ng-container matColumnDef="changenotes">
-      <mat-header-cell *matHeaderCellDef> Change Notes </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.changeNotes}}</mat-cell>
+      <mat-header-cell *matHeaderCellDef> Change Notes</mat-header-cell>
+      <mat-cell *matCellDef="let element" [innerHTML]="getHTML(element)"></mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="platforms">
-      <mat-header-cell *matHeaderCellDef> Files </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Files</mat-header-cell>
       <mat-cell *matCellDef="let element">
         <mat-chip-list>
           <mat-chip color="primary" selected="true" *ngIf="element.platforms.windows.length > 0">Windows</mat-chip>
@@ -35,4 +35,6 @@
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
 </div>
-<button mat-fab (click)="createRelease()" color="primary"><mat-icon>add</mat-icon></button>
+<button mat-fab (click)="createRelease()" color="primary">
+  <mat-icon>add</mat-icon>
+</button>
