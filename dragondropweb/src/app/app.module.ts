@@ -21,6 +21,7 @@ import {FroalaEditorModule, FroalaViewModule} from 'angular-froala-wysiwyg';
 import { QuilljsComponent } from './quilljs/quilljs.component';
 import {EditorModule} from 'primeng/editor';
 import {SplitButtonModule} from 'primeng/primeng';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {SplitButtonModule} from 'primeng/primeng';
     ReleaseListComponent,
     ReleaseComponent,
     NewReleaseDialogComponent,
-    QuilljsComponent
+    QuilljsComponent,
+    PageNotFoundComponent
   ],
   entryComponents: [NewReleaseDialogComponent],
   imports: [
