@@ -3,6 +3,7 @@ import {HomeComponent} from './home/home.component';
 import {NgModule} from '@angular/core';
 import {ReleaseComponent} from './release/release.component';
 import {ReleaseListComponent} from './release-list/release-list.component';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 
 const routes: Routes = [{
   path: '',
@@ -13,10 +14,13 @@ const routes: Routes = [{
 }, {
   path: 'admin',
   component: ReleaseListComponent
+}, {
+  path: '**',
+  component: PageNotFoundComponent
 }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
+  imports: [RouterModule.forRoot(routes, {enableTracing: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
