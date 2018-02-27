@@ -1,10 +1,16 @@
 .example-container {
   display: flex;
   flex-direction: column;
-  max-height: 500px;
+  height: 90%;
   min-width: 300px;
 }
 
 .mat-table {
   overflow: auto;
+}
+
+.add-release {
+  position: fixed;
+  bottom: 1%;
+  right: 1%
 }
