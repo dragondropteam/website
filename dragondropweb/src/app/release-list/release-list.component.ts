@@ -5,6 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import {MatDialog} from '@angular/material';
 import {NewReleaseDialogComponent} from '../new-release-dialog/new-release-dialog.component';
 import * as QuillDeltaToHtmlConverter from 'quill-delta-to-html';
+import {Release} from '../release/release.model';
 
 @Component({
   selector: 'app-release-list',
@@ -12,7 +13,7 @@ import * as QuillDeltaToHtmlConverter from 'quill-delta-to-html';
   styleUrls: ['./release-list.component.css']
 })
 export class ReleaseListComponent implements OnInit {
-  displayedColumns = ['version', 'channel', 'changenotes', 'platforms'];
+  displayedColumns = ['version', 'channel', 'changenotes', 'platforms', 'edit'];
   dataSource = new ReleaseDataSource(this.releaseService);
 
   constructor(private releaseService: ReleaseService, private dialog: MatDialog) {
@@ -32,7 +33,21 @@ export class ReleaseListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(release => {
       this.releaseService.createRelease(release)
-        .subscribe();
+        .subscribe(newRelease => console.log(newRelease));
+    });
+  }
+
+  editRelease(release: Release) {
+    const dialogRef = this.dialog.open(NewReleaseDialogComponent, {
+      height: '89%',
+      width: '70%',
+      maxHeight: '600px',
+      maxWidth: '800px'
+    });
+
+    dialogRef.afterClosed().subscribe(release => {
+      this.releaseService.createRelease(release)
+        .subscribe(newRelease => console.log(newRelease));
     });
   }
 }
