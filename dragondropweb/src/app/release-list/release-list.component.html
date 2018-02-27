@@ -34,7 +34,7 @@
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
+  <button class="add-release" mat-fab (click)="createRelease()" color="primary">
+    <mat-icon>add</mat-icon>
+  </button>
 </div>
-<button mat-fab (click)="createRelease()" color="primary">
-  <mat-icon>add</mat-icon>
-</button>
