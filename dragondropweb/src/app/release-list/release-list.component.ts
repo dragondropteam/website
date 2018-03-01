@@ -6,6 +6,7 @@ import {MatDialog} from '@angular/material';
 import {NewReleaseDialogComponent} from '../new-release-dialog/new-release-dialog.component';
 import * as QuillDeltaToHtmlConverter from 'quill-delta-to-html';
 import {Release} from '../release/release.model';
+import {EditReleaseDialogComponent} from '../edit-release-dialog/edit-release-dialog.component';
 
 @Component({
   selector: 'app-release-list',
@@ -38,17 +39,16 @@ export class ReleaseListComponent implements OnInit {
   }
 
   editRelease(release: Release) {
-    const dialogRef = this.dialog.open(NewReleaseDialogComponent, {
-      height: '89%',
-      width: '70%',
-      maxHeight: '600px',
-      maxWidth: '800px'
+    const dialogRef = this.dialog.open(EditReleaseDialogComponent, {
+      data: {release: release},
+      height: '95%',
+      width: '90%'
     });
 
-    dialogRef.afterClosed().subscribe(release => {
-      this.releaseService.createRelease(release)
-        .subscribe(newRelease => console.log(newRelease));
-    });
+    // dialogRef.afterClosed().subscribe(release => {
+    //   this.releaseService.createRelease(release)
+    //     .subscribe(newRelease => console.log(newRelease));
+    // });
   }
 }
 

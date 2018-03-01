@@ -38,11 +38,7 @@ const ReleaseSchema = new Schema({
     required: true
   },
   published: Date,
-  platforms: {
-    windows: [ReleaseFileSchema],
-    linux: [ReleaseFileSchema],
-    mac: [ReleaseFileSchema]
-  }
+  files: [ReleaseFileSchema]
 });
 
 ReleaseSchema.statics = {
@@ -80,10 +76,18 @@ ReleaseSchema.statics = {
         if(releases){
 
           releases.sort((a, b) => {
-            return semver.compare(a.version, b.version);
+            return -semver.compare(a.version, b.version);
           });
 
-          return releases[0].platforms[platform];
+          const files = [];
+          releases[0].files.forEach(file =>{
+            console.log(file.platform == platform);
+            if(file.platform == platform){
+              files.push(file);
+            }
+          });
+
+          return files[0];
         }
         return Promise.reject(new Error('No Releases'))
       })

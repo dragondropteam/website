@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>Create Release</h1>
+<mat-dialog-content>
+  <mat-form-field>
+    <input [(ngModel)]="data.release.version" matInput placeholder="Version">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select [(ngModel)]="data.release.channel" placeholder="Channel">
+      <mat-option *ngFor="let channel of channels" [value]="channel">
+        {{ channel }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="quill-container">
+    <p-editor [(ngModel)]="data.release.changeNotes" style="width: 100%"
+              [style]="{'display': 'flex', 'flex-direction': 'column', 'width': '100%'}"></p-editor>
+  </div>
+  <h3 id="release">Files</h3>
+  <div *ngFor="let file of data.release.files" id="files">
+    <p id="one">{{file.platform}}</p>
+    <!--<a download id="two" [href]="getFileDownload(file)">{{file.file}}</a>-->
+    <a id="two" [href]="getFileDownload(file)">{{file.file}}</a>
+    <button id="three" mat-icon-button>
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+  <div class="file-upload">
+    <h4 id="file">Upload New File</h4>
+    <input id="file-input" (change)="onFileChange($event)" type="file"/>
+    <button mat-button mat-raised-button color="accent" id="upload" (click)="upload()">Upload</button>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data.release" color="primary">Create</button>
+  <button mat-button color="primary">Cancel</button>
+</mat-dialog-actions>
