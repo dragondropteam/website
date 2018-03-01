@@ -18,10 +18,11 @@ import {FormsModule} from '@angular/forms';
 import {NgxEditorModule} from 'ngx-editor';
 import {QuillModule} from 'ngx-quill';
 import {FroalaEditorModule, FroalaViewModule} from 'angular-froala-wysiwyg';
-import { QuilljsComponent } from './quilljs/quilljs.component';
+import {QuilljsComponent} from './quilljs/quilljs.component';
 import {EditorModule} from 'primeng/editor';
-import {SplitButtonModule} from 'primeng/primeng';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {FileUploadModule, SplitButtonModule} from 'primeng/primeng';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {EditReleaseDialogComponent} from './edit-release-dialog/edit-release-dialog.component';
 
 @NgModule({
   declarations: [
@@ -31,9 +32,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ReleaseComponent,
     NewReleaseDialogComponent,
     QuilljsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    EditReleaseDialogComponent
   ],
-  entryComponents: [NewReleaseDialogComponent],
+  entryComponents: [
+    NewReleaseDialogComponent,
+    EditReleaseDialogComponent
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -51,7 +56,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     NgxEditorModule,
     QuillModule,
     EditorModule,
-    SplitButtonModule
+    SplitButtonModule,
+    FileUploadModule
   ],
   providers: [ReleaseService],
   bootstrap: [AppComponent]

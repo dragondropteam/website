@@ -44,27 +44,34 @@ router.route('/latest/:platform')
     releaseController
       .getLatest(req, res, next, 'windows');
   });
-//
-// router.route('/id/:id')
-//   .get((req, res, next) => {
-//     releaseController
-//       .get(req.params)
-//       .then(release => {
-//         res.json(release)
-//       })
-//       .catch(err => next(err))
-//   });
-//
-// router.route('/id/:id/files')
-//   .get((req, res, next) => {
-//     releaseController
-//       .get(req.params)
-//       .then(release => {
-//         res.json(release.files)
-//       })
-//       .catch(err => next(err))
-//   })
-//   .post(upload.single('file'), (req, res, next) => {
-//     releaseController.addFile(req, res, next)
-//   });
+
+router.route('/:id')
+  .get((req, res, next) => {
+    releaseController
+      .get(req.params)
+      .then(release => {
+        res.json(release)
+      })
+      .catch(err => next(err))
+  });
+
+router.route('/:id/files')
+  .get((req, res, next) => {
+    releaseController
+      .get(req.params)
+      .then(release => {
+        res.json(release.files)
+      })
+      .catch(err => next(err))
+  })
+  .post(upload.single('file'), (req, res, next) => {
+    releaseController.addFile(req, res, next)
+  });
+
+router.route('/:id/files/:fileid')
+  .get((req, res, next) => {
+    console.log('get /:id/files/:fileid');
+    releaseController.getFile(req, res, next);
+  });
+
 module.exports = router;

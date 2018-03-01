@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+mat-dialog-actions {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.quill-container {
+  display: flex;
+
+  min-height: 400px;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+:host ::ng-deep .ui-editor-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-grow: 1;
+}
+
+
+#files {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+}
+
+#file {
+  align-self: center;
+  margin-right: 20px;
+}
+
+#file-input {
+  grid-column: 2;
+  height: fit-content;
+  align-self: center;
+  justify-self: flex-end;
+}
+
+#upload {
+  height: fit-content;
+  width: fit-content;
+  align-self: center;
+}
+
+#one {
+  grid-column: 1;
+}
+
+#two {
+  grid-column: 2;
+  align-self: center;
+}
+
+#three {
+  grid-column: 3;
+}
+
+.file-upload {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+

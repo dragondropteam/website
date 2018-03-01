@@ -39,12 +39,12 @@ function addFile(req, res, next) {
   // console.log(req.file);
   load(req.params)
     .then(release => {
-      release.platforms[req.body.platform].push({
-        platform: req.body.platform,
+      release.files.unshift({
+        platform: 'windows',
         file: req.file.path
       });
       release.save();
-      res.json(release.platforms[req.body.platform]);
+      res.json(release.files[0]);
     })
     .catch(err => {
       console.error(err);
@@ -52,23 +52,32 @@ function addFile(req, res, next) {
     })
 }
 
+function getFile(id, fileID) {
+  return load({id: id})
+    .then(release => {
+      const file = release.files.id(fileID);
+      if(file){
+        return file;
+      }else{
+        throw new Error();
+      }
+    })
+}
 
 function getLatest(req, res, next, platform = "windows") {
   console.log('getLatest');
   Release.getPlatformLatest(platform)
     .then(release => {
-      console.log('latest', release);
       res.status(200).json(release);
     })
     .catch(err => next(err));
 }
 
 function downloadLatest(req, res, next, platform = "windows") {
-  console.log('getLatest');
   Release.getPlatformLatest(platform)
-    .then(release => {
-      if (release.length > 0) {
-        res.download(release[0].file);
+    .then(file => {
+      if (file) {
+        res.download(file.file);
       }else{
         res.status(404).json({'error': `No downloads available for ${platform}`});
       }
@@ -84,6 +93,7 @@ module.exports = {
   list,
   remove,
   addFile,
+  getFile,
   getLatest,
   downloadLatest
 };
