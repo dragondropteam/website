@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2018. DigiPen Institute of Technology
+ */
+
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const semver = require('semver');

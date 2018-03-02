@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2018. DigiPen Institute of Technology
+ */
+
 import {Component, Input, OnInit} from '@angular/core';
 
 import * as QuillNamespace from 'quill';

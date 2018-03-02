@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2018. DigiPen Institute of Technology
+ */
+
 import { TestBed, inject } from '@angular/core/testing';
 
 import { ReleaseService } from './release.service';
