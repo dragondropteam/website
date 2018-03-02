@@ -1,5 +1,5 @@
 <!--<div class="example-container mat-elevation-z8">-->
-  <mat-table #table [dataSource]="dataSource">
+  <mat-table class="mat-table" [dataSource]="dataSource">
 
     <ng-container matColumnDef="version">
       <mat-header-cell *matHeaderCellDef> Version</mat-header-cell>
@@ -24,9 +24,9 @@
       <mat-header-cell *matHeaderCellDef> Files</mat-header-cell>
       <mat-cell *matCellDef="let element">
         <mat-chip-list>
-          <mat-chip color="primary" selected="true" *ngIf="element.platforms.windows.length > 0">Windows</mat-chip>
-          <mat-chip color="primary" selected="true" *ngIf="element.platforms.mac.length > 0">macOS</mat-chip>
-          <mat-chip color="primary" selected="true" *ngIf="element.platforms.linux.length > 0">Linux</mat-chip>
+          <!--<mat-chip color="primary" selected="true" *ngIf="element.platforms.windows.length > 0">Windows</mat-chip>-->
+          <!--<mat-chip color="primary" selected="true" *ngIf="element.platforms.mac.length > 0">macOS</mat-chip>-->
+          <!--<mat-chip color="primary" selected="true" *ngIf="element.platforms.linux.length > 0">Linux</mat-chip>-->
         </mat-chip-list>
       </mat-cell>
     </ng-container>

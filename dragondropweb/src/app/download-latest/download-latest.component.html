@@ -1,11 +1,12 @@
-<div class="content">
-  <mat-card class="latest">
-    <h1 class="header">Get the Latest DragonDrop</h1>
-    <img class="dragon" src="../../assets/background.png">
+<div class="container">
+  <mat-card class="release-details">
+    <h2>{{release.version}}</h2>
+    <p [innerHtml]="release.changeNotes"></p>
     <div class="routes">
       <a mat-raised-button href="/download/latest/"><i class="fab fa-windows fa-lg"></i> Windows </a>
       <a mat-raised-button href="/download/latest/mac"><i class="fab fa-apple fa-lg"></i> macOS </a>
       <a mat-raised-button href="/download/latest/linux"><i class="fab fa-linux fa-lg"></i> Linux </a>
     </div>
+    <a class="version" routerLink="versions">Other Versions</a>
   </mat-card>
 </div>

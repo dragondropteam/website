@@ -4,6 +4,7 @@ import {NgModule} from '@angular/core';
 import {ReleaseComponent} from './release/release.component';
 import {ReleaseListComponent} from './release-list/release-list.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {DownloadLatestComponent} from './download-latest/download-latest.component';
 
 const routes: Routes = [{
   path: '',
@@ -14,6 +15,9 @@ const routes: Routes = [{
 }, {
   path: 'admin',
   component: ReleaseListComponent
+}, {
+  path: 'release',
+  component: DownloadLatestComponent
 }, {
   path: '**',
   component: PageNotFoundComponent

@@ -91,6 +91,23 @@ ReleaseSchema.statics = {
         }
         return Promise.reject(new Error('No Releases'))
       })
+  },
+
+  getLatestRelease() {
+    return this.find()
+      .exec()
+      .then(releases => {
+        if(releases){
+
+          releases.sort((a, b) => {
+            return -semver.compare(a.version, b.version);
+          });
+
+          return Promise.resolve(releases[0])
+        }
+
+        return Promise.reject(new Error('No Releases'))
+      })
   }
 };
 

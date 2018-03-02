@@ -36,4 +36,8 @@ export class ReleaseService {
   getFileDownload(release: Release, file: ReleaseFile): String {
     return `/download/release/${release._id}/${file._id}`;
   }
+
+  getLatestRelease() {
+    return this.httpClient.get<Release>(`${this.releaseURL}/latest`);
+  }
 }

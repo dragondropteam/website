@@ -7,7 +7,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {ReleaseListComponent} from './release-list/release-list.component';
 import {ReleaseComponent} from './release/release.component';
 import {
-  MatButtonModule, MatChipsModule, MatDialogModule, MatFormFieldModule, MatIconModule, MatInputModule, MatSelectModule,
+  MatButtonModule, MatCardModule, MatChipsModule, MatDialogModule, MatFormFieldModule, MatIconModule, MatInputModule, MatSelectModule,
   MatTableModule
 } from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
@@ -23,6 +23,8 @@ import {EditorModule} from 'primeng/editor';
 import {FileUploadModule, SplitButtonModule} from 'primeng/primeng';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {EditReleaseDialogComponent} from './edit-release-dialog/edit-release-dialog.component';
+import { DownloadLatestComponent } from './download-latest/download-latest.component';
+import { DownloadVersionListComponent } from './download-version-list/download-version-list.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import {EditReleaseDialogComponent} from './edit-release-dialog/edit-release-dia
     NewReleaseDialogComponent,
     QuilljsComponent,
     PageNotFoundComponent,
-    EditReleaseDialogComponent
+    EditReleaseDialogComponent,
+    DownloadLatestComponent,
+    DownloadVersionListComponent
   ],
   entryComponents: [
     NewReleaseDialogComponent,
@@ -51,6 +55,7 @@ import {EditReleaseDialogComponent} from './edit-release-dialog/edit-release-dia
     MatSelectModule,
     MatInputModule,
     MatIconModule,
+    MatCardModule,
     BrowserAnimationsModule,
     FormsModule,
     NgxEditorModule,
