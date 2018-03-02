@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2018. DigiPen Institute of Technology
+ */
+
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 

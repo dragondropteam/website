@@ -1,5 +1,9 @@
 
 
+/*
+ * Copyright (c) 2018. DigiPen Institute of Technology
+ */
+
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/filter';

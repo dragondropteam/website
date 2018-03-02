@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2018. DigiPen Institute of Technology
+ */
+
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material';
 import {ReleaseService} from '../release.service';

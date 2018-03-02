@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2018. DigiPen Institute of Technology
+ */
+
 import { browser, by, element } from 'protractor';
 
 export class AppPage {

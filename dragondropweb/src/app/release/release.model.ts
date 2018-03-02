@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2018. DigiPen Institute of Technology
+ */
+
 export class ReleaseFile {
   _id?: string;
   platform: string;

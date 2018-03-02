@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2018. DigiPen Institute of Technology
+ */
+
 const express = require('express');
 const app = express();
 const formidable = require('express-formidable');

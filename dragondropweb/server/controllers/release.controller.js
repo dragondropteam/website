@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2018. DigiPen Institute of Technology
+ */
+
 const Release = require('../models/release.model');
 const fs = require('fs-extra');
 

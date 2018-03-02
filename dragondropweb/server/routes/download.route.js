@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2018. DigiPen Institute of Technology
+ */
+
 const express = require('express');
 const router = express.Router();
 const releaseController = require('../controllers/release.controller');
