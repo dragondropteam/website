@@ -64,6 +64,9 @@ function getFile(id, fileID) {
     })
 }
 
+function getLatestRelease() {
+  return Release.getLatestRelease();
+}
 function getLatest(req, res, next, platform = "windows") {
   console.log('getLatest');
   Release.getPlatformLatest(platform)
@@ -95,5 +98,6 @@ module.exports = {
   addFile,
   getFile,
   getLatest,
-  downloadLatest
+  downloadLatest,
+  getLatestRelease
 };

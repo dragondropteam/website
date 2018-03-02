@@ -39,6 +39,18 @@ router.route('/')
   });
 
 
+router.route('/latest')
+  .get((req, res) => {
+    releaseController
+      .getLatestRelease()
+      .then(release => {
+        res.status(200).json(release)
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(404).json({error: 'No releases'});
+      });
+  });
 router.route('/latest/:platform')
   .get((req, res, next) => {
     releaseController
