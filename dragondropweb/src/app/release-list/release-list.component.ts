@@ -49,6 +49,12 @@ export class ReleaseListComponent implements OnInit {
       width: '90%'
     });
 
+    dialogRef.afterClosed().subscribe(editedRelease => {
+      console.log('afterClosed edit');
+      if (editedRelease) {
+        this.releaseService.updateRelease(editedRelease).subscribe(result => console.log(result));
+      }
+    });
     // dialogRef.afterClosed().subscribe(release => {
     //   this.releaseService.createRelease(release)
     //     .subscribe(newRelease => console.log(newRelease));

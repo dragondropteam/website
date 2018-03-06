@@ -24,6 +24,10 @@ const ReleaseFileSchema = new Schema({
   file: {
     type: String,
     required: true
+  },
+  filename: {
+    type: String,
+    required: true
   }
 });
 

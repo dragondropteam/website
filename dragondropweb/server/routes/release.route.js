@@ -40,6 +40,14 @@ router.route('/')
           next(err);
         }
       })
+  })
+  .put((req, res, next) => {
+    releaseController
+      .update(req.body)
+      .then(release => {
+        res.status(200).json(release);
+      })
+      .catch(err => next(err))
   });
 
 

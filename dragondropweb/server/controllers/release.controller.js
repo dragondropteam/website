@@ -24,11 +24,7 @@ function create(params) {
 }
 
 function update(params) {
-  return load(params).then(release => {
-    release.version = params.version;
-    release.channel = params.channel;
-    release.changeNotes = params.changeNotes;
-  })
+  return Release.findByIdAndUpdate(params._id, params, {new: true});
 }
 
 function list(params) {
@@ -40,18 +36,18 @@ function remove(params) {
 }
 
 function addFile(req, res, next) {
-  // console.log(req.file);
+  console.log(req.file);
   load(req.params)
     .then(release => {
       release.files.unshift({
         platform: 'windows',
-        file: req.file.path
+        file: req.file.path,
+        filename: req.file.filename
       });
-      release.save();
-      res.json(release.files[0]);
+      return release.save();
     })
+    .then(release => res.json(release.files[0]))
     .catch(err => {
-      console.error(err);
       next(err);
     })
 }

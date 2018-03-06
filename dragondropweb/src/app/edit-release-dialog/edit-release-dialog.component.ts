@@ -14,6 +14,8 @@ import {ReleaseFile} from '../release/release.model';
 })
 export class EditReleaseDialogComponent implements OnInit {
   channels = ['Stable', 'Release Candidate', 'Alpha', 'Beta'];
+  platforms = ['windows', 'macos', 'linux'];
+
   file?: File = null;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private releaseService: ReleaseService) {
@@ -43,3 +45,4 @@ export class EditReleaseDialogComponent implements OnInit {
     return this.releaseService.getFileDownload(this.data.release, file);
   }
 }
+
