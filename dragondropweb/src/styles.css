@@ -1,1 +1,17 @@
+/*
+ * Copyright (c) 2018. DigiPen Institute of Technology
+ */
+
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '../node_modules/codemirror/lib/codemirror.css';
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.button-bar {
+  display: flex;
+  flex-direction: row;
+}

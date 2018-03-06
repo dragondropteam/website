@@ -1,0 +1,91 @@
+/*
+ * Copyright (c) 2018. DigiPen Institute of Technology
+ */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: auto;
+}
+
+mat-dialog-actions {
+  display: flex;
+  flex-direction: row;
+}
+
+.quill-container {
+  display: flex;
+
+  min-height: 400px;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+:host ::ng-deep .ui-editor-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-grow: 1;
+}
+
+
+#files {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#file {
+  align-self: center;
+  margin-right: 20px;
+}
+
+#file-input {
+  grid-column: 2;
+  height: fit-content;
+  align-self: center;
+  justify-self: flex-end;
+}
+
+#upload {
+  height: fit-content;
+  width: fit-content;
+  align-self: center;
+}
+
+#one {
+  grid-column: 1;
+  align-self: center;
+  margin: 0.5em;
+  width: fit-content;
+}
+
+#two {
+  grid-column: 2;
+  align-self: center;
+  margin: 0.5em;
+  width: fit-content;
+}
+
+#three {
+  grid-column: 3;
+  align-self: center;
+  justify-self: right;
+  margin: 0.5em;
+}
+
+.dialog-controls {
+  margin: 0.5em 0.5em 0.5em auto;
+}
+
+.file-upload {
+  display: flex;
+  flex-direction: row;
+}
+
