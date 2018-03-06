@@ -1,0 +1,27 @@
+<!--
+  ~ Copyright (c) 2018. DigiPen Institute of Technology
+  -->
+
+<div class="container">
+  <h1 mat-dialog-title>Create Release</h1>
+  <mat-dialog-content>
+    <mat-form-field>
+      <input [(ngModel)]="release.version" matInput placeholder="Version">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select [(ngModel)]="release.channel" placeholder="Channel">
+        <mat-option *ngFor="let channel of channels" [value]="channel">
+          {{ channel }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="quill-container">
+      <p-editor [(ngModel)]="release.changeNotes" style="width: 100%"
+                [style]="{'display': 'flex', 'flex-direction': 'column', 'width': '100%'}"></p-editor>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="release" color="primary">Create</button>
+    <button mat-button [mat-dialog-close]="null" color="primary">Cancel</button>
+  </mat-dialog-actions>
+</div>
