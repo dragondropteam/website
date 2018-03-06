@@ -37,15 +37,17 @@ export class ReleaseListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(release => {
-      this.releaseService.createRelease(release)
-        .subscribe(newRelease => console.log(newRelease));
+      if (release) {
+        this.releaseService.createRelease(release)
+          .subscribe(newRelease => console.log(newRelease));
+      }
     });
   }
 
   editRelease(release: Release) {
     const dialogRef = this.dialog.open(EditReleaseDialogComponent, {
       data: {release: release},
-      height: '95%',
+      height: '78vh',
       width: '90%'
     });
 
@@ -55,10 +57,6 @@ export class ReleaseListComponent implements OnInit {
         this.releaseService.updateRelease(editedRelease).subscribe(result => console.log(result));
       }
     });
-    // dialogRef.afterClosed().subscribe(release => {
-    //   this.releaseService.createRelease(release)
-    //     .subscribe(newRelease => console.log(newRelease));
-    // });
   }
 }
 

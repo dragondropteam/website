@@ -32,7 +32,7 @@ export class EditReleaseDialogComponent implements OnInit {
 
   upload() {
     if (this.file !== null) {
-      this.releaseService.addFileToRelease(this.data.release, this.file).subscribe();
+      this.releaseService.addFileToRelease(this.data.release, this.file).subscribe(release => this.data.release = release);
     }
   }
 
@@ -41,7 +41,7 @@ export class EditReleaseDialogComponent implements OnInit {
     this.releaseService.downloadFile(this.data.release, file).subscribe();
   }
 
-  getFileDownload(file: ReleaseFile){
+  getFileDownload(file: ReleaseFile) {
     return this.releaseService.getFileDownload(this.data.release, file);
   }
 }

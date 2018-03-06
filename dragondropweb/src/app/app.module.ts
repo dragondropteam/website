@@ -29,6 +29,7 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {EditReleaseDialogComponent} from './edit-release-dialog/edit-release-dialog.component';
 import { DownloadLatestComponent } from './download-latest/download-latest.component';
 import { DownloadVersionListComponent } from './download-version-list/download-version-list.component';
+import { VersionListComponent } from './version-list/version-list.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { DownloadVersionListComponent } from './download-version-list/download-v
     PageNotFoundComponent,
     EditReleaseDialogComponent,
     DownloadLatestComponent,
-    DownloadVersionListComponent
+    DownloadVersionListComponent,
+    VersionListComponent
   ],
   entryComponents: [
     NewReleaseDialogComponent,

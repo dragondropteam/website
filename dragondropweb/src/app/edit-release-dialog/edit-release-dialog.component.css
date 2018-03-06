@@ -8,15 +8,16 @@
   height: 100%;
 }
 
-mat-dialog-content {
+.content {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  height: auto;
 }
 
 mat-dialog-actions {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
 }
 
 .quill-container {
@@ -37,7 +38,7 @@ mat-dialog-actions {
 
 #files {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 #file {
@@ -60,20 +61,31 @@ mat-dialog-actions {
 
 #one {
   grid-column: 1;
+  align-self: center;
+  margin: 0.5em;
+  width: fit-content;
 }
 
 #two {
   grid-column: 2;
   align-self: center;
+  margin: 0.5em;
+  width: fit-content;
 }
 
 #three {
   grid-column: 3;
+  align-self: center;
+  justify-self: right;
+  margin: 0.5em;
+}
+
+.dialog-controls {
+  margin: 0.5em 0.5em 0.5em auto;
 }
 
 .file-upload {
   display: flex;
   flex-direction: row;
-  width: 100%;
 }
 

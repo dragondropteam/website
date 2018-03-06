@@ -16,11 +16,12 @@
       </mat-select>
     </mat-form-field>
     <div class="quill-container">
-      <p-editor [(ngModel)]="release.changeNotes" style="width: 100%" [style]="{'display': 'flex', 'flex-direction': 'column', 'width': '100%'}"></p-editor>
+      <p-editor [(ngModel)]="release.changeNotes" style="width: 100%"
+                [style]="{'display': 'flex', 'flex-direction': 'column', 'width': '100%'}"></p-editor>
     </div>
   </mat-dialog-content>
   <mat-dialog-actions>
     <button mat-button [mat-dialog-close]="release" color="primary">Create</button>
-    <button mat-button color="primary">Cancel</button>
+    <button mat-button [mat-dialog-close]="null" color="primary">Cancel</button>
   </mat-dialog-actions>
 </div>
