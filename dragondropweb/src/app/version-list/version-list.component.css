@@ -7,6 +7,10 @@
   flex-direction: column;
   height: calc(100% - 64px);
   width: 100%;
+  justify-content: center;
+  align-content: center;
+  background: url("../../assets/6.jpg") no-repeat;
+  background-size: cover;
 }
 
 .mat-table {
@@ -14,10 +18,4 @@
   height: 80%;
   width: 80%;
   margin: auto;
-}
-
-.add-release {
-  position: fixed;
-  bottom: 15%;
-  right: 13%
 }

@@ -15,6 +15,25 @@ export class HomeComponent implements OnInit {
 
   release: Release;
 
+  constructor(private releaseService: ReleaseService) {
+  }
+
   ngOnInit() {
+    this.getLatestRelease();
+  }
+
+  getLatestRelease() {
+    this.releaseService.getLatestRelease()
+      .subscribe(release => this.release = release);
+  }
+
+  isPlatformAvailable(platform) {
+    let exists = false;
+    this.release.files.forEach(file => {
+      if (file.platform === platform) {
+        exists = true;
+      }
+    });
+    return exists;
   }
 }

@@ -1,7 +1,6 @@
 <!--
   ~ Copyright (c) 2018. DigiPen Institute of Technology
   -->
-
 <div class="container">
   <mat-card class="release-details">
     <h2>{{release.version}}</h2>
@@ -11,6 +10,6 @@
       <a mat-raised-button *ngIf="isPlatformAvailable('macos')" href="/download/latest/macos"><i class="fab fa-apple fa-lg"></i> macOS </a>
       <a mat-raised-button *ngIf="isPlatformAvailable('linux')" href="/download/latest/linux"><i class="fab fa-linux fa-lg"></i> Linux </a>
     </div>
-    <a class="version" routerLink="versions">Other Versions</a>
+    <a class="version" routerLink="/versions">Other Versions</a>
   </mat-card>
 </div>

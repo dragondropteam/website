@@ -1,9 +1,8 @@
 <!--
   ~ Copyright (c) 2018. DigiPen Institute of Technology
   -->
-
 <h1 mat-dialog-title>Create Release</h1>
-<mat-dialog-content>
+<div class="content" mat-dialog-content>
   <mat-form-field>
     <input [(ngModel)]="data.release.version" matInput placeholder="Version">
   </mat-form-field>
@@ -20,23 +19,27 @@
   </div>
   <h3 id="release">Files</h3>
   <div *ngFor="let file of data.release.files" id="files">
-    <mat-select id="one" [(ngModel)]="file.platform" placeholder="Channel">
-      <mat-option *ngFor="let platform of platforms" [value]="platform">
-        {{ platform }}
-      </mat-option>
-    </mat-select>
-    <a id="two" [href]="getFileDownload(file)">{{file.filename}}</a>
+    <mat-form-field>
+      <mat-select id="one" [(ngModel)]="file.platform" placeholder="Channel">
+        <mat-option *ngFor="let platform of platforms" [value]="platform">
+          {{ platform }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <a mat-button id="two" [href]="getFileDownload(file)">{{file.filename}}</a>
     <button id="three" mat-icon-button>
       <mat-icon>delete</mat-icon>
     </button>
   </div>
+</div>
+<mat-dialog-actions>
   <div class="file-upload">
     <h4 id="file">Upload New File</h4>
     <input id="file-input" (change)="onFileChange($event)" type="file"/>
     <button mat-button mat-raised-button color="accent" id="upload" (click)="upload()">Upload</button>
   </div>
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button [mat-dialog-close]="data.release" color="primary">Save</button>
-  <button mat-button color="primary">Cancel</button>
+  <div class="dialog-controls">
+    <button mat-button [mat-dialog-close]="null" color="primary">Cancel</button>
+    <button mat-button [mat-dialog-close]="data.release" color="primary">Save</button>
+  </div>
 </mat-dialog-actions>

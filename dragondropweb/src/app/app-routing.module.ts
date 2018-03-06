@@ -9,6 +9,7 @@ import {ReleaseComponent} from './release/release.component';
 import {ReleaseListComponent} from './release-list/release-list.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {DownloadLatestComponent} from './download-latest/download-latest.component';
+import {VersionListComponent} from './version-list/version-list.component';
 
 const routes: Routes = [{
   path: '',
@@ -22,6 +23,9 @@ const routes: Routes = [{
 }, {
   path: 'release',
   component: DownloadLatestComponent
+}, {
+  path: 'versions',
+  component: VersionListComponent
 }, {
   path: '**',
   component: PageNotFoundComponent

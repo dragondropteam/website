@@ -7,9 +7,9 @@
     <h1 class="header">Get the Latest DragonDrop</h1>
     <img class="dragon" src="../../assets/background.png">
     <div class="routes">
-      <a mat-raised-button href="/download/latest/windows"><i class="fab fa-windows fa-lg"></i> Windows </a>
-      <a mat-raised-button href="/download/latest/macos"><i class="fab fa-apple fa-lg"></i> macOS </a>
-      <a mat-raised-button href="/download/latest/linux"><i class="fab fa-linux fa-lg"></i> Linux </a>
+      <a *ngIf="isPlatformAvailable('windows')" mat-raised-button href="/download/latest/windows"><i class="fab fa-windows fa-lg"></i> Windows </a>
+      <a *ngIf="isPlatformAvailable('macos')" mat-raised-button href="/download/latest/macos"><i class="fab fa-apple fa-lg"></i> macOS </a>
+      <a *ngIf="isPlatformAvailable('linux')" mat-raised-button href="/download/latest/linux"><i class="fab fa-linux fa-lg"></i> Linux </a>
     </div>
   </mat-card>
 </div>
