@@ -44,4 +44,8 @@ export class ReleaseService {
   getLatestRelease() {
     return this.httpClient.get<Release>(`${this.releaseURL}/latest`);
   }
+
+  updateRelease(release: Release) {
+    return this.httpClient.put<Release>(this.releaseURL, release);
+  }
 }
