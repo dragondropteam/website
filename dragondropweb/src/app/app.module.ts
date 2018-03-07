@@ -30,6 +30,9 @@ import {EditReleaseDialogComponent} from './edit-release-dialog/edit-release-dia
 import { DownloadLatestComponent } from './download-latest/download-latest.component';
 import { DownloadVersionListComponent } from './download-version-list/download-version-list.component';
 import { VersionListComponent } from './version-list/version-list.component';
+import {AuthService} from './auth/auth.service';
+import { CallbackComponent } from './callback/callback.component';
+import {AuthGuard} from './auth/auth.guard';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,8 @@ import { VersionListComponent } from './version-list/version-list.component';
     EditReleaseDialogComponent,
     DownloadLatestComponent,
     DownloadVersionListComponent,
-    VersionListComponent
+    VersionListComponent,
+    CallbackComponent
   ],
   entryComponents: [
     NewReleaseDialogComponent,
@@ -70,7 +74,7 @@ import { VersionListComponent } from './version-list/version-list.component';
     SplitButtonModule,
     FileUploadModule
   ],
-  providers: [ReleaseService],
+  providers: [ReleaseService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {
