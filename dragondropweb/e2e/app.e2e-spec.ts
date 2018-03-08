@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2018. DigiPen Institute of Technology
+ */
+
 import { AppPage } from './app.po';
 
 describe('dragondropweb App', () => {

@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2018. DigiPen Institute of Technology
+ */
+
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
