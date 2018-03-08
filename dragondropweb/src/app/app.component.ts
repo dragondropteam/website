@@ -2,7 +2,8 @@
  * Copyright (c) 2018. DigiPen Institute of Technology
  */
 
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {AuthService} from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -10,5 +11,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'DragonDrop';
+
+  constructor(private auth: AuthService) {
+    auth.handleAuthentication();
+  }
 }

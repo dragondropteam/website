@@ -12,6 +12,20 @@ import * as QuillDeltaToHtmlConverter from 'quill-delta-to-html';
 import {Release} from '../release/release.model';
 import {EditReleaseDialogComponent} from '../edit-release-dialog/edit-release-dialog.component';
 
+
+export class ReleaseDataSource extends DataSource<any> {
+  connect(): Observable<any[]> {
+    return this.releaseService.getReleases();
+  }
+
+  disconnect(): void {
+  }
+
+  constructor(private releaseService: ReleaseService) {
+    super();
+  }
+}
+
 @Component({
   selector: 'app-release-list',
   templateUrl: './release-list.component.html',
@@ -57,18 +71,5 @@ export class ReleaseListComponent implements OnInit {
         this.releaseService.updateRelease(editedRelease).subscribe(result => console.log(result));
       }
     });
-  }
-}
-
-export class ReleaseDataSource extends DataSource<any> {
-  connect(): Observable<any[]> {
-    return this.releaseService.getReleases();
-  }
-
-  disconnect(): void {
-  }
-
-  constructor(private releaseService: ReleaseService) {
-    super();
   }
 }

@@ -5,6 +5,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ReleaseService} from '../release.service';
 import {Release} from '../release/release.model';
+import {AuthService} from '../auth/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   release: Release;
 
-  constructor(private releaseService: ReleaseService) {
+  constructor(private releaseService: ReleaseService, private authService: AuthService) {
   }
 
   ngOnInit() {
@@ -35,5 +36,9 @@ export class HomeComponent implements OnInit {
       }
     });
     return exists;
+  }
+
+  login() {
+    this.authService.login();
   }
 }
