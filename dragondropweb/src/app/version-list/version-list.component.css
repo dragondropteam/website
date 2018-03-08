@@ -1,0 +1,21 @@
+/*
+ * Copyright (c) 2018. DigiPen Institute of Technology
+ */
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 64px);
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+  background: url("../../assets/6.jpg") no-repeat;
+  background-size: cover;
+}
+
+.mat-table {
+  overflow: auto;
+  height: 80%;
+  width: 80%;
+  margin: auto;
+}
