@@ -5,6 +5,20 @@ import {MatDialog} from '@angular/material';
 import {ReleaseService} from '../release.service';
 import {DataSource} from '@angular/cdk/collections';
 
+
+export class ReleaseDataSource extends DataSource<any> {
+  connect(): Observable<any[]> {
+    return this.releaseService.getReleases();
+  }
+
+  disconnect(): void {
+  }
+
+  constructor(private releaseService: ReleaseService) {
+    super();
+  }
+}
+
 @Component({
   selector: 'app-version-list',
   templateUrl: './version-list.component.html',
@@ -29,18 +43,5 @@ export class VersionListComponent implements OnInit {
       }
     });
     return exists;
-  }
-}
-
-export class ReleaseDataSource extends DataSource<any> {
-  connect(): Observable<any[]> {
-    return this.releaseService.getReleases();
-  }
-
-  disconnect(): void {
-  }
-
-  constructor(private releaseService: ReleaseService) {
-    super();
   }
 }
