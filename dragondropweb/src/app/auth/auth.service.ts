@@ -8,6 +8,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/filter';
 import * as auth0 from 'auth0-js';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class AuthService {
@@ -17,7 +18,7 @@ export class AuthService {
     domain: 'dragonwellstudios.auth0.com',
     responseType: 'token id_token',
     audience: 'https://dragonwellstudios.auth0.com/userinfo',
-    redirectUri: 'http://localhost:4200/callback',
+    redirectUri: environment.authCallback,
     scope: 'openid'
   });
 

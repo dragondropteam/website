@@ -8,7 +8,7 @@ const releaseController = require('../controllers/release.controller');
 const multer = require('multer');
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, '/Users/lukepowell/Documents/Uploads/')
+    cb(null, '/releases')
   },
   filename: function (req, file, cb) {
     cb(null, file.originalname);
