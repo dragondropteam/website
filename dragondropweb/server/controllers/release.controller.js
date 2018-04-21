@@ -46,7 +46,7 @@ function addFile(req, res, next) {
       });
       return release.save();
     })
-    .then(release => res.json(release.files[0]))
+    .then(release => res.json(release))
     .catch(err => {
       next(err);
     })
