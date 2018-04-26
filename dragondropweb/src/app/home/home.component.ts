@@ -38,6 +38,10 @@ export class HomeComponent implements OnInit {
     return exists;
   }
 
+  isReady(){
+    return !!this.release;
+  }
+
   login() {
     this.authService.login();
   }
