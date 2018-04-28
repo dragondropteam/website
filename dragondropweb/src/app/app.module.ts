@@ -33,6 +33,12 @@ import { VersionListComponent } from './version-list/version-list.component';
 import {AuthService} from './auth/auth.service';
 import { CallbackComponent } from './callback/callback.component';
 import {AuthGuard} from './auth/auth.guard';
+import { JwtModule } from '@auth0/angular-jwt';
+
+
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
 
 @NgModule({
   declarations: [
@@ -56,6 +62,11 @@ import {AuthGuard} from './auth/auth.guard';
   imports: [
     BrowserModule,
     HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter
+      }
+    }),
     AppRoutingModule,
     MatChipsModule,
     MatTableModule,
