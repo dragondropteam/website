@@ -6,6 +6,17 @@ const express = require('express');
 const router = express.Router();
 const releaseController = require('../controllers/release.controller');
 const multer = require('multer');
+
+const Minio = require('minio');
+
+const minioClient = new Minio.Client({
+  endPoint: 'localhost',
+  port: 9000,
+  secure: false,
+  accessKey: 'AKIAIOSFODNN7EXAMPLE',
+  secretKey: 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY'
+});
+
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, '/releases')
@@ -79,17 +90,23 @@ router.route('/:id')
       .catch(err => next(err))
   });
 
+router.route('/version/:semver/files')
+  .get((req, res, next) => {
+    console.log('Getting files for '  + req.params.semver);
+    const objectStream = minioClient.listObjects('test-release', 'Dragon Drop-' + req.params.semver);
+    const objects = [];
+    objectStream.on('data', data => objects.push(data));
+    objectStream.on('end', () => res.status(201).json(objects));
+    objectStream.on('error', error => console.error(error));
+  });
+
 router.route('/:id/files')
   .get((req, res, next) => {
-    releaseController
-      .get(req.params)
-      .then(release => {
-        res.json(release.files)
-      })
-      .catch(err => next(err))
-  })
-  .post(upload.single('file'), (req, res, next) => {
-    releaseController.addFile(req, res, next)
+    const objectStream = minioClient.listObjects('test-release', 'Dragon Drop-');
+    const objects = [];
+    objectStream.on('data', data => objects.push(data));
+    objectStream.on('end', () => res.status(201).json(objects));
+    objectStream.on('error', error => console.error(error));
   });
 
 router.route('/:id/files/:fileid')

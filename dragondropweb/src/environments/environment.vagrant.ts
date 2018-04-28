@@ -9,5 +9,5 @@
 
 export const environment = {
   production: false,
-  authCallback: 'http://localhost:4200/callback'
+  authCallback: 'http://localhost:8080/callback'
 };
