@@ -20,7 +20,7 @@ const routes: Routes = [{
   path: 'home',
   redirectTo: ''
 }, {
-  path: 'releases/:channel',
+  path: 'release/:id',
   component: ReleaseComponent
 }, {
   path: 'admin',
