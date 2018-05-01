@@ -34,6 +34,7 @@ import {AuthService} from './auth/auth.service';
 import { CallbackComponent } from './callback/callback.component';
 import {AuthGuard} from './auth/auth.guard';
 import { JwtModule } from '@auth0/angular-jwt';
+import { LoginComponent } from './login/login.component';
 
 
 export function tokenGetter() {
@@ -53,7 +54,8 @@ export function tokenGetter() {
     DownloadLatestComponent,
     DownloadVersionListComponent,
     VersionListComponent,
-    CallbackComponent
+    CallbackComponent,
+    LoginComponent
   ],
   entryComponents: [
     NewReleaseDialogComponent,
@@ -64,7 +66,9 @@ export function tokenGetter() {
     HttpClientModule,
     JwtModule.forRoot({
       config: {
-        tokenGetter: tokenGetter
+        tokenGetter: tokenGetter,
+        whitelistedDomains: [/^null$/, 'localhost:3000', 'localhost:4200', 'dragondrop.digipen.edu'],
+        skipWhenExpired: true
       }
     }),
     AppRoutingModule,

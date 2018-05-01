@@ -12,6 +12,7 @@ import {DownloadLatestComponent} from './download-latest/download-latest.compone
 import {VersionListComponent} from './version-list/version-list.component';
 import {CallbackComponent} from './callback/callback.component';
 import {AuthGuard} from './auth/auth.guard';
+import {LoginComponent} from './login/login.component';
 
 const routes: Routes = [{
   path: '',
@@ -19,6 +20,9 @@ const routes: Routes = [{
 }, {
   path: 'home',
   redirectTo: ''
+}, {
+  path: 'login',
+  component: LoginComponent
 }, {
   path: 'release/:id',
   component: ReleaseComponent
