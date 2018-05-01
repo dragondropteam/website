@@ -11,6 +11,8 @@ const path = require('path');
 const apiRoutes = require('./server/routes/api.route');
 const downloadRoutes = require('./server/routes/download.route');
 const mongoURI = 'mongodb://localhost/dragondrop';
+const helmet = require('helmet');
+
 mongoose.connect(mongoURI, {server: {socketOptions: {keepAlive: 1}}})
   .then(() =>{
     console.log('Connected to dragondrop db at localhost');
@@ -21,6 +23,7 @@ mongoose.set('debug', (collectionName, method, query, doc) => {
   console.log(`${collectionName}.${method}`, doc);
 });
 
+app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 

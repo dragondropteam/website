@@ -6,9 +6,9 @@ const express = require('express');
 const router = express.Router();
 const releaseController = require('../controllers/release.controller');
 const multer = require('multer');
+const jwt = require('express-jwt');
 
 const Minio = require('minio');
-
 const minioClient = new Minio.Client({
   endPoint: 'localhost',
   port: 9000,
@@ -37,29 +37,31 @@ router.route('/')
       })
       .catch(err => next(err))
   })
-  .post((req, res, next) => {
-    console.log(req.body);
-    releaseController
-      .create(req.body)
-      .then(release => res.status(201).json(release))
-      .catch(err => {
-        //Duplicate KEY
-        if (err.code === 11000) {
-          //Conflict
-          res.status(409).json({error: err.msg})
-        } else {
-          next(err);
-        }
-      })
-  })
-  .put((req, res, next) => {
-    releaseController
-      .update(req.body)
-      .then(release => {
-        res.status(200).json(release);
-      })
-      .catch(err => next(err))
-  });
+  .post(jwt({secret: 'secret key'}),
+    (req, res, next) => {
+      console.log(req.body);
+      releaseController
+        .create(req.body)
+        .then(release => res.status(201).json(release))
+        .catch(err => {
+          //Duplicate KEY
+          if (err.code === 11000) {
+            //Conflict
+            res.status(409).json({error: err.msg})
+          } else {
+            next(err);
+          }
+        })
+    })
+  .put(jwt({secret: 'secret_key'}),
+    (req, res, next) => {
+      releaseController
+        .update(req.body)
+        .then(release => {
+          res.status(200).json(release);
+        })
+        .catch(err => next(err))
+    });
 
 
 router.route('/latest')
@@ -74,6 +76,7 @@ router.route('/latest')
         res.status(404).json({error: 'No releases'});
       });
   });
+
 router.route('/latest/:platform')
   .get((req, res, next) => {
     releaseController
@@ -92,7 +95,7 @@ router.route('/:id')
 
 router.route('/version/:semver/files')
   .get((req, res, next) => {
-    console.log('Getting files for '  + req.params.semver);
+    console.log('Getting files for ' + req.params.semver);
     const objectStream = minioClient.listObjects('test-release', 'Dragon Drop-' + req.params.semver);
     const objects = [];
     objectStream.on('data', data => objects.push(data));
