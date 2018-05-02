@@ -33,6 +33,13 @@ import { VersionListComponent } from './version-list/version-list.component';
 import {AuthService} from './auth/auth.service';
 import { CallbackComponent } from './callback/callback.component';
 import {AuthGuard} from './auth/auth.guard';
+import { JwtModule } from '@auth0/angular-jwt';
+import { LoginComponent } from './login/login.component';
+
+
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
 
 @NgModule({
   declarations: [
@@ -47,7 +54,8 @@ import {AuthGuard} from './auth/auth.guard';
     DownloadLatestComponent,
     DownloadVersionListComponent,
     VersionListComponent,
-    CallbackComponent
+    CallbackComponent,
+    LoginComponent
   ],
   entryComponents: [
     NewReleaseDialogComponent,
@@ -56,6 +64,13 @@ import {AuthGuard} from './auth/auth.guard';
   imports: [
     BrowserModule,
     HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: [/^null$/, 'localhost:3000', 'localhost:4200', 'dragondrop.digipen.edu'],
+        skipWhenExpired: true
+      }
+    }),
     AppRoutingModule,
     MatChipsModule,
     MatTableModule,

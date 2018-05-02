@@ -17,11 +17,13 @@ export class EditReleaseDialogComponent implements OnInit {
   platforms = ['windows', 'macos', 'linux'];
 
   file?: File = null;
+  files?: File[] = null;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private releaseService: ReleaseService) {
   }
 
   ngOnInit() {
+    this.getFiles();
   }
 
   onFileChange(event) {
@@ -41,8 +43,14 @@ export class EditReleaseDialogComponent implements OnInit {
     this.releaseService.downloadFile(this.data.release, file).subscribe();
   }
 
-  getFileDownload(file: ReleaseFile) {
-    return this.releaseService.getFileDownload(this.data.release, file);
+  getFileDownload(file: String) {
+    return this.releaseService.getDownload(file);
+  }
+
+  getFiles() {
+    this.releaseService.getFiles(this.data.release).subscribe(files => {
+      this.files = files;
+    });
   }
 }
 

@@ -6,8 +6,25 @@ const express = require('express');
 const router = express.Router();
 const releaseController = require('../controllers/release.controller');
 
-router.get('/healthcheck', (req, res) => {
-  res.send('OK');
+const Minio = require('minio');
+
+const minioClient = new Minio.Client({
+  endPoint: 'localhost',
+  port: 9000,
+  secure: false,
+  accessKey: 'AKIAIOSFODNN7EXAMPLE',
+  secretKey: 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY'
+});
+
+router.get('/file/:file', (req, res) => {
+  minioClient.getObject('test-release', req.params.file, (error, stream) => {
+    if(error){
+      res.status(500).send(error);
+      return;
+    }
+
+    stream.pipe(res);
+  })
 });
 
 router.route('/latest')
