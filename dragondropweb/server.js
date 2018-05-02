@@ -12,16 +12,21 @@ const apiRoutes = require('./server/routes/api.route');
 const downloadRoutes = require('./server/routes/download.route');
 const mongoURI = 'mongodb://localhost/dragondrop';
 const helmet = require('helmet');
+const config = require('./server/config/config.dev');
 
-mongoose.connect(mongoURI, {server: {socketOptions: {keepAlive: 1}}})
+
+mongoose.connect(config.mongo.host, { server: { socketOptions: { keepAlive: 1 } } })
   .then(() =>{
     console.log('Connected to dragondrop db at localhost');
   })
   .catch(err => console.error(err));
 
-mongoose.set('debug', (collectionName, method, query, doc) => {
-  console.log(`${collectionName}.${method}`, doc);
-});
+// print mongoose logs in dev env
+if (config.MONGOOSE_DEBUG) {
+  mongoose.set('debug', (collectionName, method, query, doc) => {
+    console.log(`${collectionName}.${method}`, doc);
+  });
+}
 
 app.use(helmet());
 app.use(bodyParser.json());
@@ -37,4 +42,4 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
-app.listen(3000, () => console.log('listening on port 3000'));
+app.listen(config.port, () => console.log(`listening on port ${config.port}`));

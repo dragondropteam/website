@@ -7,14 +7,15 @@ const router = express.Router();
 const releaseController = require('../controllers/release.controller');
 const multer = require('multer');
 const jwt = require('express-jwt');
+const config = require('../config/config.dev');
 
 const Minio = require('minio');
 const minioClient = new Minio.Client({
   endPoint: 'localhost',
-  port: 9000,
+  port: config.objectStore.port,
   secure: false,
-  accessKey: 'AKIAIOSFODNN7EXAMPLE',
-  secretKey: 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY'
+  accessKey: config.objectStore.accessKey,
+  secretKey: config.objectStore.secretKey
 });
 
 const storage = multer.diskStorage({
@@ -37,7 +38,7 @@ router.route('/')
       })
       .catch(err => next(err))
   })
-  .post(jwt({secret: 'secret key'}),
+  .post(jwt({secret: config.jwtSecret}),
     (req, res, next) => {
       console.log(req.body);
       releaseController
@@ -53,7 +54,7 @@ router.route('/')
           }
         })
     })
-  .put(jwt({secret: 'secret_key'}),
+  .put(jwt({secret: config.jwtSecret}),
     (req, res, next) => {
       releaseController
         .update(req.body)
