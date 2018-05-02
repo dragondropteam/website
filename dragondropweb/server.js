@@ -22,7 +22,7 @@ mongoose.connect(config.mongo.host, { server: { socketOptions: { keepAlive: 1 } 
   .catch(err => console.error(err));
 
 // print mongoose logs in dev env
-if (config.MONGOOSE_DEBUG) {
+if (config.mongooseDebug) {
   mongoose.set('debug', (collectionName, method, query, doc) => {
     console.log(`${collectionName}.${method}`, doc);
   });
