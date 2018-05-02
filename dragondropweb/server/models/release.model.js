@@ -102,7 +102,7 @@ ReleaseSchema.statics = {
   },
 
   getLatestRelease() {
-    return this.find()
+    return this.find({channel: 'Stable'})
       .exec()
       .then(releases => {
         if(releases){

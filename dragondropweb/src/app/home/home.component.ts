@@ -28,14 +28,27 @@ export class HomeComponent implements OnInit {
       .subscribe(release => this.release = release);
   }
 
+  getWindowsDownload() {
+    return this.releaseService.getDownload(`Dragon Drop-${this.release.version}.exe`);
+  }
+
+  getMacDownload() {
+    return this.releaseService.getDownload(`Dragon Drop-${this.release.version}.dmg`);
+  }
+
+  getLinuxDownload() {
+    return this.releaseService.getDownload(`Dragon Drop-${this.release.version}.appimage`);
+  }
+
   isPlatformAvailable(platform) {
-    let exists = false;
-    this.release.files.forEach(file => {
-      if (file.platform === platform) {
-        exists = true;
-      }
-    });
-    return exists;
+    return true;
+    // let exists = false;
+    // this.release.files.forEach(file => {
+    //   if (file.platform === platform) {
+    //     exists = true;
+    //   }
+    // });
+    // return exists;
   }
 
   isReady(){
@@ -43,6 +56,6 @@ export class HomeComponent implements OnInit {
   }
 
   login() {
-    this.authService.login();
+    // this.authService.login();
   }
 }

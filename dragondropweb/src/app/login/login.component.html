@@ -1,0 +1,18 @@
+<!--
+  ~ Copyright (c) 2018. DigiPen Institute of Technology
+  -->
+
+<div class="content">
+  <mat-card class="latest">
+    <h2>Log In</h2>
+    <form (submit)="login()">
+      <mat-form-field>
+        <input [(ngModel)]="email" matInput placeholder="e-mail" name="email" type="email"/>
+      </mat-form-field>
+      <mat-form-field>
+        <input [(ngModel)]="password" matInput placeholder="password" name="password" type="password"/>
+      </mat-form-field>
+      <button mat-raised-button type="submit">Log In</button>
+    </form>
+  </mat-card>
+</div>

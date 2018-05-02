@@ -44,4 +44,8 @@ export class VersionListComponent implements OnInit {
     });
     return exists;
   }
+
+  getRouterLink(release) {
+    return '/release/' + release._id;
+  }
 }
