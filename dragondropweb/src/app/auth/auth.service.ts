@@ -1,52 +1,43 @@
-
-
 /*
  * Copyright (c) 2018. DigiPen Institute of Technology
  */
 
-import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import {Injectable} from '@angular/core';
+import {Router} from '@angular/router';
 import 'rxjs/add/operator/filter';
 import * as auth0 from 'auth0-js';
-import { environment } from '../../environments/environment';
+import {environment} from '../../environments/environment';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs/Observable';
+import {JwtHelperService} from '@auth0/angular-jwt';
 
 @Injectable()
 export class AuthService {
+  private authPath = '/api/auth';
 
-  auth0 = new auth0.WebAuth({
-    clientID: 'kf37V3yA3iAVQpohUdfXnTjf45Xv3mYy',
-    domain: 'dragonwellstudios.auth0.com',
-    responseType: 'token id_token',
-    audience: 'https://dragonwellstudios.auth0.com/userinfo',
-    redirectUri: environment.authCallback,
-    scope: 'openid'
-  });
+  constructor(public router: Router, public httpClient: HttpClient, private jwtHelperService: JwtHelperService) {
+  }
 
-  constructor(public router: Router) {}
-
-  public login(): void {
-    this.auth0.authorize();
+  public login(email, password, onError = () => {}): void {
+    this.httpClient.post<string>(`${this.authPath}/login`, {email: email, password: password})
+      .subscribe((jwt: string) => {
+        console.log(jwt);
+        this.setSession(jwt);
+        this.router.navigate(['/']);
+      }, (error) => {
+        console.log(error);
+        onError();
+      });
   }
 
   public handleAuthentication(): void {
-    this.auth0.parseHash((err, authResult) => {
-      if (authResult && authResult.accessToken && authResult.idToken) {
-        window.location.hash = '';
-        this.setSession(authResult);
-        this.router.navigate(['/home']);
-      } else if (err) {
-        this.router.navigate(['/home']);
-        console.log(err);
-      }
-    });
+
   }
 
   private setSession(authResult): void {
     // Set the time that the Access Token will expire at
-    const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
-    localStorage.setItem('access_token', authResult.accessToken);
-    localStorage.setItem('id_token', authResult.idToken);
-    localStorage.setItem('expires_at', expiresAt);
+    localStorage.setItem('access_token', authResult);
+    // const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
   }
 
   public logout(): void {
@@ -59,9 +50,12 @@ export class AuthService {
   }
 
   public isAuthenticated(): boolean {
-    // Check whether the current time is past the
-    // Access Token's expiry time
-    const expiresAt = JSON.parse(localStorage.getItem('expires_at'));
-    return new Date().getTime() < expiresAt;
+    return !this.jwtHelperService.isTokenExpired();
+  }
+
+  public isAdmin(): boolean {
+    const decodedToken = this.jwtHelperService.decodeToken();
+    console.log(decodedToken);
+    return this.isAuthenticated() && (decodedToken.data.roles && decodedToken.data.roles.includes('site-admin'));
   }
 }
