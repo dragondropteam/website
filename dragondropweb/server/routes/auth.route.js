@@ -7,7 +7,6 @@ const User = require('../models/user.model');
 const argon2 = require('argon2');
 const jwt = require('jsonwebtoken');
 
-
 router.route('/login')
   .post((req, res, next) => {
     User.get(req.body.email)
