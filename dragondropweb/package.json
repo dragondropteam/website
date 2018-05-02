@@ -1,7 +1,7 @@
 {
   "name": "dragondropweb",
-  "version": "0.0.0",
-  "license": "MIT",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
   "scripts": {
     "ng": "ng",
     "start": "concurrently --names \"CLIENT,SERVER\"  -c \"bgBlue.bold,bgGreen.bold\" \"yarn run client-proxy\" \"yarn run server\"",
