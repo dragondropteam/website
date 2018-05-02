@@ -55,7 +55,6 @@ export class AuthService {
 
   public isAdmin(): boolean {
     const decodedToken = this.jwtHelperService.decodeToken();
-    console.log(decodedToken);
     return this.isAuthenticated() && (decodedToken.data.roles && decodedToken.data.roles.includes('site-admin'));
   }
 }

@@ -33,7 +33,6 @@ export class ReleaseService {
   }
 
   downloadFile(release: Release, file: ReleaseFile) {
-    console.log(`${this.releaseURL}/${release._id}/files/${file._id}`);
     return this.httpClient.get(`${this.releaseURL}/${release._id}/files/${file._id}`);
   }
 
