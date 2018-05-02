@@ -3,9 +3,9 @@
  */
 
 const express = require('express');
-
 const router = express.Router();
 const releaseRoutes = require('./release.route');
+const authRoutes =require('./auth.route');
 const downloadRoutes = require('./download.route');
 
 router.get('/healthcheck', (req, res) => {
@@ -13,5 +13,6 @@ router.get('/healthcheck', (req, res) => {
 });
 
 router.use('/release', releaseRoutes);
+router.use('/auth', authRoutes);
 
 module.exports = router;

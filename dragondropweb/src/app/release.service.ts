@@ -19,7 +19,7 @@ export class ReleaseService {
   }
 
   getRelease(id: String) {
-    return this.httpClient.get(`${this.releaseURL}/${id}`);
+    return this.httpClient.get<Release>(`${this.releaseURL}/${id}`);
   }
 
   createRelease(release: any): Observable<Release> {
@@ -41,11 +41,31 @@ export class ReleaseService {
     return `/download/release/${release._id}/${file._id}`;
   }
 
+  getDownload(file: String) {
+    return `/download/file/${file}`;
+  }
+
   getLatestRelease() {
     return this.httpClient.get<Release>(`${this.releaseURL}/latest`);
   }
 
   updateRelease(release: Release) {
     return this.httpClient.put<Release>(this.releaseURL, release);
+  }
+
+  getFiles(release: Release) {
+    return this.httpClient.get<File[]>(`${this.releaseURL}/version/${release.version}/files`);
+  }
+
+  getWindowsDownload(release: Release) {
+    return this.getDownload(`Dragon Drop-${release.version}.exe`);
+  }
+
+  getMacDownload(release: Release) {
+    return this.getDownload(`Dragon Drop-${release.version}.dmg`);
+  }
+
+  getLinuxDownload(release: Release) {
+    return this.getDownload(`Dragon Drop-${release.version}.appimage`);
   }
 }

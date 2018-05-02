@@ -18,18 +18,8 @@
               [style]="{'display': 'flex', 'flex-direction': 'column', 'width': '100%'}"></p-editor>
   </div>
   <h3 id="release">Files</h3>
-  <div *ngFor="let file of data.release.files" id="files">
-    <mat-form-field>
-      <mat-select id="one" [(ngModel)]="file.platform" placeholder="Channel">
-        <mat-option *ngFor="let platform of platforms" [value]="platform">
-          {{ platform }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <a mat-button id="two" [href]="getFileDownload(file)">{{file.filename}}</a>
-    <button id="three" mat-icon-button>
-      <mat-icon>delete</mat-icon>
-    </button>
+  <div *ngFor="let file of files" id="files">
+    <a mat-button id="two" [href]="getFileDownload(file.name)">{{file.name}}</a>
   </div>
 </div>
 <mat-dialog-actions>
