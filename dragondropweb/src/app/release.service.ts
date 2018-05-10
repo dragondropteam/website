@@ -57,7 +57,7 @@ export class ReleaseService {
   }
 
   getWindowsDownload(release: Release) {
-    return this.getDownload(`Dragon Drop-${release.version}.exe`);
+    return this.getDownload(`Dragon Drop Setup ${release.version}.exe`);
   }
 
   getMacDownload(release: Release) {
@@ -65,6 +65,6 @@ export class ReleaseService {
   }
 
   getLinuxDownload(release: Release) {
-    return this.getDownload(`Dragon Drop-${release.version}.appimage`);
+    return this.getDownload(`DragonDrop-${release.version}-x86_64.AppImage`);
   }
 }

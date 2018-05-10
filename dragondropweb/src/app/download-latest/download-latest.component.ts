@@ -28,12 +28,6 @@ export class DownloadLatestComponent implements OnInit {
   }
 
   isPlatformAvailable(platform) {
-    let exists = false;
-    this.release.files.forEach(file => {
-      if (file.platform === platform) {
-        exists = true;
-      }
-    });
-    return exists;
+    return true;
   }
 }
