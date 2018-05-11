@@ -5,12 +5,14 @@
   "scripts": {
     "ng": "ng",
     "start": "concurrently --names \"CLIENT,SERVER\"  -c \"bgBlue.bold,bgGreen.bold\" \"yarn run client-proxy\" \"yarn run server\"",
+    "start-nocheck": "concurrently --names \"CLIENT,SERVER\" -c \"bgBlue.bold,bgGreen.bold\" \"yarn run client-proxy-nocheck\" \"yarn run server\"",
     "start-client": "ng serve",
     "build-client": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "client-proxy": "ng serve --proxy proxy.conf.json",
+    "client-proxy-nocheck": "ng serve --proxy proxy.conf.json --host 127.0.0.1 --disable-host-check",
     "server": "nodemon server.js"
   },
   "private": true,

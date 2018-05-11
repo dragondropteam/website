@@ -11,7 +11,7 @@ const config = require('../config/config.dev');
 
 const Minio = require('minio');
 const minioClient = new Minio.Client({
-  endPoint: 'localhost',
+  endPoint: 'dragondrop.digipen.edu',
   port: config.objectStore.port,
   secure: false,
   accessKey: config.objectStore.accessKey,

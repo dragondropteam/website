@@ -7,18 +7,21 @@ const router = express.Router();
 const releaseController = require('../controllers/release.controller');
 
 const Minio = require('minio');
+const config = require('../config/config.dev');
 
 const minioClient = new Minio.Client({
-  endPoint: 'localhost',
-  port: 9000,
+  endPoint: config.objectStore.endpoint, 
+  port: config.objectStore.port,
   secure: false,
-  accessKey: 'AKIAIOSFODNN7EXAMPLE',
-  secretKey: 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY'
+  accessKey: config.objectStore.accessKey, 
+  secretKey: config.objectStore.secretKey
 });
 
 router.get('/file/:file', (req, res) => {
+  console.log('file/:file', req.params.file);
   minioClient.getObject('test-release', req.params.file, (error, stream) => {
     if(error){
+      console.error(error);
       res.status(500).send(error);
       return;
     }
