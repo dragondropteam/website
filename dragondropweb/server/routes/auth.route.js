@@ -6,6 +6,7 @@ const router = express.Router();
 const User = require('../models/user.model');
 const argon2 = require('argon2');
 const jwt = require('jsonwebtoken');
+const config = require('../config/config.dev');
 
 router.route('/login')
   .post((req, res, next) => {
@@ -23,7 +24,7 @@ router.route('/login')
                   id: user._id,
                   roles: user.roles
                 }
-              }, 'secret key'));
+              }, config.jwtSecret));
             } else {
               res.status(401).send();
             }
