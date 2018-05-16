@@ -171,9 +171,9 @@
   dependencies:
     tslib "^1.7.1"
 
-"@auth0/angular-jwt@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@auth0/angular-jwt/-/angular-jwt-1.1.0.tgz#ceb6b1eed4fb29812a435da78b420ca6eac81009"
+"@auth0/angular-jwt@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@auth0/angular-jwt/-/angular-jwt-1.2.0.tgz#cfac04fe3f93e36ab9881d469df2c0556f2e7392"
   dependencies:
     url "^0.11.0"
 
@@ -7446,11 +7446,7 @@ typedarray@^0.0.6, typedarray@~0.0.5:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typescript@^2.7.1:
-  version "2.7.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.7.2.tgz#2d615a1ef4aee4f574425cdff7026edf81919836"
-
-typescript@~2.6.2:
+"typescript@>=2.4.2 <2.7.0", typescript@~2.6.2:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.6.2.tgz#3c5b6fd7f6de0914269027f03c0946758f7673a4"
 

@@ -20,7 +20,7 @@ export class ReleaseComponent implements OnInit {
   release?: Release = null;
 
   constructor(private route: ActivatedRoute,
-              private releaseService: ReleaseService) {
+              public releaseService: ReleaseService) {
   }
 
   ngOnInit() {
