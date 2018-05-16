@@ -10,7 +10,6 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const apiRoutes = require('./server/routes/api.route');
 const downloadRoutes = require('./server/routes/download.route');
-const mongoURI = 'mongodb://localhost/dragondrop';
 const helmet = require('helmet');
 const config = require('./server/config/config.dev');
 

@@ -6,6 +6,7 @@ import {Component, OnInit} from '@angular/core';
 import {ReleaseService} from '../release.service';
 import {Release} from '../release/release.model';
 
+
 @Component({
   selector: 'app-download-latest',
   templateUrl: './download-latest.component.html',

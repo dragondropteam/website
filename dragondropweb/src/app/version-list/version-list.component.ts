@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {EditReleaseDialogComponent} from '../edit-release-dialog/edit-release-dialog.component';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {MatDialog} from '@angular/material';
 import {ReleaseService} from '../release.service';
 import {DataSource} from '@angular/cdk/collections';

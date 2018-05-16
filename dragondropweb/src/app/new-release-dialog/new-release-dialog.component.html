@@ -5,8 +5,10 @@
 <div class="container">
   <h1 mat-dialog-title>Create Release</h1>
   <mat-dialog-content>
-    <mat-form-field>
-      <input [(ngModel)]="release.version" matInput placeholder="Version">
+    <mat-form-field >
+      <input [formControl]="versionFormControl" [(ngModel)]="release.version" matInput placeholder="Version">
+      <mat-error *ngIf="versionFormControl.hasError('required')">Required</mat-error>
+      <mat-error *ngIf="versionFormControl.hasError('validateSemver')">Invalid Semver</mat-error>
     </mat-form-field>
     <mat-form-field>
       <mat-select [(ngModel)]="release.channel" placeholder="Channel">

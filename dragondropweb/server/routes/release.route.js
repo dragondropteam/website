@@ -40,7 +40,6 @@ router.route('/')
   })
   .post(jwt({secret: config.jwtSecret}),
     (req, res, next) => {
-      console.log(req.body);
       releaseController
         .create(req.body)
         .then(release => res.status(201).json(release))
@@ -92,16 +91,21 @@ router.route('/:id')
         res.json(release)
       })
       .catch(err => next(err))
+  })
+  .delete((req, res) => {
+    releaseController.remove(req, res);
   });
 
 router.route('/version/:semver/files')
   .get((req, res, next) => {
-    console.log('Getting files for ' + req.params.semver);
     const objectStream = minioClient.listObjects('test-release', 'Dragon Drop-' + req.params.semver);
     const objects = [];
     objectStream.on('data', data => objects.push(data));
     objectStream.on('end', () => res.status(201).json(objects));
-    objectStream.on('error', error => console.error(error));
+    objectStream.on('error', error => {
+      console.error(error);
+      res.status(404).json();
+    });
   });
 
 router.route('/:id/files')
@@ -115,7 +119,6 @@ router.route('/:id/files')
 
 router.route('/:id/files/:fileid')
   .get((req, res, next) => {
-    console.log('get /:id/files/:fileid');
     releaseController.getFile(req, res, next);
   });
 

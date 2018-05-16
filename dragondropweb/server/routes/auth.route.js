@@ -12,9 +12,6 @@ router.route('/login')
   .post((req, res, next) => {
     User.get(req.body.email)
       .then(user => {
-        console.log(user);
-        console.log(argon2.verify(user.password, req.body.password));
-
         argon2.verify(user.password, req.body.password)
           .then(match => {
             if (match) {
@@ -30,8 +27,13 @@ router.route('/login')
             }
           })
           .catch(err => {
+            console.error(err);
             res.status(500).send();
           });
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(404).send();
       });
   });
 
