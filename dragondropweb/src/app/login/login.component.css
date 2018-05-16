@@ -13,10 +13,24 @@
   margin: auto;
 }
 
+.login {
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+}
 .header {
   text-align: center;
 }
 
+.loginError {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+button {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
 .routes {
   margin: 1em;
   display: flex;

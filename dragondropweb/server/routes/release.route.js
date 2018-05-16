@@ -91,6 +91,9 @@ router.route('/:id')
         res.json(release)
       })
       .catch(err => next(err))
+  })
+  .delete((req, res) => {
+    releaseController.remove(req, res);
   });
 
 router.route('/version/:semver/files')

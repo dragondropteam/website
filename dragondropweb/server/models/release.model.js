@@ -46,7 +46,9 @@ const ReleaseSchema = new Schema({
     required: true
   },
   published: Date,
-  files: [ReleaseFileSchema]
+  platforms: {
+    type: [String]
+  }
 });
 
 ReleaseSchema.statics = {

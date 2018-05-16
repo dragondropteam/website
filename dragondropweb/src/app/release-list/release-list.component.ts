@@ -5,26 +5,31 @@
 import {Component, OnInit} from '@angular/core';
 import {ReleaseService} from '../release.service';
 import {CollectionViewer, DataSource} from '@angular/cdk/collections';
-import {Observable} from 'rxjs';
-import {MatDialog} from '@angular/material';
+import {BehaviorSubject, Observable} from 'rxjs';
+import {MatDialog, MatSnackBar, MatTable, MatTableDataSource} from '@angular/material';
 import {NewReleaseDialogComponent} from '../new-release-dialog/new-release-dialog.component';
 import * as QuillDeltaToHtmlConverter from 'quill-delta-to-html';
 import {Release} from '../release/release.model';
 import {EditReleaseDialogComponent} from '../edit-release-dialog/edit-release-dialog.component';
+import {ConfirmDeleteComponent} from '../confirm-delete/confirm-delete.component';
 
 
-export class ReleaseDataSource extends DataSource<any> {
-  connect(): Observable<any[]> {
-    return this.releaseService.getReleases();
-  }
-
-  disconnect(): void {
-  }
-
-  constructor(private releaseService: ReleaseService) {
-    super();
-  }
-}
+// export class ReleaseDataSource extends MatTableDataSource<ReleaseMo> {
+//   connect(): BehaviorSubject<any[]> {
+//     return this.releaseService.getReleases();
+//   }
+//
+//   disconnect(): void {
+//   }
+//
+//   constructor(private releaseService: ReleaseService) {
+//     super();
+//   }
+//
+//   refresh(){
+//     this.releaseService.getReleases().subscribe(releases => this.data = releases);
+//   }
+// }
 
 @Component({
   selector: 'app-release-list',
@@ -32,14 +37,18 @@ export class ReleaseDataSource extends DataSource<any> {
   styleUrls: ['./release-list.component.css']
 })
 export class ReleaseListComponent implements OnInit {
-  displayedColumns = ['version', 'channel', 'changenotes', 'platforms', 'edit'];
-  dataSource = new ReleaseDataSource(this.releaseService);
+  displayedColumns = ['version', 'channel', 'changenotes', 'edit', 'delete'];
+  dataSource = new MatTableDataSource();
 
-  constructor(private releaseService: ReleaseService, private dialog: MatDialog) {
+  constructor(private releaseService: ReleaseService, private dialog: MatDialog, public snackBar: MatSnackBar) {
+  }
+
+  refresh() {
+    this.releaseService.getReleases().subscribe(releases => this.dataSource.data = releases);
   }
 
   ngOnInit() {
-
+    this.refresh();
   }
 
   createRelease() {
@@ -53,7 +62,12 @@ export class ReleaseListComponent implements OnInit {
     dialogRef.afterClosed().subscribe(release => {
       if (release) {
         this.releaseService.createRelease(release)
-          .subscribe(newRelease => console.log(newRelease));
+          .subscribe(newRelease => {
+            if (newRelease) {
+              console.log(newRelease);
+              this.refresh();
+            }
+          });
       }
     });
   }
@@ -66,9 +80,37 @@ export class ReleaseListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(editedRelease => {
-      console.log('afterClosed edit');
       if (editedRelease) {
         this.releaseService.updateRelease(editedRelease).subscribe(result => console.log(result));
+      }
+    });
+  }
+
+  deleteRelease(release: Release) {
+    const dialogRef = this.dialog.open(ConfirmDeleteComponent, {});
+
+    dialogRef.afterClosed().subscribe(del => {
+      if (del) {
+        this.releaseService.deleteRelease(release._id)
+          .subscribe(deletedRelease => {
+            if (deletedRelease) {
+              this.refresh();
+
+              const snackBarRef = this.snackBar.open(`${release.version} deleted`, 'Undo');
+
+              snackBarRef.onAction().subscribe(() => {
+                console.log('On Action');
+                this.releaseService.createRelease(deletedRelease).subscribe(release => {
+                  if(release){
+                    this.refresh();
+                    return;
+                  }
+
+                  this.snackBar.open('could not undo');
+                });
+              });
+            }
+          });
       }
     });
   }
