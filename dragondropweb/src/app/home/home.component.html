@@ -11,5 +11,8 @@
       <a download *ngIf="isPlatformAvailable('macos')" mat-raised-button [href]="getMacDownload()"><i class="fab fa-apple fa-lg"></i> macOS </a>
       <a download *ngIf="isPlatformAvailable('linux')" mat-raised-button [href]="getLinuxDownload()"><i class="fab fa-linux fa-lg"></i> Linux </a>
     </div>
+    <div *ngIf="!isReady()" class="routes">
+      <h3>No Stable Releases Available  <a routerLink="versions">Pre-Release Versions</a></h3>
+    </div>
   </mat-card>
 </div>

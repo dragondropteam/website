@@ -4,11 +4,11 @@
 
 import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
-import 'rxjs/add/operator/filter';
+
 import * as auth0 from 'auth0-js';
 import {environment} from '../../environments/environment';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {JwtHelperService} from '@auth0/angular-jwt';
 
 @Injectable()
