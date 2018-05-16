@@ -11,14 +11,22 @@ import {AppRoutingModule} from './app-routing.module';
 import {ReleaseListComponent} from './release-list/release-list.component';
 import {ReleaseComponent} from './release/release.component';
 import {
-  MatButtonModule, MatCardModule, MatChipsModule, MatDialogModule, MatFormFieldModule, MatIconModule, MatInputModule, MatSelectModule,
+  MatButtonModule,
+  MatCardModule,
+  MatChipsModule,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatSelectModule,
+  MatSnackBarModule,
   MatTableModule
 } from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import {ReleaseService} from './release.service';
 import {NewReleaseDialogComponent} from './new-release-dialog/new-release-dialog.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxEditorModule} from 'ngx-editor';
 import {QuillModule} from 'ngx-quill';
 import {FroalaEditorModule, FroalaViewModule} from 'angular-froala-wysiwyg';
@@ -35,6 +43,7 @@ import { CallbackComponent } from './callback/callback.component';
 import {AuthGuard} from './auth/auth.guard';
 import { JwtModule } from '@auth0/angular-jwt';
 import { LoginComponent } from './login/login.component';
+import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.component';
 
 
 export function tokenGetter() {
@@ -55,11 +64,13 @@ export function tokenGetter() {
     DownloadVersionListComponent,
     VersionListComponent,
     CallbackComponent,
-    LoginComponent
+    LoginComponent,
+    ConfirmDeleteComponent
   ],
   entryComponents: [
     NewReleaseDialogComponent,
-    EditReleaseDialogComponent
+    EditReleaseDialogComponent,
+    ConfirmDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -81,13 +92,16 @@ export function tokenGetter() {
     MatInputModule,
     MatIconModule,
     MatCardModule,
+    MatSnackBarModule,
     BrowserAnimationsModule,
     FormsModule,
     NgxEditorModule,
     QuillModule,
     EditorModule,
     SplitButtonModule,
-    FileUploadModule
+    FileUploadModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ReleaseService, AuthService, AuthGuard],
   bootstrap: [AppComponent]

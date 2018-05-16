@@ -14,6 +14,10 @@ export class ReleaseService {
   constructor(private httpClient: HttpClient) {
   }
 
+  deleteRelease(id) : Observable<Release> {
+    return this.httpClient.delete<Release>(`${this.releaseURL}/${id}`);
+  }
+
   getReleases(): Observable<any> {
     return this.httpClient.get(this.releaseURL);
   }

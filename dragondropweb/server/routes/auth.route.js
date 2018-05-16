@@ -27,8 +27,13 @@ router.route('/login')
             }
           })
           .catch(err => {
+            console.error(err);
             res.status(500).send();
           });
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(404).send();
       });
   });
 

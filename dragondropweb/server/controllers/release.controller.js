@@ -31,8 +31,21 @@ function list(params) {
   return Release.list(params);
 }
 
-function remove(params) {
-  return load(params).then(release => release.remove());
+function remove(req, res) {
+  load(req.params)
+    .then(release => {
+      if(release) {
+        release.remove();
+        res.status(201).json(release);
+        return;
+      }
+
+      res.status(404).send()
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).send()
+    });
 }
 
 function addFile(req, res, next) {

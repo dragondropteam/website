@@ -24,21 +24,19 @@
       <mat-cell *matCellDef="let element" [innerHTML]="element.changeNotes"></mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="platforms">
-      <mat-header-cell *matHeaderCellDef> Files</mat-header-cell>
-      <mat-cell *matCellDef="let element">
-        <mat-chip-list>
-          <!--<mat-chip color="primary" selected="true" *ngIf="element.platforms.windows.length > 0">Windows</mat-chip>-->
-          <!--<mat-chip color="primary" selected="true" *ngIf="element.platforms.mac.length > 0">macOS</mat-chip>-->
-          <!--<mat-chip color="primary" selected="true" *ngIf="element.platforms.linux.length > 0">Linux</mat-chip>-->
-        </mat-chip-list>
-      </mat-cell>
-    </ng-container>
-
     <ng-container matColumnDef="edit">
       <mat-header-cell *matHeaderCellDef>Edit</mat-header-cell>
       <mat-cell *matCellDef="let element">
         <button mat-button color="primary" (click)="editRelease(element)">Edit</button>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <mat-header-cell *matHeaderCellDef>Delete</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button mat-icon-button (click)="deleteRelease(element)">
+          <mat-icon aria-label="delete">delete</mat-icon>
+        </button>
       </mat-cell>
     </ng-container>
 
