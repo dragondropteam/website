@@ -36,7 +36,6 @@ function remove(params) {
 }
 
 function addFile(req, res, next) {
-  console.log(req.file);
   load(req.params)
     .then(release => {
       release.files.unshift({
@@ -68,7 +67,6 @@ function getLatestRelease() {
   return Release.getLatestRelease();
 }
 function getLatest(req, res, next, platform = "windows") {
-  console.log('getLatest');
   Release.getPlatformLatest(platform)
     .then(release => {
       res.status(200).json(release);
