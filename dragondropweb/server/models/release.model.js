@@ -89,7 +89,6 @@ ReleaseSchema.statics = {
 
           const files = [];
           releases[0].files.forEach(file =>{
-            console.log(file.platform == platform);
             if(file.platform == platform){
               files.push(file);
             }
