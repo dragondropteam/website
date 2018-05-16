@@ -67,7 +67,7 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        whitelistedDomains: [/^null$/, 'localhost:3000', 'localhost:4200', 'dragondrop.digipen.edu'],
+        whitelistedDomains: ['localhost:3000', 'localhost:4200', 'digipen.edu'],
         skipWhenExpired: true
       }
     }),
