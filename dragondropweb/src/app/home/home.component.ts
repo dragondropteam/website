@@ -29,15 +29,15 @@ export class HomeComponent implements OnInit {
   }
 
   getWindowsDownload() {
-    return this.releaseService.getDownload(`Dragon Drop-${this.release.version}.exe`);
+    return this.releaseService.getWindowsDownload(this.release);
   }
 
   getMacDownload() {
-    return this.releaseService.getDownload(`Dragon Drop-${this.release.version}.dmg`);
+    return this.releaseService.getMacDownload(this.release);
   }
 
   getLinuxDownload() {
-    return this.releaseService.getDownload(`Dragon Drop-${this.release.version}.appimage`);
+    return this.releaseService.getLinuxDownload(this.release);
   }
 
   isPlatformAvailable(platform) {
