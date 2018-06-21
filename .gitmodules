@@ -1,0 +1,3 @@
+[submodule "dragondropweb/src/assets/blockly"]
+	path = dragondropweb/src/assets/blockly
+	url = https://gitlabk12.digipen.edu/dragondrop/blockly

@@ -44,6 +44,8 @@ import {AuthGuard} from './auth/auth.guard';
 import { JwtModule } from '@auth0/angular-jwt';
 import { LoginComponent } from './login/login.component';
 import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.component';
+import { BlocklyTestComponent } from './blockly-test/blockly-test.component';
+import { ProjectWorkspaceComponent } from './project-workspace/project-workspace.component';
 
 
 export function tokenGetter() {
@@ -65,7 +67,9 @@ export function tokenGetter() {
     VersionListComponent,
     CallbackComponent,
     LoginComponent,
-    ConfirmDeleteComponent
+    ConfirmDeleteComponent,
+    BlocklyTestComponent,
+    ProjectWorkspaceComponent
   ],
   entryComponents: [
     NewReleaseDialogComponent,
