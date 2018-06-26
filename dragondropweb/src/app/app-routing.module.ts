@@ -14,6 +14,7 @@ import {CallbackComponent} from './callback/callback.component';
 import {AuthGuard} from './auth/auth.guard';
 import {LoginComponent} from './login/login.component';
 import {BlocklyTestComponent} from './blockly-test/blockly-test.component';
+import {ProjectWorkspaceComponent} from './project-workspace/project-workspace.component';
 
 const routes: Routes = [{
   path: '',
@@ -42,7 +43,7 @@ const routes: Routes = [{
   component: CallbackComponent
 }, {
   path: 'blockly',
-  component: BlocklyTestComponent
+  component: ProjectWorkspaceComponent
 }, {
   path: '**',
   component: PageNotFoundComponent
