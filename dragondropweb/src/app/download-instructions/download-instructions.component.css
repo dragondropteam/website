@@ -1,0 +1,33 @@
+/*
+ * Copyright (c) 2018. DigiPen Institute of Technology
+ */
+
+.parallax{
+  min-height: 500px;
+  background: url("../../assets/6.jpg") no-repeat fixed center;
+  background-size: cover;
+  padding: 4em;
+}
+
+.header{
+  margin: 0;
+  padding: 0;
+}
+
+.info{
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 1);
+}
+
+.platforms{
+  padding: 2em 2em;
+  display: flex;
+  justify-content: center;
+}
+
+.button{
+  padding-left: 3em;
+  padding-right: 3em;
+}

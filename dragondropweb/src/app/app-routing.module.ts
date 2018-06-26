@@ -13,6 +13,7 @@ import {VersionListComponent} from './version-list/version-list.component';
 import {CallbackComponent} from './callback/callback.component';
 import {AuthGuard} from './auth/auth.guard';
 import {LoginComponent} from './login/login.component';
+import {DownloadInstructionsComponent} from './download-instructions/download-instructions.component';
 
 const routes: Routes = [{
   path: '',
@@ -39,6 +40,9 @@ const routes: Routes = [{
 }, {
   path: 'callback',
   component: CallbackComponent
+}, {
+  path: 'instructions',
+  component: DownloadInstructionsComponent
 }, {
   path: '**',
   component: PageNotFoundComponent

@@ -1,0 +1,228 @@
+<!--
+  ~ Copyright (c) 2018. DigiPen Institute of Technology
+  -->
+
+<div class="parallax">
+  <mat-card class="info" style="font-size: large">
+
+    <h1 class="header">DragonDrop Installation Instructions</h1>
+
+    <div class="platforms">
+      <button class="button" mat-button (click)="displayInfo('windows')"><i
+        class="fab fa-windows fa-lg"></i> Windows
+      </button>
+      <button class="button" mat-button (click)="displayInfo('mac')"><i
+        class="fab fa-apple fa-lg"></i> macOS
+      </button>
+      <button class="button" mat-button (click)="displayInfo('linux')"><i
+        class="fab fa-linux fa-lg"></i> Linux
+      </button>
+
+    </div>
+
+    <div *ngIf="windows">
+      <div>
+        <h2>Step 1: </h2>
+        <p>
+          Go to <a href="http://wwwprod5.digipen.edu/release" target="_blank">the download page</a> and click on the
+          correct
+          version for your computer.
+        </p>
+        <img src="../../assets/download-instructions/windows/step1.PNG" height="70%" width="70%">
+      </div>
+
+      <div>
+        <h2>Step 2: </h2>
+        <p>
+          Once it finishes downloading, double click on the file to run it.
+        </p>
+        <img src="../../assets/download-instructions/windows/step2.PNG" height="70%" width="70%">
+      </div>
+
+      <div>
+        <h2>Step 3: </h2>
+        <p>
+          Click on more info.
+        </p>
+        <img src="../../assets/download-instructions/windows/step2.1.PNG" height="70%" width="70%">
+      </div>
+
+      <div>
+        <h2>Step 4: </h2>
+        <p>
+          Click on run anyway.
+        </p>
+        <img src="../../assets/download-instructions/windows/step2.2.PNG" height="70%" width="70%">
+      </div>
+
+      <div>
+        <h2>Step 5: </h2>
+        <p>
+          Read the License Agreement and click "I Agree" and let it install the files.
+        </p>
+        <img src="../../assets/download-instructions/windows/step3.PNG" height="70%" width="70%">
+        <br/>
+        <img src="../../assets/download-instructions/windows/step3.5.PNG" height="70%" width="70%">
+      </div>
+
+      <div>
+        <h2>Step 6: </h2>
+        <p>
+          Click on "Run DragonDrop" if you want the application to launch right away. Click on finish.
+        </p>
+        <img src="../../assets/download-instructions/windows/step4.PNG" height="70%" width="70%">
+      </div>
+
+      <div>
+        <p>
+          This window will pop up when you launch DragonDrop. Enjoy!
+        </p>
+        <img src="../../assets/download-instructions/windows/step5.PNG" height="70%" width="70%">
+      </div>
+    </div>
+
+    <div *ngIf="linux">
+      <div>
+        <h2>Step 1: </h2>
+        <p>
+          Go to <a href="http://wwwprod5.digipen.edu/release" target="_blank">the download page</a> and click on the
+          correct
+          version for your computer.
+        </p>
+        <img src="../../assets/download-instructions/linux/step1.PNG" height="70%" width="70%">
+      </div>
+
+      <div>
+        <h2>Step 2: </h2>
+        <p>
+          Open the terminal and run 'chmod +x DragonDrop-2.0.0-x86_64.AppImage'
+        </p>
+        <img src="../../assets/download-instructions/linux/step2.PNG" height="70%" width="70%">
+      </div>
+
+      <div>
+        <h2>Step 3: </h2>
+        <p>
+          Double click on the AppImage file.
+        </p>
+        <img src="../../assets/download-instructions/linux/step3.PNG" height="70%" width="70%">
+      </div>
+
+      <div>
+        <h2>Step 4: </h2>
+        <p>
+          Once it finishes installing the files in the background, DragonDrop will open and be ready to use. Enjoy!
+        </p>
+        <img src="../../assets/download-instructions/linux/step4.PNG" height="70%" width="70%">
+      </div>
+    </div>
+
+    <div *ngIf="mac">
+      <div>
+        <h2>
+          Step 1:
+        </h2>
+        <p>
+          Go to <a href="http://wwwprod5.digipen.edu/release" target="_blank">the download page</a> and click on the
+          correct
+          version for your computer. Save the file in a spot you can easily locate.
+        </p>
+        <img src="../../assets/download-instructions/macOS/step1.PNG" height="70%" width="70%">
+      </div>
+
+      <div>
+        <h2>Step 2</h2>
+        <p>
+          Double click on the .dmg file to run it.
+        </p>
+        <img src="../../assets/download-instructions/macOS/step2.png" height="70%" width="70%">
+      </div>
+
+      <div>
+        <h2>Step 3</h2>
+        <p>
+          Depending on your security settings, this window may pop up. To let your computer run it, we need to open
+          System Preferences.
+        </p>
+        <img src="../../assets/download-instructions/macOS/step3.png" height="70%" width="70%">
+      </div>
+
+      <div>
+        <h2>Step 4</h2>
+        <p>
+          Open System Preferences and click on Security & Privacy.
+        </p>
+        <img src="../../assets/download-instructions/macOS/step4.png" height="70%" width="70%">
+      </div>
+
+      <div>
+        <h2>Step 5</h2>
+        <p>
+          There is text at the bottom talking about Dragon Drop. Click Open Anyway to continue the installation process.
+        </p>
+        <img src="../../assets/download-instructions/macOS/step5.png" height="70%" width="70%">
+      </div>
+
+      <div>
+        <h2>Step 6</h2>
+        <p>
+          This window will pop up. Click on Open.
+        </p>
+        <img src="../../assets/download-instructions/macOS/step6.png" height="70%" width="70%">
+      </div>
+
+      <div>
+        <h2>Step 7</h2>
+        <p>
+          Click on Agree.
+        </p>
+        <img src="../../assets/download-instructions/macOS/step8.png" height="70%" width="70%">
+      </div>
+
+      <div>
+        <h2>Step 9</h2>
+        <p>
+          Drag the Dragon Drop icon into the Applications folder.
+        </p>
+        <img src="../../assets/download-instructions/macOS/step9.png" height="70%" width="70%">
+        <br>
+        <img src="../../assets/download-instructions/macOS/step10.png" height="70%" width="70%">
+      </div>
+
+      <div>
+        <h2>Step 10</h2>
+        <p>
+          Go to your Applications folder and double click on Dragon Drop to run it.
+        </p>
+        <img src="../../assets/download-instructions/macOS/step11.png" height="70%" width="70%">
+      </div>
+
+      <div>
+        <h2>Step 11</h2>
+        <p>
+          This window will pop up. Click on Open.
+        </p>
+        <img src="../../assets/download-instructions/macOS/step12.png" height="70%" width="70%">
+      </div>
+
+      <div>
+        <h2>Step 12</h2>
+        <p>
+          Dragon Drop is now ready to use. Enjoy!
+        </p>
+        <img src="../../assets/download-instructions/macOS/step13.png" height="70%" width="70%">
+      </div>
+    </div>
+    <br>
+
+    <p style="color:red">
+      <b>
+        If you are doing anything with Wink, Ringo, or Arduino, please follow <a
+        href="https://www.arduino.cc/en/Guide/HomePage" target="_blank">these instructions</a> from the Arduino website to install the Arduino IDE before programming the hardware!
+      </b>
+
+    </p>
+
+  </mat-card>
+
+</div>

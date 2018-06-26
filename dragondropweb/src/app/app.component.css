@@ -8,6 +8,8 @@
   width: 100%;
   background: rgb(103, 53, 180);
   align-content: center;
+  position: fixed;
+  z-index: 60;
 }
 
 .admin {
