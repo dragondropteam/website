@@ -14,7 +14,7 @@ import {
   MatButtonModule,
   MatCardModule,
   MatChipsModule,
-  MatDialogModule,
+  MatDialogModule, MatExpansionModule,
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
@@ -44,6 +44,8 @@ import {AuthGuard} from './auth/auth.guard';
 import { JwtModule } from '@auth0/angular-jwt';
 import { LoginComponent } from './login/login.component';
 import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.component';
+import { DownloadInstructionsComponent } from './download-instructions/download-instructions.component';
+import { DirectionsDialogComponent } from './directions-dialog/directions-dialog.component';
 
 
 export function tokenGetter() {
@@ -65,12 +67,15 @@ export function tokenGetter() {
     VersionListComponent,
     CallbackComponent,
     LoginComponent,
-    ConfirmDeleteComponent
+    ConfirmDeleteComponent,
+    DownloadInstructionsComponent,
+    DirectionsDialogComponent
   ],
   entryComponents: [
     NewReleaseDialogComponent,
     EditReleaseDialogComponent,
-    ConfirmDeleteComponent
+    ConfirmDeleteComponent,
+    DirectionsDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -101,7 +106,8 @@ export function tokenGetter() {
     SplitButtonModule,
     FileUploadModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatExpansionModule
   ],
   providers: [ReleaseService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
