@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-download-instructions',
@@ -7,15 +7,26 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./download-instructions.component.css']
 })
 export class DownloadInstructionsComponent implements OnInit {
+  firstPlatform: string;
+
   public windows = true;
   public mac = false;
   public linux = false;
 
 
-  constructor() {
-  }
+  constructor(private route: ActivatedRoute) {
+    }
 
   ngOnInit() {
+    this.route.queryParams
+      .filter(params => params.firstPlatform)
+      .subscribe(params => {
+        this.firstPlatform = params.firstPlatform;
+      });
+
+    this.displayInfo(this.firstPlatform);
+
+
   }
 
   displayInfo(platform) {
