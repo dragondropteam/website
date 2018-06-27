@@ -27,7 +27,6 @@ export class ReleaseDataSource extends DataSource<any> {
 export class VersionListComponent implements OnInit {
   displayedColumns = ['version', 'channel', 'changenotes', 'platforms', 'more'];
   dataSource = new ReleaseDataSource(this.releaseService);
-  private dialog: MatDialog;
 
   constructor(private releaseService: ReleaseService, private dialog: MatDialog) {
   }
