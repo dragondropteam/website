@@ -1,0 +1,269 @@
+<!--
+  ~ Copyright (c) 2018. DigiPen Institute of Technology
+  -->
+
+<div class="parallax">
+  <mat-card class="info" style="font-size: large">
+
+    <h1 class="header">DragonDrop Installation Instructions</h1>
+    <mat-tab-group [selectedIndex]="getSelectedPlatform()">
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <i class="fab fa-windows fa-lg"></i> Windows
+        </ng-template>
+        <mat-horizontal-stepper>
+          <mat-step label="Step 1">
+            <p>
+              <a href="http://wwwprod5.digipen.edu/release" target="_blank">Download</a> the correct DragonDrop for your
+              operating system.
+            </p>
+            <img src="../../assets/download-instructions/windows/step1.PNG" height="70%" width="70%">
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step label="Step 2">
+            <p>
+              Once it finishes downloading, double click on the file to run it.
+            </p>
+            <img src="../../assets/download-instructions/windows/step2.PNG" height="70%" width="70%">
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step label="Step 3">
+            <p>
+              Click on more info.
+            </p>
+            <img src="../../assets/download-instructions/windows/step2.1.PNG" height="70%" width="70%">
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step label="Step 4">
+            <p>
+              Click on run anyway.
+            </p>
+            <img src="../../assets/download-instructions/windows/step2.2.PNG" height="70%" width="70%">
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step label="Step 5">
+            <p>
+              Read the License Agreement and click "I Agree" and let it install the files.
+            </p>
+            <img src="../../assets/download-instructions/windows/step3.PNG" height="70%" width="70%">
+            <br/>
+            <img src="../../assets/download-instructions/windows/step3.5.PNG" height="70%" width="70%">
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step label="Step 6">
+            <p>
+              Click on "Run DragonDrop" if you want the application to launch right away. Click on finish.
+            </p>
+            <img src="../../assets/download-instructions/windows/step4.PNG" height="70%" width="70%">
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step label="Step 7">
+            <p>
+              This window will pop up when you launch DragonDrop. Enjoy!
+            </p>
+            <img src="../../assets/download-instructions/windows/step5.PNG" height="70%" width="70%">
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+            </div>
+          </mat-step>
+        </mat-horizontal-stepper>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <i class="fab fa-apple fa-lg"></i> macOS
+        </ng-template>
+        <mat-horizontal-stepper>
+          <mat-step label="Step 1">
+            <p>
+              <a href="http://wwwprod5.digipen.edu/release" target="_blank">Download</a> the correct DragonDrop for your
+              operating system.
+            </p>
+            <img src="../../assets/download-instructions/windows/step1.PNG" height="70%" width="70%">
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step label="Step 2">
+            <p>
+              Right click on the .dmg file and click "Open".
+            </p>
+            <p style="font-size: small">
+              Note: Double-clicking will not yield the same results, so you <b>must</b> right click it to open it.
+            </p>
+            <img src="../../assets/download-instructions/macOS/step2.png" height="70%" width="70%">
+            <br>
+            <img src="../../assets/download-instructions/macOS/step3.png" height="50%" width="50%">
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step label="Step 3">
+            <p>
+              This window will pop up. Click on Open.
+            </p>
+            <img src="../../assets/download-instructions/macOS/step4.png" height="70%" width="70%">
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step label="Step 4">
+            <p>
+              Click on Agree & wait for it to load.
+            </p>
+            <img src="../../assets/download-instructions/macOS/step5.png" height="70%" width="70%">
+            <img src="../../assets/download-instructions/macOS/step6.png" height="70%" width="70%">
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step label="Step 5">
+            <p>
+              Drag the DragonDrop application to the Applications folder.
+            </p>
+            <img src="../../assets/download-instructions/macOS/step7.png" height="70%" width="70%">
+            <p>
+              Enter your password if prompted.
+            </p>
+            <img src="../../assets/download-instructions/macOS/step8.png" height="70%" width="70%">
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step label="Step 6">
+            <p>
+              Go to your Applications folder and double click on the DragonDrop icon.
+            </p>
+            <img src="../../assets/download-instructions/macOS/step9.png" height="70%" width="70%">
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step label="Step 7">
+            <p>
+              Click on Open.
+            </p>
+            <img src="../../assets/download-instructions/macOS/step10.png" height="70%" width="70%">
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step label="Step 8">
+            <h2>Step 8</h2>
+            <p>
+              DragonDrop is ready to use. Enjoy!
+            </p>
+            <img src="../../assets/download-instructions/macOS/step11.png" height="70%" width="70%">
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+            </div>
+          </mat-step>
+
+        </mat-horizontal-stepper>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <i class="fab fa-linux fa-lg"></i> Linux
+        </ng-template>
+        <mat-horizontal-stepper>
+          <mat-step label="Step 1">
+            <p>
+              <a href="http://wwwprod5.digipen.edu/release" target="_blank">Download</a> the correct DragonDrop for your
+              operating system.
+            </p>
+            <img src="../../assets/download-instructions/windows/step1.PNG" height="70%" width="70%">
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step label="Step 2">
+            <p>
+              Open the terminal in the same directory as the installer and run 'chmod +x
+              DragonDrop-2.0.0-x86_64.AppImage'
+            </p>
+            <img src="../../assets/download-instructions/linux/step2.PNG" height="70%" width="70%">
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step label="Step 3">
+            <p>
+              Double click on the AppImage file.
+            </p>
+            <img src="../../assets/download-instructions/linux/step3.PNG" height="70%" width="70%">
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step label="Step 4">
+            <p>
+              Once it finishes installing the files in the background, DragonDrop will open and be ready to use. Enjoy!
+            </p>
+            <img src="../../assets/download-instructions/linux/step4.PNG" height="70%" width="70%">
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+            </div>
+          </mat-step>
+        </mat-horizontal-stepper>
+      </mat-tab>
+    </mat-tab-group>
+
+    <br>
+
+    <p style="color:red">
+      <b>
+        If you are doing anything with Wink, Ringo, or Arduino, please follow <a
+        href="https://www.arduino.cc/en/Guide/HomePage" target="_blank">these instructions</a> from the Arduino website
+        to install the Arduino IDE before programming the hardware!
+      </b>
+
+    </p>
+
+  </mat-card>
+
+</div>

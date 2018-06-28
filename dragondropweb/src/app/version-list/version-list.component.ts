@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {EditReleaseDialogComponent} from '../edit-release-dialog/edit-release-dialog.component';
+import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {MatDialog} from '@angular/material';
 import {ReleaseService} from '../release.service';
 import {DataSource} from '@angular/cdk/collections';
+import {DirectionsDialogComponent} from '../directions-dialog/directions-dialog.component';
 
 
 export class ReleaseDataSource extends DataSource<any> {
@@ -47,5 +47,11 @@ export class VersionListComponent implements OnInit {
 
   getRouterLink(release) {
     return '/release/' + release._id;
+  }
+
+  directionsDialogPopup(platform) {
+    this.dialog.open(DirectionsDialogComponent, {
+      data: platform
+    });
   }
 }
