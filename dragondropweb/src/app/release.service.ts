@@ -19,8 +19,7 @@ export class ReleaseService {
   }
 
   getReleases(): Observable<any> {
-    return Observable.of([{version: '1.0.0', channel: 'Stable', changeNotes: '<b>:)</b>'}]);
-    // return this.httpClient.get(this.releaseURL);
+    return this.httpClient.get(this.releaseURL);
   }
 
   getRelease(id: String) {
