@@ -6,6 +6,9 @@ import {Component, OnInit} from '@angular/core';
 import {ReleaseService} from '../release.service';
 import {Release} from '../release/release.model';
 import {AuthService} from '../auth/auth.service';
+import {DirectionsDialogComponent} from '../directions-dialog/directions-dialog.component';
+import {Dialog, DialogModule} from 'primeng/dialog';
+import {MatDialog} from '@angular/material';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +19,7 @@ export class HomeComponent implements OnInit {
 
   release: Release;
 
-  constructor(private releaseService: ReleaseService, private authService: AuthService) {
+  constructor(private releaseService: ReleaseService, private authService: AuthService, private dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -57,5 +60,11 @@ export class HomeComponent implements OnInit {
 
   login() {
     // this.authService.login();
+  }
+
+  directionsDialogPopup(platform) {
+    this.dialog.open(DirectionsDialogComponent, {
+      data: platform
+    });
   }
 }

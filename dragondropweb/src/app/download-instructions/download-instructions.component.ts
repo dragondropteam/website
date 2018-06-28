@@ -7,47 +7,29 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./download-instructions.component.css']
 })
 export class DownloadInstructionsComponent implements OnInit {
-  firstPlatform: string;
-
-  public windows = true;
-  public mac = false;
-  public linux = false;
-
+  platform = 'windows';
 
   constructor(private route: ActivatedRoute) {
-    }
+  }
 
   ngOnInit() {
     this.route.queryParams
-      .filter(params => params.firstPlatform)
+      .filter(params => params.platform)
       .subscribe(params => {
-        this.firstPlatform = params.firstPlatform;
+        this.platform = params.platform;
       });
-
-    this.displayInfo(this.firstPlatform);
-
-
   }
 
-  displayInfo(platform) {
-    switch (platform) {
+  getSelectedPlatform() {
+    switch (this.platform) {
       case 'windows':
-        this.windows = true;
-        this.mac = false;
-        this.linux = false;
-        break;
-      case 'linux':
-        this.linux = true;
-        this.mac = false;
-        this.windows = false;
-        break;
+        return 0;
       case 'mac':
-        this.mac = true;
-        this.windows = false;
-        this.linux = false;
-        break;
+        return 1;
+      case 'linux':
+        return 2;
+      default:
+        return 0;
     }
-
   }
-
 }

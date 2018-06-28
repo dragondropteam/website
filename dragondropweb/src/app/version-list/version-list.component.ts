@@ -50,10 +50,8 @@ export class VersionListComponent implements OnInit {
   }
 
   directionsDialogPopup(platform) {
-    const dialogRef = this.dialog.open(DirectionsDialogComponent, {
+    this.dialog.open(DirectionsDialogComponent, {
       data: platform
     });
   }
-
-
 }

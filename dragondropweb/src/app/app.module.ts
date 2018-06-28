@@ -19,8 +19,8 @@ import {
   MatIconModule,
   MatInputModule,
   MatSelectModule,
-  MatSnackBarModule,
-  MatTableModule
+  MatSnackBarModule, MatStepperModule,
+  MatTableModule, MatTabsModule
 } from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import {ReleaseService} from './release.service';
@@ -98,6 +98,8 @@ export function tokenGetter() {
     MatIconModule,
     MatCardModule,
     MatSnackBarModule,
+    MatStepperModule,
+    MatTabsModule,
     BrowserAnimationsModule,
     FormsModule,
     NgxEditorModule,
