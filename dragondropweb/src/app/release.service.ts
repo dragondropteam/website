@@ -4,7 +4,7 @@
 
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable} from 'rxjs/Rx';
 import {Release, ReleaseFile} from './release/release.model';
 
 @Injectable()
@@ -14,7 +14,7 @@ export class ReleaseService {
   constructor(private httpClient: HttpClient) {
   }
 
-  deleteRelease(id) : Observable<Release> {
+  deleteRelease(id): Observable<Release> {
     return this.httpClient.delete<Release>(`${this.releaseURL}/${id}`);
   }
 

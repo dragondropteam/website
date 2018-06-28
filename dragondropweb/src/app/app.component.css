@@ -8,6 +8,8 @@
   width: 100%;
   background: rgb(103, 53, 180);
   align-content: center;
+  position: fixed;
+  z-index: 60;
 }
 
 .admin {
@@ -24,4 +26,8 @@
   height: 32px;
   width: 32px;
   padding: 1em;
+}
+
+.platform {
+  margin: 1em;
 }
