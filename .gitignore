@@ -2,3 +2,4 @@
 dragondropweb/\.vagrant/
 
 *.log
+*.swp

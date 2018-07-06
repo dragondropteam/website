@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  web:
+    image: "nginx"
+  app:
+    build: .
+    volumes:
+      - .:/var/www
+    ports:
+      - "80:4200"
+  minio:
+    image: "minio/minio"
+  db:
+    image: "mongo"
