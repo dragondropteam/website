@@ -4,11 +4,8 @@
 
 import {Component, OnInit} from '@angular/core';
 import {ReleaseService} from '../release.service';
-import {CollectionViewer, DataSource} from '@angular/cdk/collections';
-import {BehaviorSubject, Observable} from 'rxjs';
 import {MatDialog, MatSnackBar, MatTable, MatTableDataSource} from '@angular/material';
 import {NewReleaseDialogComponent} from '../new-release-dialog/new-release-dialog.component';
-import * as QuillDeltaToHtmlConverter from 'quill-delta-to-html';
 import {Release} from '../release/release.model';
 import {EditReleaseDialogComponent} from '../edit-release-dialog/edit-release-dialog.component';
 import {ConfirmDeleteComponent} from '../confirm-delete/confirm-delete.component';

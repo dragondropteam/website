@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  web:
+    image: "nginx"
+  app:
+    build: .
+    volumes:
+      - .:/var/www
+      - /var/www/node_modules
+    ports:
+      - "80:4200"
+    depends_on:
+      - db
+      - minio
+    environment:
+      - MONGO_HOST=mongodb://db/dragondrop
+      - AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+      - AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+      - AWS_ENDPOINT=minio
+  minio:
+    image: "minio/minio"
+    environment:
+      - MINIO_ACCESS_KEY=AKIAIOSFODNN7EXAMPLE
+      - MINIO_SECRET_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+    command: server /home/shared
+    ports:
+      - "9001:9000"
+  db:
+    image: "mongo"
