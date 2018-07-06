@@ -1,26 +1,20 @@
 Arguments: 
-  /Users/lukepowell/.nvm/versions/node/v8.9.4/bin/node /usr/local/Cellar/yarn/1.6.0/libexec/bin/yarn.js add typescript@>=2.7.0 <2.8.0
+  /usr/bin/node /usr/share/yarn/bin/yarn.js
 
 PATH: 
-  /Users/lukepowell/.nvm/versions/node/v8.9.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+  /var/www/node_modules/.bin:/usr/local/share/.config/yarn/link/node_modules/.bin:/var/www/node_modules/.bin:/usr/local/share/.config/yarn/link/node_modules/.bin:/usr/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/lib/node_modules/npm/bin/node-gyp-bin:/usr/bin/node_modules/npm/bin/node-gyp-bin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 Yarn version: 
-  1.6.0
+  1.7.0
 
 Node version: 
-  8.9.4
+  9.11.2
 
 Platform: 
-  darwin x64
+  linux x64
 
 Trace: 
-  SyntaxError: /Users/lukepowell/Documents/DragonDropSource/web/dragondropweb/package.json: Unexpected token } in JSON at position 2729
-      at JSON.parse (<anonymous>)
-      at /usr/local/Cellar/yarn/1.6.0/libexec/lib/cli.js:1130:59
-      at Generator.next (<anonymous>)
-      at step (/usr/local/Cellar/yarn/1.6.0/libexec/lib/cli.js:98:30)
-      at /usr/local/Cellar/yarn/1.6.0/libexec/lib/cli.js:109:13
-      at <anonymous>
+  Error: EIO: i/o error, scandir '/var/www/node_modules/@angular/animations/esm2015/browser/src/render'
 
 npm manifest: 
   {
@@ -81,7 +75,9 @@ npm manifest:
       "quill": "^1.3.5",
       "quill-delta-to-html": "^0.8.2",
       "rxjs": "^6.1.0",
+      "rxjs-compat": "^6.1.0",
       "semver": "^5.5.0",
+      "typescript": ">=2.7.0 <2.8.0",
       "zone.js": "^0.8.14"
     },
     "devDependencies": {
@@ -105,7 +101,7 @@ npm manifest:
       "nodemon": "^1.17.3",
       "protractor": "~5.3.0",
       "ts-node": "~6.0.3",
-      "tslint": "~5.10.0",
+      "tslint": "~5.10.0"
     }
   }
 
@@ -6246,6 +6242,10 @@ Lockfile:
   rx@2.3.24:
     version "2.3.24"
     resolved "https://registry.yarnpkg.com/rx/-/rx-2.3.24.tgz#14f950a4217d7e35daa71bbcbe58eff68ea4b2b7"
+  
+  rxjs-compat@^6.1.0:
+    version "6.1.0"
+    resolved "https://registry.yarnpkg.com/rxjs-compat/-/rxjs-compat-6.1.0.tgz#935059623ee4c167728c9dd03ee6e4468cc5b583"
   
   rxjs@^6.0.0, rxjs@^6.1.0:
     version "6.1.0"

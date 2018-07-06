@@ -26,7 +26,7 @@ export class ReleaseService {
     return this.httpClient.get<Release>(`${this.releaseURL}/${id}`);
   }
 
-  createRelease(release: any): Observable<Release> {
+   createRelease(release: any): Observable<Release> {
     return this.httpClient.post<Release>(this.releaseURL, release);
   }
 
