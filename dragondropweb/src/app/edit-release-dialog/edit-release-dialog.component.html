@@ -2,7 +2,7 @@
   ~ Copyright (c) 2018. DigiPen Institute of Technology
   -->
 <h1 mat-dialog-title>Create Release</h1>
-<div class="content" mat-dialog-content>
+<mat-dialog-content class="content">
   <mat-form-field>
     <input [(ngModel)]="data.release.version" matInput placeholder="Version">
   </mat-form-field>
@@ -17,8 +17,8 @@
     <p-editor [(ngModel)]="data.release.changeNotes" style="width: 100%"
               [style]="{'display': 'flex', 'flex-direction': 'column', 'width': '100%'}"></p-editor>
   </div>
-  <h3 id="release">Files</h3>
-  <div *ngFor="let file of files" id="files">
-    <a mat-button id="two" [href]="getFileDownload(file.name)">{{file.name}}</a>
-  </div>
-</div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button>Save Changes</button>
+  <button mat-button [mat-dialog-close]>Discard Changes</button>
+</mat-dialog-actions>

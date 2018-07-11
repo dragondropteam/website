@@ -14,6 +14,9 @@ import {CallbackComponent} from './callback/callback.component';
 import {AuthGuard} from './auth/auth.guard';
 import {LoginComponent} from './login/login.component';
 import {DownloadInstructionsComponent} from './download-instructions/download-instructions.component';
+import {AdminPanelComponent} from './admin-panel/admin-panel.component';
+import {AdminUserListComponent} from './admin-user-list/admin-user-list.component';
+import {AdminPermissionsComponent} from './admin-permissions/admin-permissions.component';
 
 const routes: Routes = [{
   path: '',
@@ -30,7 +33,17 @@ const routes: Routes = [{
 }, {
   path: 'admin',
   canActivate: [AuthGuard],
-  component: ReleaseListComponent
+  component: AdminPanelComponent,
+  children: [{
+    path: 'releases',
+    component: ReleaseListComponent
+  }, {
+    path: 'users',
+    component: AdminUserListComponent
+  }, {
+    path: 'permissions',
+    component: AdminPermissionsComponent
+  }]
 }, {
   path: 'release',
   component: DownloadLatestComponent

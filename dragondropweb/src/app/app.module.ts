@@ -20,7 +20,7 @@ import {
   MatInputModule,
   MatSelectModule,
   MatSnackBarModule, MatStepperModule,
-  MatTableModule, MatTabsModule
+  MatTableModule, MatTabsModule, MatToolbarModule, MatSidenavModule, MatListModule
 } from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import {ReleaseService} from './release.service';
@@ -29,7 +29,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxEditorModule} from 'ngx-editor';
 import {QuillModule} from 'ngx-quill';
-import {FroalaEditorModule, FroalaViewModule} from 'angular-froala-wysiwyg';
 import {QuilljsComponent} from './quilljs/quilljs.component';
 import {EditorModule} from 'primeng/editor';
 import {FileUploadModule, SplitButtonModule} from 'primeng/primeng';
@@ -46,6 +45,10 @@ import { LoginComponent } from './login/login.component';
 import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.component';
 import { DownloadInstructionsComponent } from './download-instructions/download-instructions.component';
 import { DirectionsDialogComponent } from './directions-dialog/directions-dialog.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { AdminUserListComponent } from './admin-user-list/admin-user-list.component';
+import { AdminPermissionsComponent } from './admin-permissions/admin-permissions.component';
 
 
 export function tokenGetter() {
@@ -69,7 +72,10 @@ export function tokenGetter() {
     LoginComponent,
     ConfirmDeleteComponent,
     DownloadInstructionsComponent,
-    DirectionsDialogComponent
+    DirectionsDialogComponent,
+    AdminPanelComponent,
+    AdminUserListComponent,
+    AdminPermissionsComponent
   ],
   entryComponents: [
     NewReleaseDialogComponent,
@@ -109,7 +115,11 @@ export function tokenGetter() {
     FileUploadModule,
     FormsModule,
     ReactiveFormsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [ReleaseService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
