@@ -24,7 +24,7 @@ const UserSchema = new Schema({
 //to be developed
 UserSchema.statics = {
   get(email) {
-    return this.findOne({email: 'example@example.com'})
+    return this.findOne({email: email})
       .exec()
       .then(user => {
         console.log('user', user);

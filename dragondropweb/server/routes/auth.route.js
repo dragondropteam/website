@@ -12,6 +12,7 @@ router.route('/login')
   .post((req, res, next) => {
     User.get(req.body.email)
       .then(user => {
+        console.log(`/login User: ${user}`);
         argon2.verify(user.password, req.body.password)
           .then(match => {
             if (match) {

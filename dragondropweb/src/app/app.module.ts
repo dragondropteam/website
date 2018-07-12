@@ -50,6 +50,7 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { AdminUserListComponent } from './admin-user-list/admin-user-list.component';
 import { AdminPermissionsComponent } from './admin-permissions/admin-permissions.component';
 import { AdminUserTableComponent } from './admin-user-table/admin-user-table.component';
+import {UserService} from './user.service';
 
 
 export function tokenGetter() {
@@ -125,7 +126,7 @@ export function tokenGetter() {
     MatPaginatorModule,
     MatSortModule
   ],
-  providers: [ReleaseService, AuthService, AuthGuard],
+  providers: [ReleaseService, UserService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

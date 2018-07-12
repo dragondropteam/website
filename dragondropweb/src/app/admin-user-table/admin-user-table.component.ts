@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort } from '@angular/material';
 import { AdminUserTableDataSource } from './admin-user-table-datasource';
+import {UserService} from '../user.service';
 
 @Component({
   selector: 'admin-user-table',
@@ -15,7 +16,10 @@ export class AdminUserTableComponent implements OnInit {
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['email', 'name', 'lastLogin'];
 
+  constructor(private userService: UserService){
+  }
+
   ngOnInit() {
-    this.dataSource = new AdminUserTableDataSource(this.paginator, this.sort);
+    this.dataSource = new AdminUserTableDataSource(this.paginator, this.sort, this.userService);
   }
 }
