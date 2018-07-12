@@ -8,5 +8,6 @@
 }
 
 .mat-nav-list a.active {
-  color: blueviolet;
+  background: blueviolet;
+  color: white;
 }

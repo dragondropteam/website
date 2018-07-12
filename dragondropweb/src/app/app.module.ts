@@ -20,7 +20,7 @@ import {
   MatInputModule,
   MatSelectModule,
   MatSnackBarModule, MatStepperModule,
-  MatTableModule, MatTabsModule, MatToolbarModule, MatSidenavModule, MatListModule
+  MatTableModule, MatTabsModule, MatToolbarModule, MatSidenavModule, MatListModule, MatPaginatorModule, MatSortModule
 } from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import {ReleaseService} from './release.service';
@@ -49,6 +49,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { AdminUserListComponent } from './admin-user-list/admin-user-list.component';
 import { AdminPermissionsComponent } from './admin-permissions/admin-permissions.component';
+import { AdminUserTableComponent } from './admin-user-table/admin-user-table.component';
 
 
 export function tokenGetter() {
@@ -75,7 +76,8 @@ export function tokenGetter() {
     DirectionsDialogComponent,
     AdminPanelComponent,
     AdminUserListComponent,
-    AdminPermissionsComponent
+    AdminPermissionsComponent,
+    AdminUserTableComponent
   ],
   entryComponents: [
     NewReleaseDialogComponent,
@@ -119,7 +121,9 @@ export function tokenGetter() {
     LayoutModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [ReleaseService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
