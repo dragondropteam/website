@@ -17,6 +17,7 @@ import {DownloadInstructionsComponent} from './download-instructions/download-in
 import {AdminPanelComponent} from './admin-panel/admin-panel.component';
 import {AdminUserListComponent} from './admin-user-list/admin-user-list.component';
 import {AdminPermissionsComponent} from './admin-permissions/admin-permissions.component';
+import {AdminUserTableComponent} from './admin-user-table/admin-user-table.component';
 
 const routes: Routes = [{
   path: '',
@@ -39,7 +40,7 @@ const routes: Routes = [{
     component: ReleaseListComponent
   }, {
     path: 'users',
-    component: AdminUserListComponent
+    component: AdminUserTableComponent
   }, {
     path: 'permissions',
     component: AdminPermissionsComponent

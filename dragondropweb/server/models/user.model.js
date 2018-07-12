@@ -34,6 +34,16 @@ UserSchema.statics = {
 
         return Promise.reject(new Error('No such user exists'));
       })
+  },
+  list({skip = 0, limit = 10} = {}) {
+    return this.find()
+      .select('email')
+      .skip(skip)
+      .limit(limit)
+      .exec()
+      .then(users => {
+        return users || [];
+      })
   }
 };
 
