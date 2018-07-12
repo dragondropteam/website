@@ -6,12 +6,13 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
+  private userURL = '/api/user';
 
   constructor(private httpClient: HttpClient) {
   }
 
   getUsers(): Observable<any> {
-    return null;
+    return this.httpClient.get(this.userURL);
   }
 
   createUser(): Observable<any> {

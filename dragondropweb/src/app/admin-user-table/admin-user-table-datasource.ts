@@ -2,6 +2,7 @@ import {DataSource} from '@angular/cdk/collections';
 import {MatPaginator, MatSort} from '@angular/material';
 import {map} from 'rxjs/operators';
 import {Observable, of as observableOf, merge} from 'rxjs';
+import {UserService} from '../user.service';
 
 // TODO: Replace this with your own data model type
 export class AdminUserTableItem {
@@ -83,7 +84,7 @@ const EXAMPLE_DATA: AdminUserTableItem[] = [
 export class AdminUserTableDataSource extends DataSource<AdminUserTableItem> {
   data: AdminUserTableItem[] = EXAMPLE_DATA;
 
-  constructor(private paginator: MatPaginator, private sort: MatSort) {
+  constructor(private paginator: MatPaginator, private sort: MatSort, private userService: UserService) {
     super();
   }
 
@@ -93,20 +94,23 @@ export class AdminUserTableDataSource extends DataSource<AdminUserTableItem> {
    * @returns A stream of the items to be rendered.
    */
   connect(): Observable<AdminUserTableItem[]> {
-    // Combine everything that affects the rendered data into one update
-    // stream for the data-table to consume.
-    const dataMutations = [
-      observableOf(this.data),
-      this.paginator.page,
-      this.sort.sortChange
-    ];
-
-    // Set the paginators length
-    this.paginator.length = this.data.length;
-
-    return merge(...dataMutations).pipe(map(() => {
-      return this.getPagedData(this.getSortedData([...this.data]));
-    }));
+    return this.userService.getUsers();
+    // // Combine everything that affects the rendered data into one update
+    // // stream for the data-table to consume.
+    // const dataMutations = [
+    //   this.userService.getUsers().map(user => {
+    //     return new AdminUserTableItem(user.email, user.email, Date.now());
+    //   }),
+    //   this.paginator.page,
+    //   this.sort.sortChange
+    // ];
+    //
+    // // Set the paginators length
+    // this.paginator.length = this.data.length;
+    //
+    // return merge(...dataMutations).pipe(map(() => {
+    //   return this.getPagedData(this.getSortedData([...this.data]));
+    // }));
   }
 
   /**
