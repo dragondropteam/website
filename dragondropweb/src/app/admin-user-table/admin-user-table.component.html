@@ -1,7 +1,7 @@
 <div class="mat-elevation-z8">
-  <mat-table #table [dataSource]="dataSource" matSort aria-label="Elements">
+  <mat-table class="table" #table [dataSource]="dataSource" matSort aria-label="Elements">
 
-    <!-- Las Login Column -->
+    <!-- Last Login Column -->
     <ng-container matColumnDef="lastLogin">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Last Login</mat-header-cell>
       <mat-cell *matCellDef="let row">{{row.formattedLogin}}</mat-cell>
@@ -19,7 +19,7 @@
       <mat-cell *matCellDef="let row">{{row.email}}</mat-cell>
     </ng-container>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
 
@@ -29,4 +29,8 @@
     [pageSize]="50"
     [pageSizeOptions]="[25, 50, 100, 250]">
   </mat-paginator>
+
+  <!--<button class="add-user" mat-fab color="primary">-->
+    <!--<mat-icon>add</mat-icon>-->
+  <!--</button>-->
 </div>
