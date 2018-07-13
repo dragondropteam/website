@@ -95,8 +95,8 @@ export class AdminUserTableDataSource extends DataSource<AdminUserTableItem> {
    */
   connect(): Observable<AdminUserTableItem[]> {
     return this.userService.getUsers();
-    // // Combine everything that affects the rendered data into one update
-    // // stream for the data-table to consume.
+    // Combine everything that affects the rendered data into one update
+    // stream for the data-table to consume.
     // const dataMutations = [
     //   this.userService.getUsers().map(user => {
     //     return new AdminUserTableItem(user.email, user.email, Date.now());
