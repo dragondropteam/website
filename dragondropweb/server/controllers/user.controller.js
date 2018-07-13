@@ -20,13 +20,21 @@ function createUser(req, res, next) {
         password: hash
       });
 
+      console.log('user.save()');
+
       user.save()
         .then(user => {
           res.json(user);
           return next();
         })
         .catch(err => {
-          next(err);
+          switch (err.code) {
+            case 11000://Duplicate
+              res.sendStatus(409);
+              break;
+            default:
+              next(err);
+          }
         });
     })
     .catch(err => {
