@@ -16,6 +16,10 @@ router.route('/login')
         argon2.verify(user.password, req.body.password)
           .then(match => {
             if (match) {
+
+              user.lastLogin = new Date();
+              user.save();
+              
               res.json(jwt.sign({
                 exp: Math.floor(Date.now() / 1000) + (60 * 60),
                 data: {

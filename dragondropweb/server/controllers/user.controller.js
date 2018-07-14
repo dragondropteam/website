@@ -17,7 +17,8 @@ function createUser(req, res, next) {
     .then(hash => {
       const user = new User({
         email: req.body.email,
-        password: hash
+        password: hash,
+        displayName: req.body.displayName
       });
 
       console.log('user.save()');
@@ -29,7 +30,7 @@ function createUser(req, res, next) {
         })
         .catch(err => {
           switch (err.code) {
-            case 11000://Duplicate
+            case 11000://Duplicate Entry
               res.sendStatus(409);
               break;
             default:

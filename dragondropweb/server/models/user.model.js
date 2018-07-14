@@ -11,9 +11,16 @@ const UserSchema = new Schema({
     required: true,
     unique: true
   },
+  displayName: {
+    type: String,
+    required: true
+  },
   password: {
     type: String,
     required: true
+  },
+  lastLogin: {
+    type: Date
   },
   roles: {
     type: [String]
@@ -38,7 +45,7 @@ UserSchema.statics = {
   },
   list({skip = 0, limit = 10} = {}) {
     return this.find()
-      .select('email')
+      .select(['email', 'displayName'])
       .skip(skip)
       .limit(limit)
       .exec()

@@ -1,7 +1,7 @@
 <!--
   ~ Copyright (c) 2018. DigiPen Institute of Technology
   -->
-<h1 mat-dialog-title>Create Release</h1>
+<h1 mat-dialog-title>Edit Release</h1>
 <mat-dialog-content class="content">
   <mat-form-field>
     <input [(ngModel)]="data.release.version" matInput placeholder="Version">
@@ -19,6 +19,6 @@
   </div>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button mat-button>Save Changes</button>
+  <button type="submit" mat-button>Save Changes</button>
   <button mat-button [mat-dialog-close]>Discard Changes</button>
 </mat-dialog-actions>

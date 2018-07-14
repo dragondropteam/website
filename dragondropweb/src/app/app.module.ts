@@ -20,7 +20,7 @@ import {
   MatInputModule,
   MatSelectModule,
   MatSnackBarModule, MatStepperModule,
-  MatTableModule, MatTabsModule, MatToolbarModule, MatSidenavModule, MatListModule, MatPaginatorModule, MatSortModule
+  MatTableModule, MatTabsModule, MatToolbarModule, MatSidenavModule, MatListModule, MatPaginatorModule, MatSortModule, MatCheckboxModule
 } from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import {ReleaseService} from './release.service';
@@ -51,6 +51,7 @@ import { AdminUserListComponent } from './admin-user-list/admin-user-list.compon
 import { AdminPermissionsComponent } from './admin-permissions/admin-permissions.component';
 import { AdminUserTableComponent } from './admin-user-table/admin-user-table.component';
 import {UserService} from './user.service';
+import { CreateUserDialogComponent } from './create-user-dialog/create-user-dialog.component';
 
 
 export function tokenGetter() {
@@ -78,13 +79,15 @@ export function tokenGetter() {
     AdminPanelComponent,
     AdminUserListComponent,
     AdminPermissionsComponent,
-    AdminUserTableComponent
+    AdminUserTableComponent,
+    CreateUserDialogComponent
   ],
   entryComponents: [
     NewReleaseDialogComponent,
     EditReleaseDialogComponent,
     ConfirmDeleteComponent,
-    DirectionsDialogComponent
+    DirectionsDialogComponent,
+    CreateUserDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -109,6 +112,7 @@ export function tokenGetter() {
     MatSnackBarModule,
     MatStepperModule,
     MatTabsModule,
+    MatCheckboxModule,
     BrowserAnimationsModule,
     FormsModule,
     NgxEditorModule,
