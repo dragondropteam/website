@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Create User</h2>
+<mat-dialog-content>
+  <form #userCreationForm="ngForm">
+    <mat-form-field class="fill" appearance="outline">
+      <mat-label>e-mail</mat-label>
+      <input name="email" [(ngModel)]="userModel.email" required matInput placeholder="e-mail" type="email">
+    </mat-form-field>
+    <mat-form-field class="fill" appearance="outline">
+      <mat-label>display name</mat-label>
+      <input name="displayName" [(ngModel)]="userModel.displayName" required matInput placeholder="display name" type="email">
+    </mat-form-field>
+    <mat-form-field  [hidden]="generatePassword"  class="fill" appearance="outline">
+      <mat-label>password</mat-label>
+      <input name="password" [(ngModel)]="userModel.password" matInput placeholder="password" type="password">
+    </mat-form-field>
+    <mat-form-field  [hidden]="generatePassword"  class="fill" appearance="outline">
+      <mat-label>repeat password</mat-label>
+      <input name="repeatPassword" [(ngModel)]="repeatPassword" matInput placeholder="repeat password" type="password">
+    </mat-form-field>
+    <mat-checkbox name="generatePassword" [(ngModel)]="generatePassword">generate and email password?</mat-checkbox>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button [disabled]="!userCreationForm.form.valid" mat-raised-button color="primary" [mat-dialog-close]="userModel">Save</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="null">Discard</button>
+</mat-dialog-actions>
