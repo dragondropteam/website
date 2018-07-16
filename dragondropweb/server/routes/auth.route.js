@@ -18,8 +18,11 @@ router.route('/login')
             if (match) {
 
               user.lastLogin = new Date();
-              user.save();
-              
+              user.markModified('lastLogin');
+              user.save()
+                .then(user => console.log(user))
+                .catch(err => console.log(err));
+
               res.json(jwt.sign({
                 exp: Math.floor(Date.now() / 1000) + (60 * 60),
                 data: {

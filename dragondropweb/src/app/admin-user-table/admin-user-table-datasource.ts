@@ -4,25 +4,16 @@ import {map} from 'rxjs/operators';
 import {Observable, of as observableOf, merge} from 'rxjs';
 import {UserService} from '../user.service';
 
-// TODO: Replace this with your own data model type
 export class AdminUserTableItem {
-  name: string;
-  email: string;
-  lastLogin: number;
-
-
-  constructor(name: string, email: string, lastLogin: number) {
-    this.name = name;
-    this.email = email;
-    this.lastLogin = lastLogin;
+  constructor(public displayName: string, public email: string, public lastLogin: number) {
   }
 
   get formattedLogin(): string {
-    return new Intl.DateTimeFormat('en-US').format(this.lastLogin);
+    return this.lastLogin ? new Intl.DateTimeFormat('en-US').format(new Date(this.lastLogin)) : 'Never';
   }
 }
 
-// TODO: replace this with real data from your application
+// mock data temp
 const EXAMPLE_DATA: AdminUserTableItem[] = [
   new AdminUserTableItem('Carrie	Howell', 'Carrie	Howell'.replace('\t', '.') + '@example.com', Date.now()),
   new AdminUserTableItem('Jack	Kelley', 'Jack	Kelley'.replace('\t', '.') + '@example.com', Date.now()),
@@ -94,7 +85,14 @@ export class AdminUserTableDataSource extends DataSource<AdminUserTableItem> {
    * @returns A stream of the items to be rendered.
    */
   connect(): Observable<AdminUserTableItem[]> {
-    return this.userService.getUsers();
+    return this.userService.getUsers().map(users => {
+      const adminTableUsers: AdminUserTableItem[] = [];
+      for (let i = 0; i < users.length; ++i) {
+        adminTableUsers.push(new AdminUserTableItem(users[i].displayName, users[i].email, users[i].lastLogin));
+      }
+
+      return adminTableUsers;
+    });
     // Combine everything that affects the rendered data into one update
     // stream for the data-table to consume.
     // const dataMutations = [
