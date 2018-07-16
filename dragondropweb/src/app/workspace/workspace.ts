@@ -83,7 +83,7 @@ export class Workspace {
   init() {
     // this.setIPCListeners();
     //
-    this.layout = new GoldenLayout(this.layoutConfig);
+    this.layout = new GoldenLayout(this.layoutConfig, document.getElementById('GoldenLayout'));
 
     this.registerComponents();
 

@@ -8,6 +8,7 @@
   width: 100%;
   background: rgb(103, 53, 180);
   align-content: center;
+  height: 56px;
 }
 
 .admin {
@@ -24,4 +25,12 @@
   height: 32px;
   width: 32px;
   padding: 1em;
+}
+
+.app {
+  position: absolute;
+  top: 56px;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
