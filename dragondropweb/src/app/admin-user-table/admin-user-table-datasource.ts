@@ -140,7 +140,7 @@ export class AdminUserTableDataSource extends DataSource<AdminUserTableItem> {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
         case 'name':
-          return compare(a.name, b.name, isAsc);
+          return compare(a.displayName, b.displayName, isAsc);
         case 'date':
           return compare(+a.lastLogin, +b.lastLogin, isAsc);
         case 'email':
