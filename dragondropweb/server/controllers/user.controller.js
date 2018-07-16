@@ -21,8 +21,6 @@ function createUser(req, res, next) {
         displayName: req.body.displayName
       });
 
-      console.log('user.save()');
-
       user.save()
         .then(user => {
           res.json(user);

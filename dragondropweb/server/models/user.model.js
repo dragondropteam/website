@@ -5,6 +5,20 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const IdentityProviderSchema = new Schema({
+  providerId: {
+    type: String,
+    required: true
+  },
+  identifier: {
+    type: String,
+    required: true
+  },
+  data: {
+    type: Schema.Types.Mixed
+  }
+});
+
 const UserSchema = new Schema({
   email: {
     type: String,
@@ -45,7 +59,7 @@ UserSchema.statics = {
   },
   list({skip = 0, limit = 10} = {}) {
     return this.find()
-      .select(['email', 'displayName'])
+      .select(['email', 'displayName', 'lastLogin'])
       .skip(skip)
       .limit(limit)
       .exec()
