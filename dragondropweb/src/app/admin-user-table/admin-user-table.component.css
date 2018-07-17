@@ -1,0 +1,13 @@
+.add-user {
+  position: fixed;
+  bottom: 15%;
+  right: 13%
+}
+
+.table {
+  height: 90%
+}
+
+.paginator {
+  height: 10%
+}

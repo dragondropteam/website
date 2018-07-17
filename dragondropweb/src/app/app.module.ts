@@ -20,7 +20,7 @@ import {
   MatInputModule,
   MatSelectModule,
   MatSnackBarModule, MatStepperModule,
-  MatTableModule, MatTabsModule
+  MatTableModule, MatTabsModule, MatToolbarModule, MatSidenavModule, MatListModule, MatPaginatorModule, MatSortModule, MatCheckboxModule
 } from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import {ReleaseService} from './release.service';
@@ -29,7 +29,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxEditorModule} from 'ngx-editor';
 import {QuillModule} from 'ngx-quill';
-import {FroalaEditorModule, FroalaViewModule} from 'angular-froala-wysiwyg';
 import {QuilljsComponent} from './quilljs/quilljs.component';
 import {EditorModule} from 'primeng/editor';
 import {FileUploadModule, SplitButtonModule} from 'primeng/primeng';
@@ -46,6 +45,13 @@ import { LoginComponent } from './login/login.component';
 import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.component';
 import { DownloadInstructionsComponent } from './download-instructions/download-instructions.component';
 import { DirectionsDialogComponent } from './directions-dialog/directions-dialog.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { AdminUserListComponent } from './admin-user-list/admin-user-list.component';
+import { AdminPermissionsComponent } from './admin-permissions/admin-permissions.component';
+import { AdminUserTableComponent } from './admin-user-table/admin-user-table.component';
+import {UserService} from './user.service';
+import { CreateUserDialogComponent } from './create-user-dialog/create-user-dialog.component';
 
 
 export function tokenGetter() {
@@ -69,13 +75,19 @@ export function tokenGetter() {
     LoginComponent,
     ConfirmDeleteComponent,
     DownloadInstructionsComponent,
-    DirectionsDialogComponent
+    DirectionsDialogComponent,
+    AdminPanelComponent,
+    AdminUserListComponent,
+    AdminPermissionsComponent,
+    AdminUserTableComponent,
+    CreateUserDialogComponent
   ],
   entryComponents: [
     NewReleaseDialogComponent,
     EditReleaseDialogComponent,
     ConfirmDeleteComponent,
-    DirectionsDialogComponent
+    DirectionsDialogComponent,
+    CreateUserDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -100,6 +112,7 @@ export function tokenGetter() {
     MatSnackBarModule,
     MatStepperModule,
     MatTabsModule,
+    MatCheckboxModule,
     BrowserAnimationsModule,
     FormsModule,
     NgxEditorModule,
@@ -109,9 +122,15 @@ export function tokenGetter() {
     FileUploadModule,
     FormsModule,
     ReactiveFormsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
-  providers: [ReleaseService, AuthService, AuthGuard],
+  providers: [ReleaseService, UserService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

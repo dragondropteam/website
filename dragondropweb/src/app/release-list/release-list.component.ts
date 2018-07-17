@@ -97,8 +97,8 @@ export class ReleaseListComponent implements OnInit {
 
               snackBarRef.onAction().subscribe(() => {
                 console.log('On Action');
-                this.releaseService.createRelease(deletedRelease).subscribe(release => {
-                  if(release){
+                this.releaseService.createRelease(deletedRelease).subscribe(release_ => {
+                  if (release_) {
                     this.refresh();
                     return;
                   }

@@ -10,11 +10,21 @@ const config = require('../config/config.dev');
 
 router.route('/login')
   .post((req, res, next) => {
-    User.get(req.body.email)
+    User.findOne({'identityProviders.providerId': 'email', 'identityProviders.identifier': req.body.email})
       .then(user => {
-        argon2.verify(user.password, req.body.password)
+
+        const provider = user.identityProviders.find(element => element.identifier === req.body.email);
+
+        argon2.verify(provider.data.password, req.body.password)
           .then(match => {
             if (match) {
+
+              user.lastLogin = new Date();
+              user.markModified('lastLogin');
+              user.save()
+                .then(user => console.log(user))
+                .catch(err => console.log(err));
+
               res.json(jwt.sign({
                 exp: Math.floor(Date.now() / 1000) + (60 * 60),
                 data: {
