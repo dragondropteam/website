@@ -16,14 +16,23 @@ function createUser(req, res, next) {
   argon2.hash(req.body.password)
     .then(hash => {
       const user = new User({
-        email: req.body.email,
-        password: hash,
-        displayName: req.body.displayName
+        displayName: req.body.displayName,
+        identityProviders: {
+          providerId: 'email',
+          identifier: req.body.email,
+          data: {
+            password: hash
+          }
+        }
       });
 
       user.save()
         .then(user => {
-          res.json(user);
+          res.json({
+            _id: user._id,
+            displayName: user.displayName,
+            roles: user.roles
+          });
           return next();
         })
         .catch(err => {

@@ -20,16 +20,7 @@ const IdentityProviderSchema = new Schema({
 });
 
 const UserSchema = new Schema({
-  email: {
-    type: String,
-    required: true,
-    unique: true
-  },
   displayName: {
-    type: String,
-    required: true
-  },
-  password: {
     type: String,
     required: true
   },
@@ -38,6 +29,9 @@ const UserSchema = new Schema({
   },
   roles: {
     type: [String]
+  },
+  identityProviders: {
+    type: [IdentityProviderSchema]
   }
 });
 
