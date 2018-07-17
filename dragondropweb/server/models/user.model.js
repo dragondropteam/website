@@ -5,17 +5,33 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
-  email: {
+const IdentityProviderSchema = new Schema({
+  providerId: {
     type: String,
     required: true
   },
-  password: {
+  identifier: {
     type: String,
     required: true
+  },
+  data: {
+    type: Schema.Types.Mixed
+  }
+});
+
+const UserSchema = new Schema({
+  displayName: {
+    type: String,
+    required: true
+  },
+  lastLogin: {
+    type: Date
   },
   roles: {
     type: [String]
+  },
+  identityProviders: {
+    type: [IdentityProviderSchema]
   }
 });
 
@@ -24,7 +40,7 @@ const UserSchema = new Schema({
 //to be developed
 UserSchema.statics = {
   get(email) {
-    return this.findOne({email: 'example@example.com'})
+    return this.findOne({email: email})
       .exec()
       .then(user => {
         console.log('user', user);
@@ -33,6 +49,16 @@ UserSchema.statics = {
         }
 
         return Promise.reject(new Error('No such user exists'));
+      })
+  },
+  list({skip = 0, limit = 10} = {}) {
+    return this.find()
+      .select(['email', 'displayName', 'lastLogin'])
+      .skip(skip)
+      .limit(limit)
+      .exec()
+      .then(users => {
+        return users || [];
       })
   }
 };
