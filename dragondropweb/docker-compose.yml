@@ -25,7 +25,7 @@ services:
       - MINIO_SECRET_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
     command: server /home/shared
     ports:
-      - "9001:9000"
+      - "9000:9000"
   db:
     image: "mongo"
     ports: 
