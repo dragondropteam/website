@@ -18,7 +18,7 @@ const minioClient = new Minio.Client({
 });
 
 router.get('/file/:file', (req, res) => {
-  minioClient.getObject('test-release', req.params.file, (error, stream) => {
+  minioClient.getObject(config.objectStore.releaseBucket, req.params.file, (error, stream) => {
     if(error){
       console.error(error);
       res.status(404).send(error);

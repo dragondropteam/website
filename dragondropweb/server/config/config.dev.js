@@ -27,6 +27,8 @@ const envVarsSchema = Joi.object({
     .description('Object store access key id required'),
   AWS_ENDPOINT: Joi.string().default('localhost'),
   AWS_PORT: Joi.number().default(9000),
+  RELEASE_BUCKET: Joi.string().required(),
+  USER_ASSET_BUCKET: Joi.string().required(),
   DRAGONDROP_ADMIN_EMAIL: Joi.string(),
   DRAGONDROP_ADMIN_PASSWORD: Joi.string()
 }).unknown()
@@ -50,7 +52,9 @@ const config = {
     accessKey: envVars.AWS_ACCESS_KEY_ID,
     secretKey: envVars.AWS_SECRET_ACCESS_KEY,
     port: envVars.AWS_PORT,
-    endpoint: envVars.AWS_ENDPOINT
+    endpoint: envVars.AWS_ENDPOINT,
+    releaseBucket: envVars.RELEASE_BUCKET,
+    assetBucket: envVars.USER_ASSET_BUCKET
   }
 };
 
