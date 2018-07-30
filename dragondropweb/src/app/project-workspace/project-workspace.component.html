@@ -1,1 +1,20 @@
+<mat-menu #projectMenu="matMenu">
+  <button mat-menu-item>Evaluate</button>
+  <button mat-menu-item>Open Assets Explorer</button>
+</mat-menu>
+<mat-menu #stepMenu="matMenu">
+  <button mat-menu-item>Pause Execution</button>
+  <button mat-menu-item>Step Execution</button>
+  <button mat-menu-item>Resume Execution</button>
+</mat-menu>
+<mat-menu #viewMenu="matMenu">
+  <button mat-menu-item>Phaser</button>
+  <button mat-menu-item>Code</button>
+  <button mat-menu-item>Blockly</button>
+</mat-menu>
+<mat-toolbar>
+  <button mat-button [matMenuTriggerFor]="viewMenu">Views</button>
+  <button mat-button [matMenuTriggerFor]="projectMenu">Project</button>
+  <button mat-button [matMenuTriggerFor]="stepMenu">Step</button>
+</mat-toolbar>
 <div id="GoldenLayout"></div>

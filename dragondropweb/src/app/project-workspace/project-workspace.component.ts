@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {BlocklyComponent} from '../workspace/components/blockly.component';
 import {CodeComponent} from '../workspace/components/code.component';
 import {Workspace} from '../workspace/workspace';
+import {PhaserComponent} from '../workspace/components/phaser.component';
 
 declare var Blockly: any;
 
@@ -32,7 +33,8 @@ export class ProjectWorkspaceComponent implements OnInit {
           , CodeComponent.generateContent({
             editorLanguage: 'ace/mode/c_cpp',
             readOnly: true
-          })]
+          }),
+          PhaserComponent.generateContent()]
       }]
     };
 

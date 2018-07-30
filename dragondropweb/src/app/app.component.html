@@ -1,6 +1,11 @@
 <!--
   ~ Copyright (c) 2018. DigiPen Institute of Technology
   -->
+<mat-menu #helpMenu="matMenu">
+  <button mat-menu-item>View Wiki</button>
+  <button mat-menu-item>Report Bug</button>
+  <button mat-menu-item>About</button>
+</mat-menu>
 
 <nav class="menu">
   <img class="dragon" src="../../assets/background.png">
@@ -15,6 +20,8 @@
     Log In
   </button>
 
+  <button mat-button class="menu-item" [matMenuTriggerFor]="helpMenu">Help</button>
+  
   <button
     mat-button
     class="menu-item"

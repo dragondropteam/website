@@ -17,10 +17,10 @@ import {
   MatDialogModule,
   MatFormFieldModule,
   MatIconModule,
-  MatInputModule,
+  MatInputModule, MatMenuModule,
   MatSelectModule,
   MatSnackBarModule,
-  MatTableModule
+  MatTableModule, MatToolbarModule
 } from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import {ReleaseService} from './release.service';
@@ -96,6 +96,8 @@ export function tokenGetter() {
     MatInputModule,
     MatIconModule,
     MatCardModule,
+    MatToolbarModule,
+    MatMenuModule,
     MatSnackBarModule,
     BrowserAnimationsModule,
     FormsModule,
