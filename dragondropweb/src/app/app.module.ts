@@ -52,6 +52,7 @@ import { AdminPermissionsComponent } from './admin-permissions/admin-permissions
 import { AdminUserTableComponent } from './admin-user-table/admin-user-table.component';
 import {UserService} from './user.service';
 import { CreateUserDialogComponent } from './create-user-dialog/create-user-dialog.component';
+import { AboutComponent } from './about/about.component';
 
 
 export function tokenGetter() {
@@ -80,7 +81,8 @@ export function tokenGetter() {
     AdminUserListComponent,
     AdminPermissionsComponent,
     AdminUserTableComponent,
-    CreateUserDialogComponent
+    CreateUserDialogComponent,
+    AboutComponent
   ],
   entryComponents: [
     NewReleaseDialogComponent,
