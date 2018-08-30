@@ -1,3 +1,9 @@
+/**
+ * @author: Aeon Williams
+ * @copyright DigiPen Institute of Technology 2018
+ * @file: Component to display the "About" section on the website
+ */
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({

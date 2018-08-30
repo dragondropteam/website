@@ -18,6 +18,7 @@ import {AdminPanelComponent} from './admin-panel/admin-panel.component';
 import {AdminUserListComponent} from './admin-user-list/admin-user-list.component';
 import {AdminPermissionsComponent} from './admin-permissions/admin-permissions.component';
 import {AdminUserTableComponent} from './admin-user-table/admin-user-table.component';
+import {AboutComponent} from "./about/about.component";
 
 const routes: Routes = [{
   path: '',
@@ -57,6 +58,9 @@ const routes: Routes = [{
 }, {
   path: 'instructions',
   component: DownloadInstructionsComponent
+}, {
+  path: 'about',
+  component: AboutComponent
 }, {
   path: '**',
   component: PageNotFoundComponent
