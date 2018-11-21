@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>DragonDrop Source: phaser_geometry.js</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cosmo.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">DragonDrop</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Animation.html">Animation</a></li><li><a href="Body.html">Body</a></li><li><a href="Camera.html">Camera</a></li><li><a href="Circle.html">Circle</a></li><li><a href="Collision.html">Collision</a></li><li><a href="Debug.html">Debug</a></li><li><a href="DeviceButton.html">DeviceButton</a></li><li><a href="Dynamics.html">Dynamics</a></li><li><a href="GameObject.html">GameObject</a></li><li><a href="Graphics.html">Graphics</a></li><li><a href="Groups.html">Groups</a></li><li><a href="InputHandler.html">InputHandler</a></li><li><a href="Keyboard.html">Keyboard</a></li><li><a href="Math.html">Math</a></li><li><a href="Mouse.html">Mouse</a></li><li><a href="Particles.html">Particles</a></li><li><a href="PhaserList.html">PhaserList</a></li><li><a href="PhaserText.html">PhaserText</a></li><li><a href="Point.html">Point</a></li><li><a href="Pointer.html">Pointer</a></li><li><a href="Random.html">Random</a></li><li><a href="Rectangle.html">Rectangle</a></li><li><a href="Setup.html">Setup</a></li><li><a href="Sound.html">Sound</a></li><li><a href="Sprite_Image.html">Sprite/Image</a></li><li><a href="Startup.html">Startup</a></li><li><a href="States.html">States</a></li><li><a href="Time.html">Time</a></li><li><a href="Util.html">Util</a></li><li><a href="World.html">World</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+			
+
+		<h1 class="page-title">Source: phaser_geometry.js</h1>
+    
+<section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">/**
+ * @namespace Rectangle
+ */
+//region RECTANGLE
+/**
+ * Creates a rectangle with the given properties.
+ * @method rectangle_create
+ * @param x {Number} x coordinate for the new rectangle
+ * @param y {Number} y coordinate for the new rectangle
+ * @param width {Number} width of the rectangle
+ * @param height {Number} height of the rectangle
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * new Phaser.Rectangle(x, y, width, height)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Rectangle
+ * @block
+ */
+Blockly.JavaScript['rectangle_create'] = function (block) {
+  const x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC) || 0;
+  const y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC) || 0;
+  const width = Blockly.JavaScript.valueToCode(block, 'WIDTH', Blockly.JavaScript.ORDER_ATOMIC) || 0;
+  const height = Blockly.JavaScript.valueToCode(block, 'HEIGHT', Blockly.JavaScript.ORDER_ATOMIC) || 0;
+  return [`new Phaser.Rectangle(${x}, ${y}, ${width}, ${height})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Returns true/false if the two rectangles intersect.
+ * @method rectangle_intersects
+ * @param rectA first rectangle to check
+ * @param rectB second rectangle to check
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.Rectangle.intersects(rectA, rectB)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Rectangle
+ * @block
+ */
+Blockly.JavaScript['rectangle_intersects'] = function (block) {
+  const rectA = Blockly.JavaScript.valueToCode(block, 'RECT_A', Blockly.JavaScript.ORDER_ATOMIC) || 'null';
+  const rectB = Blockly.JavaScript.valueToCode(block, 'RECT_B', Blockly.JavaScript.ORDER_ATOMIC) || 'null';
+  return [`Phaser.Rectangle.intersects(${rectA}, ${rectB})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Returns the chosen numeric field value of the rectangle.
+ * @method rectangle_get_numeric_field
+ * @param object object to get values from
+ * @param field the field to get values of
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * object.field
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Rectangle
+ * @block
+ */
+/**
+ * Returns the chosen point field value of the rectangle.
+ * @method rectangle_get_point_field
+ * @param object object to get values from
+ * @param field the field to get values of
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * object.field
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Rectangle
+ * @block
+ */
+Blockly.JavaScript['rectangle_get_numeric_field']
+  = Blockly.JavaScript['rectangle_get_point_field']
+  = function (block) {
+  const object = Blockly.JavaScript.valueToCode(block, 'OBJECT', Blockly.JavaScript.ORDER_ATOMIC) || 'null';
+  const field = block.getFieldValue('FIELD');
+  return [`${object}.${field}`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Assign the chosen numeric field of the rectangle.
+ * @method rectangle_set_numeric_field
+ * @param object object to set the value for
+ * @param field the field to set
+ * @param value {Number} value to set the field to
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * object.field = value;
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Rectangle
+ * @block
+ */
+Blockly.JavaScript['rectangle_set_numeric_field'] = function (block) {
+  const object = Blockly.JavaScript.valueToCode(block, 'OBJECT', Blockly.JavaScript.ORDER_ATOMIC) || 'null';
+  const value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
+  const field = block.getFieldValue('FIELD');
+  return `${object}.${field} = ${value};\n`;
+};
+
+/**
+ * Assign the chosen point field of the rectangle.
+ * @method rectangle_set_point_field
+ * @param object object to set the point for
+ * @param field the field to set
+ * @param point point to set the field to
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * object.field.copyFrom(point);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Rectangle
+ * @block
+ */
+Blockly.JavaScript['rectangle_set_point_field'] = setPointField;
+
+/**
+ * Returns true/false if the rectangle contains the point.
+ * @method rectangle_contains_point
+ * @param rectangle rectangle to check
+ * @param point point to check
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.Rectangle.containsPoint(rectangle, point)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Rectangle
+ * @block
+ */
+Blockly.JavaScript['rectangle_contains_point'] = function (block) {
+  const rectangle = Blockly.JavaScript.valueToCode(block, 'RECTANGLE', Blockly.JavaScript.ORDER_ATOMIC);
+  const point = Blockly.JavaScript.valueToCode(block, 'POINT', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`Phaser.Rectangle.containsPoint(${rectangle}, ${point})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Returns true/false if the rectangle contains the given coordinates.
+ * @method rectangle_contains
+ * @param rectangle rectangle to check
+ * @param x {Number} x coordinate to check
+ * @param y {Number} y coordinate to check
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.Rectangle.contains(rectangle, x, y)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Rectangle
+ * @block
+ */
+Blockly.JavaScript['rectangle_contains'] = function (block) {
+  const rectangle = Blockly.JavaScript.valueToCode(block, 'RECTANGLE', Blockly.JavaScript.ORDER_ATOMIC);
+  const x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC);
+  const y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`Phaser.Rectangle.contains(${rectangle}, ${x}, ${y})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+/**
+ * Returns true/false if one rectangle is fulling contained within another.
+ * @method rectangle_contains_rect
+ * @param rectangle_a the first rectangle to check
+ * @param rectangle_b the second rectangle to check
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.Rectangle.containsRect(rectangle_a, rectangle_b)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Rectangle
+ * @block
+ */
+Blockly.JavaScript['rectangle_contains_rect'] = function (block) {
+  const rectangle_a = Blockly.JavaScript.valueToCode(block, 'RECTANGLE_A', Blockly.JavaScript.ORDER_ATOMIC);
+  const rectangle_b = Blockly.JavaScript.valueToCode(block, 'RECTANGLE_B', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`Phaser.Rectangle.containsRect(${rectangle_a}, ${rectangle_b})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Returns a new rectangle with the same x, y, width, and height properties of the original.
+ * @method rectangle_clone
+ * @param rectangle rectangle to clone
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * rectangle.clone()
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Rectangle
+ * @block
+ */
+Blockly.JavaScript['rectangle_clone'] = function (block) {
+  const rectangle = Blockly.JavaScript.valueToCode(block, 'RECTANGLE', Blockly.JavaScript.ORDER_ATOMIC);
+//  return [`Phaser.Rectangle.clone(${rectangle})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+  return [`${rectangle}.clone()`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Returns a random x/y coordinate point from the rectangle.
+ * @method rectangle_random
+ * @param rectangle rectangle to get values from
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * rectangle.random()
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Rectangle
+ * @block
+ */
+Blockly.JavaScript['rectangle_random'] = function (block) {
+  const rectangle = Blockly.JavaScript.valueToCode(block, 'RECTANGLE', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`${rectangle}.random()`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+//endregion
+/**
+ * @namespace Point
+ */
+//region POINT
+/**
+ * Returns a point from the given x/y values.
+ * @method point_create
+ * @param x {Number} x value for the point
+ * @param y {Number} y value for the point
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * new Phaser.Point(x, y)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['point_create'] = function (block) {
+  const x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC) || 0;
+  const y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC) || 0;
+  return [`new Phaser.Point(${x}, ${y})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Returns the x or y value of the point.
+ * @method point_get_element
+ * @param element which value to return
+ * @param point point to get the value from
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * point.element
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['point_get_element'] = function (block) {
+  const element = block.getFieldValue('ELEMENT');
+  const point = Blockly.JavaScript.valueToCode(block, 'POINT', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`${point}.${element}`, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+/**
+ * Assigns the x or y value of the point to a number.
+ * @method point_set_element
+ * @param element which value to set
+ * @param point point to set the value for
+ * @param value {Number} value to set the element to
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * point.element = value;
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['point_set_element'] = function (block) {
+  const element = block.getFieldValue('ELEMENT');
+  const point = Blockly.JavaScript.valueToCode(block, 'POINT', Blockly.JavaScript.ORDER_ATOMIC);
+  const value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
+  return `${point}.${element} = ${value};\n`;
+};
+
+/**
+ * Sets the magnitude of the point to a number.
+ * @method point_set_magnitude
+ * @param point point to set the magnitude for
+ * @param value {Number} value to set the magnitude to
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * point.setMagnitude(value);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['point_set_magnitude'] = function (block) {
+  const point = Blockly.JavaScript.valueToCode(block, 'POINT', Blockly.JavaScript.ORDER_ATOMIC);
+  const value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
+  return `${point}.setMagnitude(${value});\n`;
+};
+
+/**
+ * Adds the coordinates of two points and returns a new point with the result.
+ * @method points_add
+ * @param pointA first point to add
+ * @param pointB second point to add
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.Point.add(pointA, pointB)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_add'] = function (block) {
+  const pointA = Blockly.JavaScript.valueToCode(block, 'LHS', Blockly.JavaScript.ORDER_ATOMIC);
+  const pointB = Blockly.JavaScript.valueToCode(block, 'RHS', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`Phaser.Point.add(${pointA}, ${pointB})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Subtracts the coordinates of two points and returns a new point with the result.
+ * @method points_subtract
+ * @param pointA first point to subtract
+ * @param pointB second point to subtract
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.Point.subtract(pointA, pointB)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_subtract'] = function (block) {
+  const pointA = Blockly.JavaScript.valueToCode(block, 'LHS', Blockly.JavaScript.ORDER_ATOMIC);
+  const pointB = Blockly.JavaScript.valueToCode(block, 'RHS', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`Phaser.Point.subtract(${pointA}, ${pointB})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Calculates the angle between two points and returns the result.
+ * @method points_angle_between
+ * @param pointA first angle to calculate
+ * @param pointB second angle to calculate
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.Point.angle(pointA, pointB)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_angle_between'] = function (block) {
+  const pointA = Blockly.JavaScript.valueToCode(block, 'LHS', Blockly.JavaScript.ORDER_ATOMIC);
+  const pointB = Blockly.JavaScript.valueToCode(block, 'RHS', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`Phaser.Point.angle(${pointA}, ${pointB})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Calculates the distance between two points and returns the result.
+ * @method points_distance
+ * @param pointA first angle to calculate
+ * @param pointB second angle to calculate
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.Point.distance(pointA, pointB)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_distance'] = function (block) {
+  const pointA = Blockly.JavaScript.valueToCode(block, 'LHS', Blockly.JavaScript.ORDER_ATOMIC);
+  const pointB = Blockly.JavaScript.valueToCode(block, 'RHS', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`Phaser.Point.distance(${pointA}, ${pointB})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Divides the coordinates of two points and returns a new point with the result.
+ * @method points_divide
+ * @param pointA first point to divide
+ * @param pointB second point to divide
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.Point.divide(pointA, pointB)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_divide'] = function (block) {
+  const pointA = Blockly.JavaScript.valueToCode(block, 'LHS', Blockly.JavaScript.ORDER_ATOMIC);
+  const pointB = Blockly.JavaScript.valueToCode(block, 'RHS', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`Phaser.Point.divide(${pointA}, ${pointB})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Returns true/false if one point has the same x/y values as another.
+ * @method points_equals
+ * @param pointA first point to check
+ * @param pointB second point to check
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.Point.equals(pointA, pointB)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_equals'] = function (block) {
+  const pointA = Blockly.JavaScript.valueToCode(block, 'LHS', Blockly.JavaScript.ORDER_ATOMIC);
+  const pointB = Blockly.JavaScript.valueToCode(block, 'RHS', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`Phaser.Point.equals(${pointA}, ${pointB})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Interpolates the two points based on the percent value between 0 and 1.
+ * @method points_interpolate
+ * @param pointA first point
+ * @param pointB second point
+ * @param f {Number} the level of interpolation between the two points
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.Point.interpolate(pointA, pointB, f)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_interpolate'] = function (block) {
+  const pointA = Blockly.JavaScript.valueToCode(block, 'LHS', Blockly.JavaScript.ORDER_ATOMIC);
+  const pointB = Blockly.JavaScript.valueToCode(block, 'RHS', Blockly.JavaScript.ORDER_ATOMIC);
+  const f = Blockly.JavaScript.valueToCode(block, 'F', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`Phaser.Point.interpolate(${pointA}, ${pointB}, ${f})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Multiplies the coordinates of two points and returns a new point with the result.
+ * @method points_multiply
+ * @param pointA first point to multiply
+ * @param pointB second point to multiply
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.Point.multiply(pointA, pointB)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_multiply'] = function (block) {
+  const pointA = Blockly.JavaScript.valueToCode(block, 'LHS', Blockly.JavaScript.ORDER_ATOMIC);
+  const pointB = Blockly.JavaScript.valueToCode(block, 'RHS', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`Phaser.Point.multiply(${pointA}, ${pointB})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Creates a new point with negative values of the original point.
+ * @method points_negate
+ * @param pointA point to get the values from
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.Point.negative(pointA)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_negate'] = function (block) {
+  const pointA = Blockly.JavaScript.valueToCode(block, 'LHS', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`Phaser.Point.negative(${pointA})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Returns a new point of the normalized values of the original.
+ * @method points_normalize
+ * @param pointA point to normalize
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.Point.normalize(pointA)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_normalize'] = function (block) {
+  const pointA = Blockly.JavaScript.valueToCode(block, 'LHS', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`Phaser.Point.normalize(${pointA})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Returns a new point with the perpendicular vector to the original point.
+ * @method points_perpendicular
+ * @param pointA point to get the vector from
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.Point.perp(pointA)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_perpendicular'] = function (block) {
+  const pointA = Blockly.JavaScript.valueToCode(block, 'LHS', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`Phaser.Point.perp(${pointA})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Returns a new point with the centroid of the list of points.
+ * @method points_centroid
+ * @param array {Array} list of points to calculate the centroid from
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.Point.centroid(array)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_centroid'] = function (block) {
+  var array = Blockly.JavaScript.valueToCode(block, 'ARRAY', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`Phaser.Point.centroid(${array})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Clamps the point object values to be between the given minimum and maximum.
+ * @method points_clamp
+ * @param point point to clamp
+ * @param min {Number} the minimum value to clamp the point to
+ * @param max {Number} the maximum value to clamp the point to
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * point.clamp(min, max);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_clamp'] = function (block) {
+  var point = Blockly.JavaScript.valueToCode(block, 'POINT', Blockly.JavaScript.ORDER_ATOMIC);
+  var min = Blockly.JavaScript.valueToCode(block, 'MIN', Blockly.JavaScript.ORDER_ATOMIC);
+  var max = Blockly.JavaScript.valueToCode(block, 'MAX', Blockly.JavaScript.ORDER_ATOMIC);
+  return `${point}.clamp(${min}, ${max});\n`;
+};
+
+/**
+ * Clamp the point object x value to be between the given minimum and maximum.
+ * @method points_clamp_x
+ * @param point point to clamp
+ * @param min {Number} the minimum value to clamp the value to
+ * @param max {Number} the maximum value to lcmap the value to
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * point.clampX(min, max);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_clamp_x'] = function (block) {
+  var point = Blockly.JavaScript.valueToCode(block, 'POINT', Blockly.JavaScript.ORDER_ATOMIC);
+  var min = Blockly.JavaScript.valueToCode(block, 'MIN', Blockly.JavaScript.ORDER_ATOMIC);
+  var max = Blockly.JavaScript.valueToCode(block, 'MAX', Blockly.JavaScript.ORDER_ATOMIC);
+  return `${point}.clampX(${min}, ${max});\n`;
+};
+
+/**
+ * Clamp the point object y value to be between the given minimum and maximum.
+ * @method points_clamp_y
+ * @param point point to clamp
+ * @param min {Number} the minimum value to clamp the value to
+ * @param max {Number} the maximum value to lcmap the value to
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * point.clampY(min, max);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_clamp_y'] = function (block) {
+  var point = Blockly.JavaScript.valueToCode(block, 'POINT', Blockly.JavaScript.ORDER_ATOMIC);
+  var min = Blockly.JavaScript.valueToCode(block, 'MIN', Blockly.JavaScript.ORDER_ATOMIC);
+  var max = Blockly.JavaScript.valueToCode(block, 'MAX', Blockly.JavaScript.ORDER_ATOMIC);
+  return `${point}.clampY(${min}, ${max});\n`;
+};
+
+/**
+ * Returns a new point with the same properties as the original point.
+ * @method points_clone
+ * @param point point to clone
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * point.clone()
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_clone'] = function (block) {
+  var point = Blockly.JavaScript.valueToCode(block, 'POINT', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`${point}.clone()`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Copies values from one point to another, overwriting the original values.
+ * @method points_copy_from
+ * @param source point to get the values from
+ * @param target point to copy the values to
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * target.copyFrom(source);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_copy_from'] = function (block) {
+  var source = Blockly.JavaScript.valueToCode(block, 'SOURCE', Blockly.JavaScript.ORDER_ATOMIC);
+  var target = Blockly.JavaScript.valueToCode(block, 'TARGET', Blockly.JavaScript.ORDER_ATOMIC);
+  return `${target}.copyFrom(${source});\n`;
+};
+
+/**
+ * Calculates the cross product of two points and returns the result.
+ * @method points_cross
+ * @param pointA left-hand side
+ * @param pointB right-hand side
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * pointA.cross(pointB)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_cross'] = function (block) {
+  var pointA = Blockly.JavaScript.valueToCode(block, 'LHS', Blockly.JavaScript.ORDER_ATOMIC);
+  var pointB = Blockly.JavaScript.valueToCode(block, 'RHS', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`${pointA}.cross(${pointB})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Calculates the dot product of two points and returns the result.
+ * @method points_dot
+ * @param pointA left-hand side
+ * @param pointB right-hand side
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * pointA.dot(pointB)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_dot'] = function (block) {
+  var pointA = Blockly.JavaScript.valueToCode(block, 'LHS', Blockly.JavaScript.ORDER_ATOMIC);
+  var pointB = Blockly.JavaScript.valueToCode(block, 'RHS', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`${pointA}.dot(${pointB})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Adds the given x and y values to the point.
+ * @method points_add_member
+ * @param point point to add values to
+ * @param x {Number} x value to add to the point
+ * @param y {Number} y value to add to the point
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * point.add(x, y);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_add_member'] = function (block) {
+  var point = Blockly.JavaScript.valueToCode(block, 'POINT', Blockly.JavaScript.ORDER_ATOMIC);
+  var x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC);
+  var y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC);
+  return `${point}.add(${x}, ${y});\n`;
+};
+
+/**
+ * Subtracts the given x and y values from the point.
+ * @method points_subtract_member
+ * @param point point to subtract values from
+ * @param x {Number} x value to subtract from the point
+ * @param y {Number} y value to subtract from the point
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * point.subtract(x, y);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_subtract_member'] = function (block) {
+  var point = Blockly.JavaScript.valueToCode(block, 'POINT', Blockly.JavaScript.ORDER_ATOMIC);
+  var x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC);
+  var y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC);
+  return `${point}.subtract(${x}, ${y});\n`;
+};
+
+/**
+ * Divides the point values by the given x and y values.
+ * @method points_divide_member
+ * @param point point to divide
+ * @param x {Number} x value to divide the point by
+ * @param y {Number} y value to divide the point by
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * point.divide(x, y);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_divide_member'] = function (block) {
+  var point = Blockly.JavaScript.valueToCode(block, 'POINT', Blockly.JavaScript.ORDER_ATOMIC);
+  var x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC);
+  var y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC);
+  return `${point}.divide(${x}, ${y});\n`;
+};
+
+/**
+ * Multiplies the point values by the given x and y values.
+ * @method points_multiply_member
+ * @param point point to multiply
+ * @param x {Number} x value to multiply the point by
+ * @param y {Number} y value to multiply the point by
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * point.multiply(x, y);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_multiply_member'] = function (block) {
+  var point = Blockly.JavaScript.valueToCode(block, 'POINT', Blockly.JavaScript.ORDER_ATOMIC);
+  var x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC);
+  var y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC);
+  return `${point}.multiply(${x}, ${y});\n`;
+};
+
+/**
+ * Applies Math.ceil() to the x and y values of the point.
+ * @method points_ceil
+ * @param point point to change the values of
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * point.ceil();
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_ceil'] = function (block) {
+  var point = Blockly.JavaScript.valueToCode(block, 'POINT', Blockly.JavaScript.ORDER_ATOMIC);
+  return `${point}.ceil();\n`;
+};
+
+/**
+ * Applies Math.floor() to the x and y values of the point.
+ * @method points_floor
+ * @param point point to change the values of
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * point.floor();
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_floor'] = function (block) {
+  var point = Blockly.JavaScript.valueToCode(block, 'POINT', Blockly.JavaScript.ORDER_ATOMIC);
+  return `${point}.floor();\n`;
+};
+
+/**
+ * Returns the length of the point object.
+ * @method points_get_magnitude
+ * @param point point to get the magnitude of
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * point.getMagnitude()
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_get_magnitude'] = function (block) {
+  var point = Blockly.JavaScript.valueToCode(block, 'POINT', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`${point}.getMagnitude()`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Returns the length squared of the point object.
+ * @method points_get_magnitude_squared
+ * @param point point to get the magnitude squared of
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * point.getMagnitudeSq()
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_get_magnitude_squared'] = function (block) {
+  var point = Blockly.JavaScript.valueToCode(block, 'POINT', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`${point}.getMagnitudeSq()`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Inverts the x and y values of the point.
+ * @method points_invert
+ * @param point point to invert
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * point.invert();
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_invert'] = function (block) {
+  var point = Blockly.JavaScript.valueToCode(block, 'POINT', Blockly.JavaScript.ORDER_ATOMIC);
+  return `${point}.invert();\n`;
+};
+
+/**
+ * Returns true/false if the point has the values 0,0.
+ * @method points_is_zero
+ * @param point point to check
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * point.isZero()
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_is_zero'] = function (block) {
+  var point = Blockly.JavaScript.valueToCode(block, 'POINT', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`${point}.isZero()`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Alters the point so it's magnitude is no more than the given maximum value.
+ * @method points_limit
+ * @param point point to change
+ * @param max {Number} the value to set the maximum to
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * point.limit(max);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_limit'] = function (block) {
+  var point = Blockly.JavaScript.valueToCode(block, 'POINT', Blockly.JavaScript.ORDER_ATOMIC);
+  var max = Blockly.JavaScript.valueToCode(block, 'MAX', Blockly.JavaScript.ORDER_ATOMIC);
+  return `${point}.limit(${max});\n`;
+};
+
+/**
+ * Sets the x and y values of hte point based on the given polar coordinate.
+ * @method points_set_to_polar
+ * @param point point to change the values of
+ * @param degrees {Number} degrees of the polar coordinate
+ * @param radius {Number} radius of the polar coordinate
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * point.setToPolar(degrees, radius, true);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Point
+ * @block
+ */
+Blockly.JavaScript['points_set_to_polar'] = function (block) {
+  var point = Blockly.JavaScript.valueToCode(block, 'POINT', Blockly.JavaScript.ORDER_ATOMIC);
+  var degrees = Blockly.JavaScript.valueToCode(block, 'DEGREES', Blockly.JavaScript.ORDER_ATOMIC);
+  var radius = Blockly.JavaScript.valueToCode(block, 'RADIUS', Blockly.JavaScript.ORDER_ATOMIC);
+  return `${point}.setToPolar(${degrees}, ${radius}, true);\n`;
+};
+//endregion
+/**
+ * @namespace Circle
+ */
+//region CIRCLE
+/**
+ * Returns a circle with the given properties.
+ * @method circle_create
+ * @param x {Number} x coordinate to create the circle at
+ * @param y {Number} y coordinate to create the circle at
+ * @param diameter {Number} diameter of the circle
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * new Phaser.Circle(x, y, diameter)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Circle
+ * @block
+ */
+Blockly.JavaScript['circle_create'] = function (block) {
+  const x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC) || 0;
+  const y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC) || 0;
+  const diameter = Blockly.JavaScript.valueToCode(block, 'DIAMETER', Blockly.JavaScript.ORDER_ATOMIC) || 0;
+  return [`new Phaser.Circle(${x}, ${y}, ${diameter})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Returns the chosen numeric field value of the circle.
+ * @method circle_get_numeric_field
+ * @param object object to get values from
+ * @param field the field to get values of
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * object.field
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Circle
+ * @block
+ */
+Blockly.JavaScript['circle_get_numeric_field'] = function (block) {
+  const object = Blockly.JavaScript.valueToCode(block, 'OBJECT', Blockly.JavaScript.ORDER_ATOMIC) || 'null';
+  const field = block.getFieldValue('FIELD');
+  return [`${object}.${field}`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Assign the chosen numeric field of the circle.
+ * @method circle_set_numeric_field
+ * @param object object to set the value for
+ * @param field the field to set
+ * @param value {Number} value to set the field to
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * object.field = value;
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Circle
+ * @block
+ */
+Blockly.JavaScript['circle_set_numeric_field'] = function (block) {
+  const object = Blockly.JavaScript.valueToCode(block, 'OBJECT', Blockly.JavaScript.ORDER_ATOMIC) || 'null';
+  const value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
+  const field = block.getFieldValue('FIELD');
+  return `${object}.${field} = ${value};\n`;
+};
+
+/**
+ * Returns true/false if the two circle objects intersect, determined by the radius distances between the two.
+ * @method circle_intersects
+ * @param circle_a first circle to check
+ * @param circle_b second circle to check
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.Circle.intersects(circle_a, circle_b)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Circle
+ * @block
+ */
+Blockly.JavaScript['circle_intersects'] = function (block) {
+  const circle_a = Blockly.JavaScript.valueToCode(block, 'CIRCLE_A', Blockly.JavaScript.ORDER_ATOMIC) || 'null';
+  const circle_b = Blockly.JavaScript.valueToCode(block, 'CIRCLE_B', Blockly.JavaScript.ORDER_ATOMIC) || 'null';
+  return [`Phaser.Circle.intersects(${circle_a}, ${circle_b})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Returns true/false if the circle and rectangle objects intersect.
+ * @method circle_intersects_rectangle
+ * @param circle circle to check
+ * @param rectangle rectangle to check
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.Circle.intersectsRectangle(circle, rectangle)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Circle
+ * @block
+ */
+Blockly.JavaScript['circle_intersects_rectangle'] = function (block) {
+  const circle = Blockly.JavaScript.valueToCode(block, 'CIRCLE', Blockly.JavaScript.ORDER_ATOMIC) || 'null';
+  const rectangle = Blockly.JavaScript.valueToCode(block, 'RECTANGLE', Blockly.JavaScript.ORDER_ATOMIC) || 'null';
+  return [`Phaser.Circle.intersectsRectangle(${circle}, ${rectangle})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Returns a new circle object with the same properties as the original.
+ * @method circle_clone
+ * @param circle circle to clone
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * circle.clone()
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Circle
+ * @block
+ */
+Blockly.JavaScript['circle_clone'] = function (block) {
+  const circle = Blockly.JavaScript.valueToCode(block, 'CIRCLE', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`${circle}.clone()`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Returns true/false if the given x/y coordinate can be found within the circle.
+ * @method circle_contains
+ * @param circle circle to check
+ * @param x {Number} the x value to check
+ * @param y {Number} the y value to check
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * circle.contains(x, y)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Circle
+ * @block
+ */
+Blockly.JavaScript['circle_contains'] = function (block) {
+  const circle = Blockly.JavaScript.valueToCode(block, 'CIRCLE', Blockly.JavaScript.ORDER_ATOMIC);
+  const x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC);
+  const y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`${circle}.contains(${x}, ${y})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Returns a point containing random values of x and y found within the circle.
+ * @method cirlce_random
+ * @param circle circle to get values from
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * circle.random()
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Circle
+ * @block
+ */
+Blockly.JavaScript['circle_random'] = function (block) {
+  const circle = Blockly.JavaScript.valueToCode(block, 'CIRCLE', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`${circle}.random()`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Returns the circumference of the circle.
+ * @method circle_circumference
+ * @param circle circle to get circumference of
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * circle.circumference()
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Circle
+ * @block
+ */
+Blockly.JavaScript['circle_circumference'] = function (block) {
+  const circle = Blockly.JavaScript.valueToCode(block, 'CIRCLE', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`${circle}.circumference()`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+/**
+ * Returns a point containing the coordinates of the point on the circumference of the circle based on the given angle.
+ * @method circle_circumference_point
+ * @param circle circle to get values from
+ * @param degrees {Number} angle to get the point at
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * circle_circumference_point
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Circle
+ * @block
+ */
+Blockly.JavaScript['circle_circumference_point'] = function (block) {
+  const circle = Blockly.JavaScript.valueToCode(block, 'CIRCLE', Blockly.JavaScript.ORDER_ATOMIC);
+  const degrees = Blockly.JavaScript.valueToCode(block, 'DEGREES', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`${circle}.circumferencePoint(${degrees}, true)`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+//endregion
+</pre>
+    </article>
+</section>
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+	<span class="copyright">
+	© 2018 DigiPen, All Rights Reserved.
+	</span>
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
+	
+		on Wed Nov 21st 2018
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>
