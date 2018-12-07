@@ -1,0 +1,1904 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>DragonDrop Namespace: Particles</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cosmo.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">DragonDrop</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Animation.html">Animation</a></li><li><a href="Body.html">Body</a></li><li><a href="Camera.html">Camera</a></li><li><a href="Circle.html">Circle</a></li><li><a href="Collision.html">Collision</a></li><li><a href="Debug.html">Debug</a></li><li><a href="DeviceButton.html">DeviceButton</a></li><li><a href="Dynamics.html">Dynamics</a></li><li><a href="GameObject.html">GameObject</a></li><li><a href="Graphics.html">Graphics</a></li><li><a href="Groups.html">Groups</a></li><li><a href="InputHandler.html">InputHandler</a></li><li><a href="Keyboard.html">Keyboard</a></li><li><a href="Math.html">Math</a></li><li><a href="Mouse.html">Mouse</a></li><li><a href="Particles.html">Particles</a></li><li><a href="PhaserList.html">PhaserList</a></li><li><a href="PhaserText.html">PhaserText</a></li><li><a href="Point.html">Point</a></li><li><a href="Pointer.html">Pointer</a></li><li><a href="Random.html">Random</a></li><li><a href="Rectangle.html">Rectangle</a></li><li><a href="Setup.html">Setup</a></li><li><a href="Sound.html">Sound</a></li><li><a href="Sprite_Image.html">Sprite/Image</a></li><li><a href="Startup.html">Startup</a></li><li><a href="States.html">States</a></li><li><a href="Time.html">Time</a></li><li><a href="Util.html">Util</a></li><li><a href="World.html">World</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	<h1 class="page-title">Namespace: Particles</h1>
+<section>
+
+<header>
+    
+        <h2>
+        Particles
+        </h2>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="phaser_objects.js.html">phaser_objects.js</a>,
+				 <a href="phaser_objects.js.html#sunlight-1-line-1690">line 1690</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id=".addemitter"><span class="type-signature">&lt;static> </span>addemitter(x, y, maxparticles)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/addemitter.JPG" width="350"> <br>
+Creates a particle emitter at the given location, with a total number of max particles.<a href = "http://dragondrop.digipen.edu/docs/Phaser.Particles.Arcade.Emitter.html" target = "_blank"> Check out Phaser documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the x location of the emitter</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the y location of the emitter</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>maxparticles</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the total number of particles in the emitter</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="phaser_objects.js.html">phaser_objects.js</a>,
+				 <a href="phaser_objects.js.html#sunlight-1-line-1694">line 1694</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <pre><code>
+game.add.emitter(x, y, maxparticles)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".emitters_make_particles"><span class="type-signature">&lt;static> </span>emitters_make_particles(emitter, keys, frames, quantity, collide, collideWorldBounds)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/emitters_make_particles.JPG" width="350"> <br>
+Generates new particles to be used by the emitter.<a href = "http://dragondrop.digipen.edu/docs/Phaser.Particles.Arcade.Emitter.html#makeParticles" target = "_blank"> Check out Phaser documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>emitter</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>emitter to make new particles for</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>keys</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the sprite/texture to use for the particles</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>frames</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the frames the sprites will use</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>quantity</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the number of particles to generate</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>collide</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>whether or not the particles should collide with physics bodies</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>collideWorldBounds</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>whether or not the particles should collide with the world bounds</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="phaser_objects.js.html">phaser_objects.js</a>,
+				 <a href="phaser_objects.js.html#sunlight-1-line-1728">line 1728</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <pre><code>
+emitter.makeParticles(keys, frames, quantity, collide, collideWorldBounds);
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".emitters_set_alpha_vi"><span class="type-signature">&lt;static> </span>emitters_set_alpha_vi(emitter, min, max, rate)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/emitters_set_alpha_vi.JPG" width="350"> <br>
+Sets the alpha constraints and variations for the particles on the emitter.<a href = "http://dragondrop.digipen.edu/docs/Phaser.Particles.Arcade.Emitter.html#setAlpha" target = "_blank"> Check out Phaser documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>emitter</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>emitter to change the particles of</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>min</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the minimum value the alpha of the particles can reach</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>max</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the maximum value the alpha of the particles can reach</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>rate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the rate the particles will change between min and max</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="phaser_objects.js.html">phaser_objects.js</a>,
+				 <a href="phaser_objects.js.html#sunlight-1-line-1798">line 1798</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <pre><code>
+emitter.setAlpha(min, max, rate);
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".emitters_set_gravity"><span class="type-signature">&lt;static> </span>emitters_set_gravity(emitter, particle_gravity)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/emitters_set_gravity.JPG" width="350"> <br>
+Sets the gravity each particle has when launched from the emitter.<a href = "http://dragondrop.digipen.edu/docs/Phaser.Particles.Arcade.Emitter.html#gravity" target = "_blank"> Check out Phaser documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>emitter</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>emitter to set the gravity of the particles for</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>particle_gravity</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the gravity each particle will have</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="phaser_objects.js.html">phaser_objects.js</a>,
+				 <a href="phaser_objects.js.html#sunlight-1-line-1924">line 1924</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <pre><code>
+emitter.gravity = particle_gravity;
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".emitters_set_scale_vi"><span class="type-signature">&lt;static> </span>emitters_set_scale_vi(emitter, minx, maxx, miny, maxy, rate)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/emitters_set_scale_vi.JPG" width="350"> <br>
+Sets the scale constraints and variations for the particles on the emitter.<a href = "http://dragondrop.digipen.edu/docs/Phaser.Particles.Arcade.Emitter.html#setScale" target = "_blank"> Check out Phaser documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>emitter</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>emitter to change the particles of</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>minx</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the minimum x value the scale the particles can reach</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>maxx</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the maximum x value the scale the particles can reach</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>miny</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the minimum y value the scale the particles can reach</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>maxy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the maximum y value the scale the particles can reach</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>rate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the rate the particles will change between min and max</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="phaser_objects.js.html">phaser_objects.js</a>,
+				 <a href="phaser_objects.js.html#sunlight-1-line-1837">line 1837</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <pre><code>
+emitter.setScale(minx, maxx, miny, maxy, rate);
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".emitters_set_speed_vi"><span class="type-signature">&lt;static> </span>emitters_set_speed_vi(emitter, minx, maxx, miny, maxy)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/emitters_set_speed_vi.JPG" width="350"> <br>
+Sets the maximum and minimum speeds of the particles released from the emitter.<a href = "http://dragondrop.digipen.edu/docs/Phaser.Particles.Arcade.Emitter.html#minParticleSpeed" target = "_blank"> Check out Phaser documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>emitter</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>emitter to set the speed of the particles for</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>minx</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the minimum speed for the particles to move in the x direction</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>maxx</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the maximum speed for the particles to move in the x direction</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>miny</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the minimum speed for the particles to move in the y direction</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>maxy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the maximum speed for the particles to move in the y direction</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="phaser_objects.js.html">phaser_objects.js</a>,
+				 <a href="phaser_objects.js.html#sunlight-1-line-1883">line 1883</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <pre><code>
+emitter.minParticleSpeed.set(minx, miny); emitter.maxParticleSpeed.set(maxx, maxy);
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".emitters_start_vi"><span class="type-signature">&lt;static> </span>emitters_start_vi(emitter, explode, lifespan, frequency, quantity)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/emitters_start_vi.JPG" width="350"> <br>
+Tell the emitter to start emitting particles.<a href = "http://dragondrop.digipen.edu/docs/Phaser.Particles.Arcade.Emitter.html#start" target = "_blank"> Check out Phaser documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>emitter</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>emitter to start emitting particles from</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>explode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>whether the particles should burst out at once (true), or at the frequency given (false)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lifespan</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>how long each particle lives once emitted</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>frequency</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the interval between the release of each particle</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>quantity</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>how many particles to emit before turning off</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="phaser_objects.js.html">phaser_objects.js</a>,
+				 <a href="phaser_objects.js.html#sunlight-1-line-1971">line 1971</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <pre><code>
+emitter.start(explode, lifespan, frequncy, quantity);
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+	<span class="copyright">
+	© 2018 DigiPen, All Rights Reserved.
+	</span>
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
+	
+		on Wed Nov 21st 2018
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>

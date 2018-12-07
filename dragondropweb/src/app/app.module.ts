@@ -53,6 +53,7 @@ import { AdminUserTableComponent } from './admin-user-table/admin-user-table.com
 import {UserService} from './user.service';
 import { CreateUserDialogComponent } from './create-user-dialog/create-user-dialog.component';
 import { AboutComponent } from './about/about.component';
+import { DragondropDocumentationComponent } from './dragondrop-documentation/dragondrop-documentation.component';
 
 
 export function tokenGetter() {
@@ -82,7 +83,8 @@ export function tokenGetter() {
     AdminPermissionsComponent,
     AdminUserTableComponent,
     CreateUserDialogComponent,
-    AboutComponent
+    AboutComponent,
+    DragondropDocumentationComponent
   ],
   entryComponents: [
     NewReleaseDialogComponent,

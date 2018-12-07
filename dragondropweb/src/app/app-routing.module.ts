@@ -19,6 +19,7 @@ import {AdminUserListComponent} from './admin-user-list/admin-user-list.componen
 import {AdminPermissionsComponent} from './admin-permissions/admin-permissions.component';
 import {AdminUserTableComponent} from './admin-user-table/admin-user-table.component';
 import {AboutComponent} from "./about/about.component";
+import {DragondropDocumentationComponent} from "./dragondrop-documentation/dragondrop-documentation.component";
 
 const routes: Routes = [{
   path: '',
@@ -58,6 +59,9 @@ const routes: Routes = [{
 }, {
   path: 'instructions',
   component: DownloadInstructionsComponent
+},{
+  path: 'documentation',
+  component: DragondropDocumentationComponent
 }, {
   path: 'about',
   component: AboutComponent
