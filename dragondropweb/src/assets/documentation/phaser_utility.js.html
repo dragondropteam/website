@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>DragonDrop Source: phaser_utility.js</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cosmo.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">DragonDrop</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Animation.html">Animation</a></li><li><a href="Body.html">Body</a></li><li><a href="Camera.html">Camera</a></li><li><a href="Circle.html">Circle</a></li><li><a href="Collision.html">Collision</a></li><li><a href="Debug.html">Debug</a></li><li><a href="DeviceButton.html">DeviceButton</a></li><li><a href="Dynamics.html">Dynamics</a></li><li><a href="GameObject.html">GameObject</a></li><li><a href="Graphics.html">Graphics</a></li><li><a href="Groups.html">Groups</a></li><li><a href="InputHandler.html">InputHandler</a></li><li><a href="Keyboard.html">Keyboard</a></li><li><a href="Math.html">Math</a></li><li><a href="Mouse.html">Mouse</a></li><li><a href="Particles.html">Particles</a></li><li><a href="PhaserList.html">PhaserList</a></li><li><a href="PhaserText.html">PhaserText</a></li><li><a href="Point.html">Point</a></li><li><a href="Pointer.html">Pointer</a></li><li><a href="Random.html">Random</a></li><li><a href="Rectangle.html">Rectangle</a></li><li><a href="Setup.html">Setup</a></li><li><a href="Sound.html">Sound</a></li><li><a href="Sprite_Image.html">Sprite/Image</a></li><li><a href="Startup.html">Startup</a></li><li><a href="States.html">States</a></li><li><a href="Time.html">Time</a></li><li><a href="Util.html">Util</a></li><li><a href="World.html">World</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+			
+
+		<h1 class="page-title">Source: phaser_utility.js</h1>
+    
+<section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">/**
+ * @namespace Debug
+ */
+//region DEBUG
+/**
+ * Enables stepping through the game loop one frame at a time. Must use game.step()
+ * @method enable_step
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.enableStep();
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Debug
+ * @block
+ */
+Blockly.JavaScript['enable_step'] = function (block) {
+  return `game.enableStep();\n`;
+};
+/**
+ * Disables stepping through the game loop.
+ * @method disable_step
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.disableStep();
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Debug
+ * @block
+ */
+Blockly.JavaScript['disable_step'] = function (block) {
+  return `game.disableStep();\n`;
+};
+/**
+ * Steps through the game loop one frame at a time.
+ * @method step
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.step();
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Debug
+ * @block
+ */
+Blockly.JavaScript['step'] = function (block) {
+  return `game.step();\n`;
+};
+
+/**
+ * Renders a geometry object.
+ * @method debug_geom
+ * @param object object to render
+ * @param colour colour to render the object with
+ * @param filled {Boolean} whether or not to leave the object filled or stroked
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.debug.geom(object, colour, filled);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Debug
+ * @block
+ */
+Blockly.JavaScript['debug_geom'] = function (block) {
+  const object = Blockly.JavaScript.valueToCode(block, 'OBJECT', Blockly.JavaScript.ORDER_ATOMIC);
+  const colour = Blockly.JavaScript.valueToCode(block, 'COLOUR', Blockly.JavaScript.ORDER_ATOMIC);
+  const filled = block.getFieldValue('FILLED') == 'TRUE';
+
+  return `game.debug.geom(${object}, ${colour}, ${filled});\n`;
+};
+
+/**
+ * Display all information about the sprite object and it's properties.
+ * @method debug_sprite
+ * @param object object to display information about
+ * @param x {Number} x coordiante to display the information at
+ * @param y {Number} y coordinate to display the information at
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.debug.spriteInfo(object, x, y);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Debug
+ * @block
+ */
+Blockly.JavaScript['debug_sprite'] = function (block) {
+  const object = Blockly.JavaScript.valueToCode(block, 'OBJECT', Blockly.JavaScript.ORDER_ATOMIC);
+  const x = Blockly.JavaScript.valueToCode(block, 'X_VAL', Blockly.JavaScript.ORDER_ATOMIC);
+  const y = Blockly.JavaScript.valueToCode(block, 'Y_VAL', Blockly.JavaScript.ORDER_ATOMIC);
+
+  return `game.debug.spriteInfo(${object}, ${x}, ${y});\n`;
+};
+
+/*Blockly.JavaScript['debug_body_info'] = function(block) {
+  const object = Blockly.JavaScript.valueToCode(block, 'OBJECT', Blockly.JavaScript.ORDER_ATOMIC);
+  return `game.debug.bodyInfo(${object},${0},${20});\n`;
+};* &lt;/code>&lt;/pre>
+ *  @memberOf Debug
+ * @block
+ */
+/**
+ *
+ * @method Display all information about the object's physics body.
+ * @param object object to display body information of
+ * @param x {Number} x coordiante to display the information at
+ * @param y {Number} y coordinate to display the information at
+ * @param colour colour to display the information with
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.debug.bodyInfo(object, x, y, colour);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Debug
+ * @block
+ */
+Blockly.JavaScript['debug_body_info'] = function (block) {
+  const object = Blockly.JavaScript.valueToCode(block, 'OBJECT', Blockly.JavaScript.ORDER_ATOMIC);
+  const x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC);
+  const y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC);
+  const colour = Blockly.JavaScript.valueToCode(block, 'COLOUR', Blockly.JavaScript.ORDER_ATOMIC);
+
+  return `game.debug.bodyInfo(${object}, ${x}, ${y}, ${colour});\n`;
+};
+
+/**
+ * Makes the physics body for the object visible.
+ * @method debug_body_render
+ * @param object object to display the body of
+ * @param colour colour to display the body with
+ * @param filled {Boolean} whether or not the body should display as stroked or filled
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.debug.body(object, colour, filled);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Debug
+ * @block
+ */
+Blockly.JavaScript['debug_body_render'] = function (block) {
+  const object = Blockly.JavaScript.valueToCode(block, 'BODY', Blockly.JavaScript.ORDER_ATOMIC);
+  const colour = Blockly.JavaScript.valueToCode(block, 'COLOUR', Blockly.JavaScript.ORDER_ATOMIC);
+  const filled = block.getFieldValue('FILLED') == 'TRUE';
+
+  return `game.debug.body(${object}, ${colour}, ${filled});\n`;
+};
+
+/**
+ * Makes the game camera target and deadzone visible.
+ * @method debug_camera
+ * @param camera camera to display properties of
+ * @param colour colour to display the properties with
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.debug.camera(camera, colour);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Debug
+ * @block
+ */
+Blockly.JavaScript['debug_camera'] = function (block) {
+  const camera = Blockly.JavaScript.valueToCode(block, 'CAMERA', Blockly.JavaScript.ORDER_ATOMIC);
+  const colour = Blockly.JavaScript.valueToCode(block, 'COLOUR', Blockly.JavaScript.ORDER_ATOMIC);
+  return `game.debug.camera(${camera},${colour});\n`;
+};
+
+/**
+ * Displays information about the camera at the given location.
+ * @method debug_camera_info
+ * @param x {Number} x coordinate to display the information at
+ * @param y {Number} y coordinate to display the information at
+ * @param colour colour to display the information with
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.debug.cameraInfo(game.camera, x, y, colour);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Debug
+ * @block
+ */
+Blockly.JavaScript['debug_camera_info'] = function (block) {
+  const x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC);
+  const y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC);
+  const colour = Blockly.JavaScript.valueToCode(block, 'COLOUR', Blockly.JavaScript.ORDER_ATOMIC);
+
+  return `game.debug.cameraInfo(${`game.camera`}, ${x}, ${y}, ${colour});\n`;
+};
+
+/**
+ * Display information about the mouse at the given location.
+ * @method debug_input_info
+ * @param x {Number} x coordinate to display the information at
+ * @param y {Number} y coordinate to display the information at
+ * @param colour colour to display the information with
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.debug.inputInfo(x, y, colour);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Debug
+ * @block
+ */
+Blockly.JavaScript['debug_input_info'] = function (block) {
+  const x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC);
+  const y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC);
+  const colour = Blockly.JavaScript.valueToCode(block, 'COLOUR', Blockly.JavaScript.ORDER_ATOMIC);
+
+  return `game.debug.inputInfo(${x}, ${y}, ${colour});\n`;
+};
+
+/**
+ * Display information about the key at the given location.
+ * @method debug_key
+ * @param dropdown_key key to display information of
+ * @param x {Number} x coordinate to display the information at
+ * @param y {Number} y coordinate to display the information at
+ * @param colour colour to display the information with
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.debug.key(game.input.keyboard.addKey(Phaser.Keyboard.dropdown_key), x, y);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Debug
+ * @block
+ */
+Blockly.JavaScript['debug_key'] = function (block) {
+  const dropdown_key = block.getFieldValue('KEY');
+  const x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC);
+  const y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC);
+  const colour = Blockly.JavaScript.valueToCode(block, 'COLOUR', Blockly.JavaScript.ORDER_ATOMIC);
+
+  return `game.debug.key(game.input.keyboard.addKey(Phaser.Keyboard.${dropdown_key}), ${x}, ${y});\n`;//, ${colour});\n`;
+};
+
+/**
+ * @deprecated
+ * @param block
+ * @returns {}
+ * &lt;pre>&lt;code>
+ *
+ */
+Blockly.JavaScript['debug_physics_group'] = function (block) {
+  const group = Blockly.JavaScript.valueToCode(block, 'GROUP', Blockly.JavaScript.ORDER_ATOMIC);
+  const check_exists = block.getFieldValue('CHECK_EXISTS') == 'TRUE';
+  //return `${group}.destroy(${check_exists});\n`;
+  return `game.debug.physicsGroup(${group});\n`;//, ${"'#73ff5c'"}, ${true}, ${check_exists});\n`;
+};
+
+/**
+ * Display a rectangle with the given properties.
+ * @method debug_rectangle
+ * @param rect rectangle to display
+ * @param colour colour to display the rectangle with
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.debug.rectangle(rect, colour);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Debug
+ * @block
+ */
+Blockly.JavaScript['debug_rectangle'] = function (block) {
+  const rect = Blockly.JavaScript.valueToCode(block, 'RECT', Blockly.JavaScript.ORDER_ATOMIC);
+  const colour = Blockly.JavaScript.valueToCode(block, 'COLOUR', Blockly.JavaScript.ORDER_ATOMIC);
+
+  return `game.debug.rectangle(${rect},${colour});\n`;
+};
+
+/**
+ * @deprecated
+ * @param block
+ * @returns {}
+ * &lt;pre>&lt;code>
+ *
+ */
+Blockly.JavaScript['debug_sound'] = function (block) {
+  const x_pos = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC);
+  const y_pos = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC);
+  const colour = Blockly.JavaScript.valueToCode(block, 'COLOUR', Blockly.JavaScript.ORDER_ATOMIC);
+
+  return `game.debug.sound(${x_pos}, ${y_pos}, ${colour});\n`;
+};
+
+/**
+ * Display information about the sound at the given location.
+ * @method debug_sound_info
+ * @param sound sound to display information of
+ * @param x {Number} x coordinate to display the information at
+ * @param y {Number} y coordinate to display the information at
+ * @param colour colour to display the information with
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.debug.soundInfo(sound, x, y, colour);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Debug
+ * @block
+ */
+Blockly.JavaScript['debug_sound_info'] = function (block) {
+  const sound = Blockly.JavaScript.valueToCode(block, 'SOUND', Blockly.JavaScript.ORDER_ATOMIC);
+  const x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC);
+  const y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC);
+  const colour = Blockly.JavaScript.valueToCode(block, 'COLOUR', Blockly.JavaScript.ORDER_ATOMIC);
+
+  return `game.debug.soundInfo(${sound}, ${x}, ${y}, ${colour});\n`;
+};
+
+/**
+ * Display the sprite object's coordinates at the given location.
+ * @method debug_sprite_coords
+ * @param sprite sprite to display the coordinates of
+ * @param x {Number} x coordinate to display the information at
+ * @param y {Number} y coordinate to display the information at
+ * @parm colour colour to display the coordinates with
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.debug.spriteCoords(sprite, x, y, colour);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Debug
+ * @block
+ */
+Blockly.JavaScript['debug_sprite_coords'] = function (block) {
+  const sprite = Blockly.JavaScript.valueToCode(block, 'SPRITE', Blockly.JavaScript.ORDER_ATOMIC);
+  const x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC);
+  const y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC);
+  const colour = Blockly.JavaScript.valueToCode(block, 'COLOUR', Blockly.JavaScript.ORDER_ATOMIC);
+
+  return `game.debug.spriteCoords(${sprite}, ${x}, ${y}, ${colour});\n`;
+};
+
+/**
+ * Display information about the sprite object at the given location.
+ * @method debug_sprite_info
+ * @param sprite sprite to display information of
+ * @param x {Number} x coordinate to display the information at
+ * @param y {Number} y coordinate to display the information at
+ * @parm colour colour to display the information with
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.debug.spriteInfo(sprite, x, y, colour);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Debug
+ * @block
+ */
+Blockly.JavaScript['debug_sprite_info'] = function (block) {
+  const sprite = Blockly.JavaScript.valueToCode(block, 'SPRITE', Blockly.JavaScript.ORDER_ATOMIC);
+  const x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC);
+  const y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC);
+  const colour = Blockly.JavaScript.valueToCode(block, 'COLOUR', Blockly.JavaScript.ORDER_ATOMIC);
+
+  return `game.debug.spriteInfo(${sprite}, ${x}, ${y}, ${colour});\n`;
+};
+
+/**
+ * Display the text at the given location.
+ * @method debug_text
+ * @param text text to display
+ * @param x {Number} x coordinate to display the information at
+ * @param y {Number} y coordinate to display the information at
+ * @param colour colour to display the information with
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.debug.text(text, x, y, colour);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Debug
+ * @block
+ */
+Blockly.JavaScript['debug_text'] = function (block) {
+  const text = Blockly.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_ATOMIC);
+  const x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC);
+  const y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC);
+  const colour = Blockly.JavaScript.valueToCode(block, 'COLOUR', Blockly.JavaScript.ORDER_ATOMIC);
+
+  return `game.debug.text(${text}, ${x}, ${y}, ${colour});\n`;
+};
+//endregion
+/**
+ * @namespace Math
+ */
+//region MATH
+/**
+ * Converts the given degrees to radians and returns the result.
+ * @method math_deg_to_rad
+ * @param degrees {Number} the number of degrees to convert to radians.
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.math.degToRad(degrees)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Math
+ * @block
+ */
+Blockly.JavaScript['math_deg_to_rad'] = function (block) {
+  const degrees = Blockly.JavaScript.valueToCode(block, 'DEGREES', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`game.math.degToRad(${degrees})`, Blockly.JavaScript.ORDER_NONE];
+};
+
+/**
+ * Converts the given radians to degrees and returns the result.
+ * @method math_rad_to_deg
+ * @param radians {Number} the number of radians to convert to degrees
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.math.radToDeg(radians)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Math
+ * @block
+ */
+Blockly.JavaScript['math_rad_to_deg'] = function (block) {
+  const radians = Blockly.JavaScript.valueToCode(block, 'RADIANS', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`game.math.radToDeg(${radians})`, Blockly.JavaScript.ORDER_NONE];
+};
+//endregion
+/**
+ * @namespace PhaserList
+ */
+//region PHASERLIST
+/**
+ * Finds the value in the list that is closest to the given value
+ * @method list_find_closest
+ * @param value {Number} the search value
+ * @param array the list to search
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.ArrayUtils.findClosest(value, array)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf PhaserList
+ * @block
+ */
+Blockly.JavaScript['list_find_closest'] = function (block) {
+  const value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
+  const array = Blockly.JavaScript.valueToCode(block, 'ARRAY', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`Phaser.ArrayUtils.findClosest(${value}, ${array})`, Blockly.JavaScript.ORDER_NONE];
+};
+
+/**
+ * Returns a randomly selected item from the given list.
+ * @method list_get_random
+ * @param array list to get the value from
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.ArrayUtils.getRandomItem(array)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf PhaserList
+ * @block
+ */
+Blockly.JavaScript['list_get_random'] = function (block) {
+  const array = Blockly.JavaScript.valueToCode(block, 'ARRAY', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`Phaser.ArrayUtils.getRandomItem(${array})`, Blockly.JavaScript.ORDER_NONE];
+};
+
+/**
+ * Creates and returns a list with every number between the given parameters.
+ * @method number_list
+ * @param start {Number} the minimum value the list starts with
+ * @param end {Number} the maximum value the list contains
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.ArrayUtils.numberArray(start, end)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf PhaserList
+ * @block
+ */
+Blockly.JavaScript['number_list'] = function (block) {
+  const start = Blockly.JavaScript.valueToCode(block, 'START', Blockly.JavaScript.ORDER_ATOMIC);
+  const end = Blockly.JavaScript.valueToCode(block, 'END', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`Phaser.ArrayUtils.numberArray(${start}, ${end})`, Blockly.JavaScript.ORDER_NONE];
+};
+
+/**
+ * Creates and returns a list starting with the min value, stepping by the given value, and stopping at the max value.
+ * @method number_list_step
+ * @param start {Number} the minimum value the list starts with
+ * @param end {Number} the maximum value the list starts with
+ * @param step {Number} the value to incremement/decrement by
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.ArrayUtils.numberArrayStep(start, end, step)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf PhaserList
+ * @block
+ */
+Blockly.JavaScript['number_list_step'] = function (block) {
+  const start = Blockly.JavaScript.valueToCode(block, 'START', Blockly.JavaScript.ORDER_ATOMIC);
+  const end = Blockly.JavaScript.valueToCode(block, 'END', Blockly.JavaScript.ORDER_ATOMIC);
+  const step = Blockly.JavaScript.valueToCode(block, 'STEP', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`Phaser.ArrayUtils.numberArrayStep(${start}, ${end}, ${step})`, Blockly.JavaScript.ORDER_NONE];
+};
+
+/**
+ * Returns a random item and removes it from the list.
+ * @method list_remove_random_item
+ * @param array list to get the item from
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.ArrayUtils.removeRandomItem(array)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf PhaserList
+ * @block
+ */
+Blockly.JavaScript['list_remove_random_item'] = function (block) {
+  const array = Blockly.JavaScript.valueToCode(block, 'ARRAY', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`Phaser.ArrayUtils.removeRandomItem(${array})`, Blockly.JavaScript.ORDER_NONE];
+};
+
+/**
+ * Shuffles the contents of the list by changing the positions of all items.
+ * @method list_shuffle
+ * @param array list to shuffle
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.ArrayUtils.shuffle(array);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf PhaserList
+ * @block
+ */
+Blockly.JavaScript['list_shuffle'] = function (block) {
+  const array = Blockly.JavaScript.valueToCode(block, 'ARRAY', Blockly.JavaScript.ORDER_ATOMIC);
+  return `Phaser.ArrayUtils.shuffle(${array});\n`;
+};
+//endregion
+/**
+ * @namespace Random
+ */
+//region RANDOMISATION
+/**
+ * @deprecated
+ * @param block
+ * @returns {}
+ * &lt;pre>&lt;code>
+ *
+ */
+Blockly.JavaScript['create_random_generator'] = function (block) {
+  return [`new Phaser.RandomDataGenerator([new Date().getTime()])`, Blockly.JavaScript.ORDER_NONE];
+};
+
+/**
+ * @deprecated
+ * @param block
+ * @returns {}
+ * &lt;pre>&lt;code>
+ *
+ */
+Blockly.JavaScript['create_random_generator_seeded'] = function (block) {
+  const seed = Blockly.JavaScript.valueToCode(block, 'SEED', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`new Phaser.RandomDataGenerator(${seed})`, Blockly.JavaScript.ORDER_NONE];
+};
+
+/**
+ * Returns a random angle between -180 and 180.
+ * @method random_angle
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.rnd.angle()
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Random
+ * @block
+ */
+Blockly.JavaScript['random_angle'] = function (block) {
+  return [`game.rnd.angle()`, Blockly.JavaScript.ORDER_NONE];
+};
+
+/**
+ * Returns a random item from the list.
+ * @method random_pick
+ * @param array list to pick from
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.rnd.pick(array)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Random
+ * @block
+ */
+Blockly.JavaScript['random_pick'] = function (block) {
+  const array = Blockly.JavaScript.valueToCode(block, 'ARRAY', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`game.rnd.pick(${array})`, Blockly.JavaScript.ORDER_NONE];
+};
+
+/**
+ * Returns a random item from the list, favoring items at the beginning.
+ * @method random_pick_weighted
+ * @param array list to pick from
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.rnd.weightedPick(array)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Random
+ * @block
+ */
+Blockly.JavaScript['random_pick_weighted'] = function (block) {
+  const array = Blockly.JavaScript.valueToCode(block, 'ARRAY', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`game.rnd.weightedPick(${array})`, Blockly.JavaScript.ORDER_NONE];
+};
+
+/**
+ * Returns a random real number between 0 and 2^32.
+ * @method random_real
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.rnd.real()
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Random
+ * @block
+ */
+Blockly.JavaScript['random_real'] = function (block) {
+  return [`game.rnd.real()`, Blockly.JavaScript.ORDER_NONE];
+};
+
+/**
+ * Returns a random number between the given range, inclusive.
+ * @method random_real_in_range
+ * @param min {Number} the minimum value in the range
+ * @param max {Number} the maximum value in the range
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.rnd.realInRange(min, max)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Random
+ * @block
+ */
+Blockly.JavaScript['random_real_in_range'] = function (block) {
+  const min = Blockly.JavaScript.valueToCode(block, 'MIN', Blockly.JavaScript.ORDER_ATOMIC);
+  const max = Blockly.JavaScript.valueToCode(block, 'MAX', Blockly.JavaScript.ORDER_ATOMIC);
+  return [`game.rnd.realInRange(${min}, ${max})`, Blockly.JavaScript.ORDER_NONE];
+};
+
+/**
+ * Returns a random sign to be used with multiplication. Returns -1 or +1.
+ * @method random_sign
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.rnd.sign()
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Random
+ * @block
+ */
+Blockly.JavaScript['random_sign'] = function (block) {
+  return [`game.rnd.sign()`, Blockly.JavaScript.ORDER_NONE];
+};
+
+/**
+ * Randomly returns true or false.
+ * @method random_boolean
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.rnd.pick([true, false])
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Random
+ * @block
+ */
+Blockly.JavaScript['random_boolean'] = function () {
+  return ['game.rnd.pick([true, false])', Blockly.JavaScript.ORDER_NONE];
+};
+//endregion
+//region EASING
+/**
+ * Returns the chosen easing method in the given direction.
+ * @method phaser_easing
+ * @param ease easing method to return
+ * @param direction direction for the easing method to use
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phasser.ease.direction
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Math
+ * @block
+ */
+Blockly.JavaScript['phaser_easing'] = function (block) {
+  const ease = block.getFieldValue('EASING');
+  const direction = block.getFieldValue('DIRECTION');
+  return [`Phaser.${ease}.${direction}`, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+/**
+ * Returns the linear easing method.
+ * @method phaser_easing_linear
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * Phaser.Easing.Linear.None
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Math
+ * @block
+ */
+Blockly.JavaScript['phaser_easing_linear'] = function (block) {
+  return [`Phaser.Easing.Linear.None`, Blockly.JavaScript.ORDER_ATOMIC];
+};
+//endregion
+//region TWEEN
+/**
+ * Creates and returns a tween with the given properties. It will start at the current value and tween to the destination value.
+ * @method phaser_game_add_tween_to
+ * @param target the object to add the tween to
+ * @param duration {Number} duration of the tween
+ * @param ease the easing function to use on the tween
+ * @param autostart {Boolean} option to automatically start the tween instead of manually calling tween.start()
+ * @param delay {Number} delay before the tween will start, in milliseconds
+ * @param repeat {Number} how many times the tween should repeat. Set to -1 to run forever
+ * @param yoyo {Boolean} option for the tween to reverse itself and play backwards
+ * @param properties (optional) optional properties to add to the tween
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.add.tween(target).to(properties[if used], duration, ease, autostart, delay, repeat, yoyo)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Math
+ * @block
+ */
+Blockly.JavaScript['phaser_game_add_tween_to'] = function (block) {
+  const target = Blockly.JavaScript.valueToCode(block, 'TARGET', Blockly.JavaScript.ORDER_ATOMIC);
+  const duration = Blockly.JavaScript.valueToCode(block, 'DURATION', Blockly.JavaScript.ORDER_ATOMIC);
+  const ease = Blockly.JavaScript.valueToCode(block, 'EASE', Blockly.JavaScript.ORDER_ATOMIC);
+  const autostart = block.getFieldValue('AUTOSTART') === 'TRUE';
+  const delay = Blockly.JavaScript.valueToCode(block, 'DELAY', Blockly.JavaScript.ORDER_ATOMIC);
+  const repeat = Blockly.JavaScript.valueToCode(block, 'REPEAT', Blockly.JavaScript.ORDER_ATOMIC);
+  const yoyo = block.getFieldValue('YOYO') === 'TRUE';
+  let objectProperties = '';
+  for (let i = 0; i &lt; block.properties_.length; ++i) {
+    objectProperties += `${block.properties_[i]}: ${Blockly.JavaScript.valueToCode(block, 'PROP' + i, Blockly.JavaScript.ORDER_COMMA)},`;
+  }
+  return [`game.add.tween(${target}).to({${objectProperties}}, ${duration}, ${ease}, ${autostart}, ${delay}, ${repeat}, ${yoyo})`, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+/**
+ * Creates and returns a tween with the given properties. It will set the target to the destination value and tween to it's current value.
+ * @method phaser_game_add_tween_from
+ * @param target the object to add the tween to
+ * @param duration {Number} duration of the tween
+ * @param ease the easing function to use on the tween
+ * @param autostart {Boolean} option to automatically start the tween instead of manually calling tween.start()
+ * @param delay {Number} delay before the tween will start, in milliseconds
+ * @param repeat {Number} how many times the tween should repeat. Set to -1 to run forever
+ * @param yoyo {Boolean} option for the tween to reverse itself and play backwards
+ * @param properties (optional) optional properties to add to the tween
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * game.add.tween(target).from(properties[if used], duration, ease, autostart, delay, repeat, yoyo)
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Math
+ * @block
+ */
+Blockly.JavaScript['phaser_game_add_tween_from'] = function (block) {
+  const target = Blockly.JavaScript.valueToCode(block, 'TARGET', Blockly.JavaScript.ORDER_ATOMIC);
+  const duration = Blockly.JavaScript.valueToCode(block, 'DURATION', Blockly.JavaScript.ORDER_ATOMIC);
+  const ease = Blockly.JavaScript.valueToCode(block, 'EASE', Blockly.JavaScript.ORDER_ATOMIC);
+  const autostart = block.getFieldValue('AUTOSTART') === 'TRUE';
+  const delay = Blockly.JavaScript.valueToCode(block, 'DELAY', Blockly.JavaScript.ORDER_ATOMIC);
+  const repeat = Blockly.JavaScript.valueToCode(block, 'REPEAT', Blockly.JavaScript.ORDER_ATOMIC);
+  const yoyo = block.getFieldValue('YOYO') === 'TRUE';
+  let objectProperties = '';
+  for (let i = 0; i &lt; block.properties_.length; ++i) {
+    objectProperties += `${block.properties_[i]}: ${Blockly.JavaScript.valueToCode(block, 'PROP' + i, Blockly.JavaScript.ORDER_COMMA)},`;
+  }
+  return [`game.add.tween(${target}).from({${objectProperties}}, ${duration}, ${ease}, ${autostart}, ${delay}, ${repeat}, ${yoyo})`, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+/**
+ * Stop the chosen tween.
+ * @method phaser_stop_tween
+ * @param tween tween to stop
+ * @param complete {Boolean} if true, dispatches the onComplete signal
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * tween.stop(complete);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Math
+ * @block
+ */
+Blockly.JavaScript['phaser_stop_tween'] = function (block) {
+  const tween = Blockly.JavaScript.valueToCode(block, 'TWEEN', Blockly.JavaScript.ORDER_ATOMIC);
+  const complete = block.getFieldValue('COMPLETE') === 'TRUE';
+  return `${tween}.stop(${complete});\n`;
+};
+
+/**
+ * Pauses the chosen tween.
+ * @method phaser.pause.tween
+ * @param tween tween to pause
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * tween.pause();
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Math
+ * @block
+ */
+Blockly.JavaScript['phaser_pause_tween'] = function (block) {
+  const tween = Blockly.JavaScript.valueToCode(block, 'TWEEN', Blockly.JavaScript.ORDER_ATOMIC);
+  return `${tween}.pause();\n`;
+};
+
+/**
+ * Resumes the chosen tween.
+ * @method phaser_resume_tween
+ * @param tween tween to resume
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * tween.resume();
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Math
+ * @block
+ */
+Blockly.JavaScript['phaser_resume_tween'] = function (block) {
+  const tween = Blockly.JavaScript.valueToCode(block, 'TWEEN', Blockly.JavaScript.ORDER_ATOMIC);
+  return `${tween}.resume();\n`;
+};
+
+/**
+ * Start the chosen tween object.
+ * @method phaser_start_tween
+ * @param tween tween to start
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * tween.start();
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Math
+ * @block
+ */
+Blockly.JavaScript['phaser_start_tween'] = function (block) {
+  const tween = Blockly.JavaScript.valueToCode(block, 'TWEEN', Blockly.JavaScript.ORDER_ATOMIC);
+  return `${tween}.start();\n`;
+};
+
+/**
+ * Make the chosen tween run through the starting values and then play back in reverse.
+ * @method phaser_yoyo_tween
+ * @param tween tween to yoyo
+ * @param enable {Boolean} enable/disable yoyoing on the tween
+ * @param delay {Number} the amount of time to wait until the yoyo will start
+ * @param index {Number} choose the object index on the tween to apply this to
+ * @returns {}
+ * &lt;pre>&lt;code>
+ * tween.yoyo(enable, delay, index);
+ * &lt;/code>&lt;/pre>
+ *  @memberOf Math
+ * @block
+ */
+Blockly.JavaScript['phaser_yoyo_tween'] = function (block) {
+  const tween = Blockly.JavaScript.valueToCode(block, 'TWEEN', Blockly.JavaScript.ORDER_ATOMIC);
+  const enable = block.getFieldValue('ENABLE') === 'TRUE';
+  const delay = Blockly.JavaScript.valueToCode(block, 'DELAY', Blockly.JavaScript.ORDER_ATOMIC);
+  const index = Blockly.JavaScript.valueToCode(block, 'INDEX', Blockly.JavaScript.ORDER_ATOMIC);
+  return `${tween}.yoyo(${enable}, ${delay}, ${index});\n`;
+};
+//endregion
+</pre>
+    </article>
+</section>
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+	<span class="copyright">
+	© 2018 DigiPen, All Rights Reserved.
+	</span>
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
+	
+		on Wed Nov 21st 2018
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>

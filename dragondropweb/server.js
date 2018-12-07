@@ -40,6 +40,8 @@ app.use('/download', downloadRoutes);
 
 app.use('/docs', express.static(path.join(__dirname, 'server/static/docs')));
 
+app.use('/test', express.static(path.join(__dirname, 'server/static/docs')));
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
