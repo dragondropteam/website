@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>DragonDrop Required Blocks</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cosmo.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">DragonDrop</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Phaser<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Animation.html">Animation</a></li><li><a href="Body.html">Body</a></li><li><a href="Camera.html">Camera</a></li><li><a href="Circle.html">Circle</a></li><li><a href="Collision.html">Collision</a></li><li><a href="Debug.html">Debug</a></li><li><a href="DeviceButton.html">DeviceButton</a></li><li><a href="Dynamics.html">Dynamics</a></li><li><a href="GameObject.html">GameObject</a></li><li><a href="Graphics.html">Graphics</a></li><li><a href="Groups.html">Groups</a></li><li><a href="InputHandler.html">InputHandler</a></li><li><a href="Keyboard.html">Keyboard</a></li><li><a href="Math.html">Math</a></li><li><a href="Mouse.html">Mouse</a></li><li><a href="Particles.html">Particles</a></li><li><a href="PhaserList.html">PhaserList</a></li><li><a href="PhaserText.html">PhaserText</a></li><li><a href="Point.html">Point</a></li><li><a href="Pointer.html">Pointer</a></li><li><a href="Random.html">Random</a></li><li><a href="Rectangle.html">Rectangle</a></li><li><a href="Setup.html">Setup</a></li><li><a href="Sound.html">Sound</a></li><li><a href="Sprite_Image.html">Sprite/Image</a></li><li><a href="Startup.html">Startup</a></li><li><a href="States.html">States</a></li><li><a href="Timer.html">Timer</a></li><li><a href="Util.html">Util</a></li><li><a href="World.html">World</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="namespaces.list_.html" class="dropdown-toggle" data-toggle="dropdown">Arduino<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Advanced%2520I_O.html">Advanced I/O</a></li><li><a href="Analog%2520I_O.html">Analog I/O</a></li><li><a href="Arduino%2520String.html">Arduino String</a></li><li><a href="Character.html">Character</a></li><li><a href="Constants.html">Constants</a></li><li><a href="Digital%2520I_O.html">Digital I/O</a></li><li><a href="EEPROM.html">EEPROM</a></li><li><a href="Serial.html">Serial</a></li><li><a href="Servo.html">Servo</a></li><li><a href="Time.html">Time</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="namespaces.list__.html" class="dropdown-toggle" data-toggle="dropdown">Wink Bots<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Required%2520Blocks.html">Required Blocks</a></li><li><a href="Wink%2520Eyes.html">Wink Eyes</a></li><li><a href="Wink%2520Input.html">Wink Input</a></li><li><a href="Wink%2520IR%2520Communication.html">Wink IR Communication</a></li><li><a href="Wink%2520Left%2520Eye.html">Wink Left Eye</a></li><li><a href="Wink%2520Motors.html">Wink Motors</a></li><li><a href="Wink%2520Right%2520Eye.html">Wink Right Eye</a></li><li><a href="Wink%2520Sensors.html">Wink Sensors</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	<h1 class="page-title">Required Blocks</h1>
+<section>
+
+<header>
+    
+        <h2>
+        Required Blocks
+        </h2>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id=".hardwarestartup"><b><span class="type-signature"></span>hardwarestartup()</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/hardwarestartup.JPG" width="350"> <br></p>
+<p>Required block to include the setup function and the hardwareBegin command. Blocks inside of the setup block will run sequentially one time at the beginning of the program.<br><a href = "http://www.plumgeek.com/learn-to-code.html/" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>
+// Below is the "setup" function. It runs one time as soon as Wink turns on. You can add stuff
+ // to this function if you want, but hardwareBegin() should always be the first code in the list.
+ void setup(){
+  hardwareBegin();
+  //blocks go here
+  }
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".loop"><b><span class="type-signature"></span>loop()</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/loop.JPG" width="350"> <br></p>
+<p>Required block to include the loop function. Blocks inside of the loop block will run sequentially over and over until the Wink Bot is turned off.<br><a href = "http://www.plumgeek.com/learn-to-code.html/" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>
+// Below is the "loop" function. This is where you'll write most of your code. Whatever is included
+ // inside the "loop" function will run over and over until Wink runs out of power or you turn him off.
+ void loop(){
+ //blocks go here
+ }
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+	<span class="copyright">
+	© 2018 DigiPen, All Rights Reserved.
+	</span>
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
+	
+		on Tue Jan 15th 2019
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>

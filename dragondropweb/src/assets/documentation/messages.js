@@ -5260,7 +5260,7 @@ Blockly.Msg.ARDUINO_STRING_TO_UPPER_HELP_URL = 'https://www.arduino.cc/reference
 
 Blockly.Msg.ARDUINO_STRING_TRIM = 'trim';
 Blockly.Msg.ARDUINO_STRING_TRIM_TOOLTIP = 'Get a version of the String with any leading and trailing whitespace removed.';
-Blockly.Msg.ARDUINO_STRING_TRIM_HELP_URL = 'https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/';
+Blockly.Msg.ARDUINO_STRING_TRIM_HELP_URL = 'https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/trim//';
 
 Blockly.Msg.TYPE_CHARACTER = 'character';
 Blockly.Msg.CHAR_INPUT_TOOLTIP = 'character input';

@@ -1,0 +1,3355 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>DragonDrop Arduino String</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cosmo.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">DragonDrop</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Phaser<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Animation.html">Animation</a></li><li><a href="Body.html">Body</a></li><li><a href="Camera.html">Camera</a></li><li><a href="Circle.html">Circle</a></li><li><a href="Collision.html">Collision</a></li><li><a href="Debug.html">Debug</a></li><li><a href="DeviceButton.html">DeviceButton</a></li><li><a href="Dynamics.html">Dynamics</a></li><li><a href="GameObject.html">GameObject</a></li><li><a href="Graphics.html">Graphics</a></li><li><a href="Groups.html">Groups</a></li><li><a href="InputHandler.html">InputHandler</a></li><li><a href="Keyboard.html">Keyboard</a></li><li><a href="Math.html">Math</a></li><li><a href="Mouse.html">Mouse</a></li><li><a href="Particles.html">Particles</a></li><li><a href="PhaserList.html">PhaserList</a></li><li><a href="PhaserText.html">PhaserText</a></li><li><a href="Point.html">Point</a></li><li><a href="Pointer.html">Pointer</a></li><li><a href="Random.html">Random</a></li><li><a href="Rectangle.html">Rectangle</a></li><li><a href="Setup.html">Setup</a></li><li><a href="Sound.html">Sound</a></li><li><a href="Sprite_Image.html">Sprite/Image</a></li><li><a href="Startup.html">Startup</a></li><li><a href="States.html">States</a></li><li><a href="Timer.html">Timer</a></li><li><a href="Util.html">Util</a></li><li><a href="World.html">World</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="namespaces.list_.html" class="dropdown-toggle" data-toggle="dropdown">Arduino<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Advanced%2520I_O.html">Advanced I/O</a></li><li><a href="Analog%2520I_O.html">Analog I/O</a></li><li><a href="Arduino%2520String.html">Arduino String</a></li><li><a href="Character.html">Character</a></li><li><a href="Constants.html">Constants</a></li><li><a href="Digital%2520I_O.html">Digital I/O</a></li><li><a href="EEPROM.html">EEPROM</a></li><li><a href="Serial.html">Serial</a></li><li><a href="Servo.html">Servo</a></li><li><a href="Time.html">Time</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="namespaces.list__.html" class="dropdown-toggle" data-toggle="dropdown">Wink Bots<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Required%2520Blocks.html">Required Blocks</a></li><li><a href="Wink%2520Eyes.html">Wink Eyes</a></li><li><a href="Wink%2520Input.html">Wink Input</a></li><li><a href="Wink%2520IR%2520Communication.html">Wink IR Communication</a></li><li><a href="Wink%2520Left%2520Eye.html">Wink Left Eye</a></li><li><a href="Wink%2520Motors.html">Wink Motors</a></li><li><a href="Wink%2520Right%2520Eye.html">Wink Right Eye</a></li><li><a href="Wink%2520Sensors.html">Wink Sensors</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	<h1 class="page-title">Arduino String</h1>
+<section>
+
+<header>
+    
+        <h2>
+        Arduino String
+        </h2>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id=".arduino_string_char_at"><b><span class="type-signature"></span>arduino_string_char_at(location, string)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/arduino_string_char_at.JPG" width="350"> <br></p>
+<p>Returns the character at the given location of a string.<br><a href = "https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/charat/" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>location</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the position of the character to return, starting at 0</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>string</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the string to get the character from</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>string.charAt(location)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".arduino_string_compare_to"><b><span class="type-signature"></span>arduino_string_compare_to(lhs, rhs)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/arduino_string_compare_to.JPG" width="350"> <br></p>
+<p>Compares two strings, testing whether one comes before the other alphabetically. The comparison uses ASCII values and is case sensitive, meaning that upper case letters have a higher value than lower case letters. The strings are compared character by character.<br><a href = "https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/compareto/" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>lhs</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>one of the strings to check</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>rhs</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>one of the strings to check</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>lhs.compareTo(rhs)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".arduino_string_concat"><b><span class="type-signature"></span>arduino_string_concat(input, string)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/arduino_string_concat.JPG" width="350"> <br></p>
+<p>Concatenates the input data to the string, appending it to the end.<br><a href = "https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/concat/" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the string/value to append</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>string</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the string to append to</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>string.concat(input);
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".arduino_string_create"><b><span class="type-signature"></span>arduino_string_create(input)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/arduino_string_create.JPG" width="350"> <br></p>
+<p>Creates a string from the given text and stores it in a variable.<br><a href = "https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the text to store in the string</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>String(input)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".arduino_string_create_base"><b><span class="type-signature"></span>arduino_string_create_base(input, base)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/arduino_string_create_base.JPG" width="350"> <br></p>
+<p>Converts the given number to the chosen base and returns it as a string.<br><a href = "https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the number to convert</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>base</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the base to convert the number to</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>String(input, base)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".arduino_string_ends_with"><b><span class="type-signature"></span>arduino_string_ends_with(input, string)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/arduino_string_ends_with.JPG" width="350"> <br></p>
+<p>Returns true/false if the string ends with the same character as the input string.<br><a href = "https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/endswith/" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>one of the strings to check</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>string</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>one of the strings to check</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>string.endsWith(input)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".arduino_string_equals"><b><span class="type-signature"></span>arduino_string_equals(lhs, rhs)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/arduino_string_equals.JPG" width="350"> <br></p>
+<p>Compares two strings for equality with case sensitivity, returning true or false. &quot;dragon&quot; is not equal to &quot;Dragon&quot; or &quot;DRAGON&quot;.<br><a href = "https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/equals/" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>lhs</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>one of the strings to compare</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>rhs</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>one of the strings to compare</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>lhs.equals(rhs)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".arduino_string_equals_ignore_case"><b><span class="type-signature"></span>arduino_string_equals_ignore_case(lhs, rhs)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/arduino_string_equals_ignore_case.JPG" width="350"> <br></p>
+<p>Compares two strings for equality without case sensitivity, returning true or false. &quot;dragon&quot; is will be equal to &quot;Dragon&quot; or &quot;DRAGON&quot;.<br><a href = "http://dragondrop.digipen.edu/docs/" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>lhs</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>one of the strings to compare</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>rhs</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>one of the strings to compare</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>lhs.equalsIgnoreCase(rhs)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".arduino_string_index_of"><b><span class="type-signature"></span>arduino_string_index_of(input, string, position)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/arduino_string_index_of.JPG" width="350"> <br></p>
+<p>Locates a character/string/value within a string. It will search from the beginning of the string, or from the given index if provided. It will return the index of the input, or -1 if not found.<br><a href = "https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/indexof/" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the data to search for</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>string</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the string to search in</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>position</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the position to start the search from</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>string.indexOf(input, position);
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".arduino_string_length"><b><span class="type-signature"></span>arduino_string_length(string)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/arduino_string_length.JPG" width="350"> <br></p>
+<p>Returns the length of the given string in characters.<br><a href = "https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/length/" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>string</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the string to get the length of</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>string.length()
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".arduino_string_remove"><b><span class="type-signature"></span>arduino_string_remove(start, string, end)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/arduino_string_remove.JPG" width="350"> <br></p>
+<p>Modifies a string by removing characters from the given start index to the given end index.<br><a href = "https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/remove/" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>start</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the start index to remove characters from</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>string</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the string to remove characters from</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>end</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the end index to remove characters from</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>string.remove(start, end);
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".arduino_string_replace"><b><span class="type-signature"></span>arduino_string_replace(lhs, rhs, string)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/arduino_string_replace.JPG" width="350"> <br></p>
+<p>Replaces all instances of the lhs character with the rhs character in the given string.<br><a href = "https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>lhs</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the character to replace</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>rhs</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the character to replace lhs with</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>string</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the string to replace characters in</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>string.replace(lhs, rhs);
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".arduino_string_starts_with"><b><span class="type-signature"></span>arduino_string_starts_with(lhs, rhs)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/arduino_string_starts_with.JPG" width="350"> <br></p>
+<p>Returns true/false if the lhs string starts with the same characters as the rhs string.<br><a href = "https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/startswith/" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>lhs</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>one of the strings to check</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>rhs</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>one of the strings to check</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>lhs.startsWith(rhs)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".arduino_string_substring"><b><span class="type-signature"></span>arduino_string_substring(start, end, string)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/arduino_string_substring.JPG" width="350"> <br></p>
+<p>Returns a substring of the given string between the start and end indices. The start is inclusive, and the end is exclusive.<br><a href = "https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>start</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the starting index</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>end</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the ending index</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>string</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the string to get the substring from</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>string.substring(start, end)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".arduino_string_to_float"><b><span class="type-signature"></span>arduino_string_to_float(string)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/arduino_string_to_float.JPG" width="350"> <br></p>
+<p>Converts a valid string to an float and returns the value. The string will only be converted if it starts with a digit, and will return 0 otherwise.<br><a href = "https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/tofloat/" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>string</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the string to convert</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>string.toFloat()
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".arduino_string_to_int"><b><span class="type-signature"></span>arduino_string_to_int(string)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/arduino_string_to_int.JPG" width="350"> <br></p>
+<p>Converts a valid string to an integer and returns the value. The string will only be converted if it starts with an integer number. If the string contains non integer numbers, it will return 0.<br><a href = "https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/toint/" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>string</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the string to convert</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>string.toInt()
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".arduino_string_to_lower"><b><span class="type-signature"></span>arduino_string_to_lower(string)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/arduino_string_to_lower.JPG" width="350"> <br></p>
+<p>Converts the given string to all lower case.<br><a href = "https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/tolowercase/" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>string</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>string to convert</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>string.toLowerCase();
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".arduino_string_to_upper"><b><span class="type-signature"></span>arduino_string_to_upper(string)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/arduino_string_to_upper.JPG" width="350"> <br></p>
+<p>Converts the given string to all upper case.<br><a href = "https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>string</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>string to convert</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>string.toUpperCase();
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".arduino_string_trim"><b><span class="type-signature"></span>arduino_string_trim(string)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/arduino_string_trim.JPG" width="350"> <br></p>
+<p>Removes all leading and trailing white space from the string.<br><a href = "https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/trim//" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>string</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the string to modify</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>string.trim();
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+	<span class="copyright">
+	© 2018 DigiPen, All Rights Reserved.
+	</span>
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
+	
+		on Tue Jan 15th 2019
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>
