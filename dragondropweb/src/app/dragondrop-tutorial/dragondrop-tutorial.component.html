@@ -1,0 +1,167 @@
+<!--
+  ~ Copyright (c) 2018. DigiPen Institute of Technology
+  -->
+
+<div class="parallax">
+  <mat-card class="info" style="font-size: large">
+
+    <h1 class="header">Getting Started With DragonDrop</h1>
+    <p>
+      These tutorials will teach you all of the basics about how to use DragonDrop and it's different environments.
+    </p>
+    <mat-tab-group [selectedIndex]="getSelectedEnvironment()">
+      <mat-tab>
+        <ng-template mat-tab-label>
+          DragonDrop
+        </ng-template>
+
+        <mat-horizontal-stepper>
+          <mat-step label="Getting Started">
+            <p>
+              This set of steps will help you become familiar with DragonDrop's block based environment!
+              <br><br>
+              A Visual Phaser project will be used in this example, but the concepts apply to all block based DragonDrop projects.
+            </p>
+            <img src="../../assets/background.png" height="512px" width="512px">
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step label="1">
+            <p>
+              This is what the basic DragonDrop environment looks like!
+
+            </p>
+            <img src="../../assets/tutorial/step1_1.png" height="70%" width="70%">
+
+            <p>
+              <font color="red"><b>1:</b></font>
+              <br>
+              This is where all of the usable blocks can be found! Click on a category to find relevant blocks.
+              <br><br>
+              <a href="http://dragondrop.digipen.edu/assets/documentation/index.html" target="_blank">Check out our documentation to learn about how all of the different blocks work!</a>
+            </p>
+            <p>
+              <font color="red"><b>2:</b></font>
+              <br>
+              This is where all of the block programming takes place! All blocks should go inside of a surrounding parent block. In Phaser, this means that all blocks should go in the "run phaser" block, unless they are in functions or classes.
+            </p>
+            <p>
+              <font color="red"><b>3:</b></font>
+              <br>
+              This is the live Javascript output. For every block you add or delete, it will immediately edit the equivalent Javascript accordingly.
+              <br><br>
+              You cannot type in this window, but you can copy it's contents to use in the Javascript version of Phaser in DragonDrop.
+            </p>
+
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step label="2">
+            <p>
+              This is what the basic DragonDrop environment looks like!
+
+            </p>
+
+
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+        </mat-horizontal-stepper>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          Visual Phaser
+        </ng-template>
+        <mat-horizontal-stepper>
+          <mat-step label="Step 1">
+
+            <p>
+              Get started by creating a Visual Phaser project.
+              <br><br>
+              Click on Create Project, choose Visual Phaser Game Engine.
+              <br><br>
+              Make sure you give it a name that makes sense and save it in a place you can easily find!
+            </p>
+
+            <video width="640" height="480" controls>
+              <source src="../../assets/phaser_tutorial/create_project.mkv" type="video/mp4">
+            </video>
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step label="Step 2">
+
+            <p>
+              This is the environment that appears for every empty Visual Phaser project.
+            </p>
+
+            <img src="../../assets/phaser_tutorial/step2_1" height="70%" width="70%">
+
+            <p>
+              
+            </p>
+
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step label="Step 3">
+
+            <p>
+              This is the environment that appears for every empty Visual Phaser project.
+            </p>
+
+            <img src="../../assets/phaser_tutorial/step2_1" height="70%" width="70%">
+
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+
+
+        </mat-horizontal-stepper>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+         Wink Robots
+        </ng-template>
+        <mat-horizontal-stepper>
+          <mat-step label="Step 1">
+            <p>
+              <a href="http://wwwprod5.digipen.edu/release" target="_blank">Download</a> the correct DragonDrop for your
+              operating system.
+            </p>
+            <img src="../../assets/download-instructions/windows/step1.PNG" height="70%" width="70%">
+            <div>
+              <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+
+        </mat-horizontal-stepper>
+      </mat-tab>
+    </mat-tab-group>
+
+
+  </mat-card>
+
+</div>

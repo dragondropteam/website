@@ -20,6 +20,7 @@ import {AdminPermissionsComponent} from './admin-permissions/admin-permissions.c
 import {AdminUserTableComponent} from './admin-user-table/admin-user-table.component';
 import {AboutComponent} from "./about/about.component";
 import {DragondropDocumentationComponent} from "./dragondrop-documentation/dragondrop-documentation.component";
+import {DragondropTutorialComponent} from "./dragondrop-tutorial/dragondrop-tutorial.component";
 
 const routes: Routes = [{
   path: '',
@@ -62,6 +63,9 @@ const routes: Routes = [{
 },{
   path: 'documentation',
   component: DragondropDocumentationComponent
+},{
+  path: 'tutorial',
+  component: DragondropTutorialComponent
 }, {
   path: 'about',
   component: AboutComponent
