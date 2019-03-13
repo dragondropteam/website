@@ -19,7 +19,7 @@ steps:
     yarn global add @angular/cli
     yarn global add angular-cli-ghpages
     yarn install
-    ng build --prod 
+    yarn build-client 
   displayName: 'yarn install and build'
   workingDirectory: dragondropweb
 
