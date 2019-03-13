@@ -16,11 +16,11 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    yarn global add @angular/cli
-    yarn global add angular-cli-ghpages
-    yarn install
-    yarn build-client 
-  displayName: 'yarn install and build'
+    npm global add @angular/cli
+    npm global add angular-cli-ghpages
+    npm install
+    npm build-client 
+  displayName: 'npm install and build'
   workingDirectory: dragondropweb
 
 - script: npx angular-cli-ghpages --repo="https://GH_TOKEN@github.com/dragondropteam/dragondropteam.github.io"  --branch=master
