@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Progress</title>
+    <link rel="stylesheet" href="angular-material.min.css">
+</head>
+<body ng-app="DragonDrop" ng-cloak layout="row" ng-controller="projects-controller">
+
+<md-progress-circular md-mode="indeterminate"></md-progress-circular>
+<h1>Uploading To Arduino</h1>
+
+<!-- This fixes issues with Electron http://stackoverflow.com/questions/32621988/electron-jquery-is-not-defined -->
+<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+<!-- Angular Material requires Angular.js Libraries -->
+<script src="angular.min.js"></script>
+<script src="angular-animate.min.js"></script>
+<script src="angular-aria.min.js"></script>
+<script src="angular-messages.min.js"></script>
+
+<!-- Angular Material Library -->
+<script src="angular-material.min.js"></script>
+
+<!-- JQuery -->
+<script src="jquery-3.2.1.min.js"></script>
+<!-- Insert this line after script imports -->
+<script>if (window.module) module = window.module;</script>
+
+<script>
+
+    let app = angular.module('DragonDrop', ['ngMaterial']);
+    app.controller('projects-controller', function($scope){
+
+    });
+
+    $('document').ready(function() {
+    });
+
+</script>
+</body>
+</html>
