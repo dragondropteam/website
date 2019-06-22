@@ -7,13 +7,8 @@
     <h1 class="header">DragonDrop</h1>
     <h2 class="header">3.0.0 Now Available!</h2>
     <img class="dragon" src="../../assets/background.png">
-    <div *ngIf="isReady()" class="routes">
-      <a download (click)="directionsDialogPopup('windows')" *ngIf="isPlatformAvailable('windows')" mat-raised-button [href]="getWindowsDownload()"><i class="fab fa-windows fa-lg"></i> Windows </a>
-      <a download (click)="directionsDialogPopup('mac')" *ngIf="isPlatformAvailable('macos')" mat-raised-button [href]="getMacDownload()"><i class="fab fa-apple fa-lg"></i> macOS </a>
-      <a download (click)="directionsDialogPopup('linux')" *ngIf="isPlatformAvailable('linux')" mat-raised-button [href]="getLinuxDownload()"><i class="fab fa-linux fa-lg"></i> Linux </a>
-    </div>
-    <div *ngIf="!isReady()" class="routes">
-      <h3>No Stable Releases Available  <a routerLink="versions">Pre-Release Versions</a></h3>
+    <div class="routes">
+      <a mat-raised-button  href="https://github.com/dragondropteam/desktop/releases/latest">Download</a>
     </div>
   </mat-card>
 </div>
