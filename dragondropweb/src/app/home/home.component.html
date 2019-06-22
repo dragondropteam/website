@@ -4,7 +4,8 @@
 
 <div class="content">
   <mat-card class="latest">
-    <h1 class="header">Get the Latest DragonDrop</h1>
+    <h1 class="header">DragonDrop</h1>
+    <h2 class="header">3.0.0 Now Available!</h2>
     <img class="dragon" src="../../assets/background.png">
     <div *ngIf="isReady()" class="routes">
       <a download (click)="directionsDialogPopup('windows')" *ngIf="isPlatformAvailable('windows')" mat-raised-button [href]="getWindowsDownload()"><i class="fab fa-windows fa-lg"></i> Windows </a>
