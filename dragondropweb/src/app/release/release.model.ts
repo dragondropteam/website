@@ -14,6 +14,6 @@ export class Release {
   channel: string;
   changeNotes: string;
   published: Date;
-  files: ReleaseFile[];
+  platforms: string[];
 }
 

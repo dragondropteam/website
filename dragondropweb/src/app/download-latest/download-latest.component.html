@@ -2,14 +2,17 @@
   ~ Copyright (c) 2018. DigiPen Institute of Technology
   -->
 <div class="container">
-  <mat-card class="release-details">
+  <mat-card *ngIf="!!release" class="release-details">
     <h2>{{release.version}}</h2>
     <p [innerHtml]="release.changeNotes"></p>
     <div class="routes">
-      <a mat-raised-button *ngIf="isPlatformAvailable('windows')" href="/download/latest/"><i class="fab fa-windows fa-lg"></i> Windows </a>
-      <a mat-raised-button *ngIf="isPlatformAvailable('macos')" href="/download/latest/macos"><i class="fab fa-apple fa-lg"></i> macOS </a>
-      <a mat-raised-button *ngIf="isPlatformAvailable('linux')" href="/download/latest/linux"><i class="fab fa-linux fa-lg"></i> Linux </a>
+      <a class="platform" download (click)="directionsDialogPopup('windows')" mat-raised-button [href]="releaseService.getWindowsDownload(release)"><i class="fab fa-windows fa-lg"></i> Windows </a>
+      <a class="platform" download (click)="directionsDialogPopup('mac')" mat-raised-button [href]="releaseService.getMacDownload(release)"><i class="fab fa-apple fa-lg"></i> macOS </a>
+      <a class="platform" download (click)="directionsDialogPopup('linux')" mat-raised-button [href]="releaseService.getLinuxDownload(release)"><i class="fab fa-linux fa-lg"></i> Linux </a>
     </div>
     <a class="version" routerLink="/versions">Other Versions</a>
+  </mat-card>
+  <mat-card *ngIf="!release" class="release-details">
+    <h3>No Stable Releases Available  <a routerLink="/versions">Pre-Release Versions</a></h3>
   </mat-card>
 </div>

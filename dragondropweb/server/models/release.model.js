@@ -46,7 +46,9 @@ const ReleaseSchema = new Schema({
     required: true
   },
   published: Date,
-  files: [ReleaseFileSchema]
+  platforms: {
+    type: [String]
+  }
 });
 
 ReleaseSchema.statics = {
@@ -89,7 +91,6 @@ ReleaseSchema.statics = {
 
           const files = [];
           releases[0].files.forEach(file =>{
-            console.log(file.platform == platform);
             if(file.platform == platform){
               files.push(file);
             }
@@ -102,7 +103,7 @@ ReleaseSchema.statics = {
   },
 
   getLatestRelease() {
-    return this.find()
+    return this.find({channel: 'Stable'})
       .exec()
       .then(releases => {
         if(releases){

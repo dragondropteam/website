@@ -1,0 +1,22 @@
+<!--
+  ~ Copyright (c) 2018. DigiPen Institute of Technology
+  -->
+
+<div class="content">
+  <mat-card class="latest">
+    <h2>Log In</h2>
+    <form class="login" (submit)="login()">
+      <mat-form-field>
+        <input [formControl]="email" matInput placeholder="e-mail" name="email" type="email"/>
+        <mat-error *ngIf="email.hasError('required')">Required</mat-error>
+        <mat-error *ngIf="email.hasError('email')">Enter a valid e-mail</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input [formControl]="password" matInput placeholder="password" name="password" type="password"/>
+        <mat-error *ngIf="password.hasError('required')">Required</mat-error>
+      </mat-form-field>
+      <button mat-raised-button type="submit">Log In</button>
+      <mat-error class="loginError" *ngIf="invalidLogin">Invalid Username and/or Password</mat-error>
+    </form>
+  </mat-card>
+</div>

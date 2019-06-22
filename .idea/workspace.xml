@@ -1,19 +1,195 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7aabe60c-1149-4170-a623-2b64c3a3246d" name="Default" comment="" />
+    <list default="true" id="7aabe60c-1149-4170-a623-2b64c3a3246d" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly" beforeDir="false" afterPath="$PROJECT_DIR$/blockly" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly/closure-library" beforeDir="false" afterPath="$PROJECT_DIR$/blockly/closure-library" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly/closure-library/closure/goog/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/blockly/closure-library/closure/goog/base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly/closure-library/closure/goog/crypt/base64.js" beforeDir="false" afterPath="$PROJECT_DIR$/blockly/closure-library/closure/goog/crypt/base64.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly/closure-library/closure/goog/demos/control.html" beforeDir="false" afterPath="$PROJECT_DIR$/blockly/closure-library/closure/goog/demos/control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly/closure-library/closure/goog/dom/classes_test.js" beforeDir="false" afterPath="$PROJECT_DIR$/blockly/closure-library/closure/goog/dom/classes_test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly/closure-library/closure/goog/editor/browserfeature.js" beforeDir="false" afterPath="$PROJECT_DIR$/blockly/closure-library/closure/goog/editor/browserfeature.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly/closure-library/closure/goog/editor/plugins/firststrong.js" beforeDir="false" afterPath="$PROJECT_DIR$/blockly/closure-library/closure/goog/editor/plugins/firststrong.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly/closure-library/closure/goog/events/eventtarget.js" beforeDir="false" afterPath="$PROJECT_DIR$/blockly/closure-library/closure/goog/events/eventtarget.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly/closure-library/closure/goog/history/history.js" beforeDir="false" afterPath="$PROJECT_DIR$/blockly/closure-library/closure/goog/history/history.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly/closure-library/closure/goog/html/legacyconversions.js" beforeDir="false" afterPath="$PROJECT_DIR$/blockly/closure-library/closure/goog/html/legacyconversions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly/closure-library/closure/goog/html/sanitizer/noclobber.js" beforeDir="false" afterPath="$PROJECT_DIR$/blockly/closure-library/closure/goog/html/sanitizer/noclobber.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly/closure-library/closure/goog/i18n/timezone.js" beforeDir="false" afterPath="$PROJECT_DIR$/blockly/closure-library/closure/goog/i18n/timezone.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly/closure-library/closure/goog/iter/iter.js" beforeDir="false" afterPath="$PROJECT_DIR$/blockly/closure-library/closure/goog/iter/iter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly/closure-library/closure/goog/locale/genericfontnames.js" beforeDir="false" afterPath="$PROJECT_DIR$/blockly/closure-library/closure/goog/locale/genericfontnames.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly/closure-library/closure/goog/net/jsloader.js" beforeDir="false" afterPath="$PROJECT_DIR$/blockly/closure-library/closure/goog/net/jsloader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly/closure-library/closure/goog/proto2/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/blockly/closure-library/closure/goog/proto2/message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly/closure-library/closure/goog/storage/mechanism/ieuserdata.js" beforeDir="false" afterPath="$PROJECT_DIR$/blockly/closure-library/closure/goog/storage/mechanism/ieuserdata.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly/closure-library/closure/goog/transpile.js" beforeDir="false" afterPath="$PROJECT_DIR$/blockly/closure-library/closure/goog/transpile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly/closure-library/closure/goog/ui/ac/autocomplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/blockly/closure-library/closure/goog/ui/ac/autocomplete.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly/closure-library/closure/goog/ui/ac/cachingmatcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/blockly/closure-library/closure/goog/ui/ac/cachingmatcher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly/closure-library/closure/goog/ui/component.js" beforeDir="false" afterPath="$PROJECT_DIR$/blockly/closure-library/closure/goog/ui/component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly/closure-library/closure/goog/ui/hsvpalette.js" beforeDir="false" afterPath="$PROJECT_DIR$/blockly/closure-library/closure/goog/ui/hsvpalette.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly/closure-library/third_party/closure/goog/dojo/dom/query.js" beforeDir="false" afterPath="$PROJECT_DIR$/blockly/closure-library/third_party/closure/goog/dojo/dom/query.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockly/closure-library/third_party/closure/goog/svgpan/svgpan.js" beforeDir="false" afterPath="$PROJECT_DIR$/blockly/closure-library/third_party/closure/goog/svgpan/svgpan.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragondropweb/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/dragondropweb/server.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1496978346">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.30" value="1" />
+          <entry key="project.open.time.36" value="1" />
+          <entry key="project.open.time.42" value="1" />
+          <entry key="project.open.time.44" value="2" />
+          <entry key="project.open.time.47" value="1" />
+          <entry key="project.open.time.50" value="1" />
+          <entry key="project.open.time.64" value="1" />
+          <entry key="project.opened" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="Dockerfile" value="1" />
+          <entry key="css" value="16" />
+          <entry key="dragondropweb" value="1" />
+          <entry key="html" value="30" />
+          <entry key="ico" value="2" />
+          <entry key="js" value="4" />
+          <entry key="json" value="4" />
+          <entry key="png" value="1" />
+          <entry key="ts" value="18" />
+          <entry key="yml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="16" />
+          <entry key="Dockerfile" value="1" />
+          <entry key="HTML" value="30" />
+          <entry key="Image" value="3" />
+          <entry key="JSON" value="4" />
+          <entry key="JavaScript" value="4" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="TypeScript" value="18" />
+          <entry key="YAML" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts">
+        <counts>
+          <entry key="Angular2LanguageService" value="5" />
+          <entry key="TypeScriptServerServiceImpl" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="css" value="112" />
+          <entry key="html" value="1674" />
+          <entry key="js" value="24" />
+          <entry key="ts" value="176" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CSS" value="112" />
+          <entry key="HTML" value="1674" />
+          <entry key="JavaScript" value="24" />
+          <entry key="TypeScript" value="176" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/app.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dragondropweb/src/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dragondropweb/src/test.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dragondropweb/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="42" column="71" lean-forward="true" selection-start-line="42" selection-start-column="71" selection-end-line="42" selection-end-column="71" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>release</find>
+      <find>about.compon</find>
+      <find>https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js</find>
+      <find>ajax.googleapis.com</find>
+      <find>&lt;title&gt;Dragondropweb&lt;/title&gt;</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/dragondropweb/src/app/about/about.component.ts" />
+        <option value="$PROJECT_DIR$/dragondropweb/src/app/home/home.component.css" />
+        <option value="$PROJECT_DIR$/dragondropweb/src/app/about/about.component.css" />
+        <option value="$PROJECT_DIR$/dragondropweb/src/app/about/about.component.html" />
+        <option value="$PROJECT_DIR$/dragondropweb/src/app/app-routing.module.ts" />
+        <option value="$PROJECT_DIR$/dragondropweb/src/app/dragondrop-documentation/dragondrop-documentation.component.css" />
+        <option value="$PROJECT_DIR$/dragondropweb/src/index.html" />
+        <option value="$PROJECT_DIR$/dragondropweb/src/app/dragondrop-documentation/dragondrop-documentation.component.ts" />
+        <option value="$PROJECT_DIR$/dragondropweb/src/assets/documentation/test.html" />
+        <option value="$PROJECT_DIR$/dragondropweb/src/assets/documentation/test.css" />
+        <option value="$PROJECT_DIR$/dragondropweb/src/assets/documentation/index.html" />
+        <option value="$PROJECT_DIR$/dragondropweb/src/app/dragondrop-documentation/test.html" />
+        <option value="$PROJECT_DIR$/dragondropweb/src/app/app.component.html" />
+        <option value="$PROJECT_DIR$/dragondropweb/src/app/dragondrop-documentation/dragondrop-documentation.component.html" />
+        <option value="$PROJECT_DIR$/dragondropweb/server.js" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -21,35 +197,80 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="22" />
-    <option name="width" value="2560" />
-    <option name="height" value="1414" />
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/dragondropweb/node_modules" />
   </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/blockly/closure-library/closure/bin/generate_closure_unit_tests/package.json" />
+      <path value="$PROJECT_DIR$/blockly/closure-library/package.json" />
+      <path value="$PROJECT_DIR$/dragondropweb/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1848" />
+    <option name="width" value="1658" />
+    <option name="height" value="1011" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
-      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="dragondropweb" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="dragondropweb" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="dragondropweb" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="dragondropweb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/dragondropweb/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dragondropweb/server/static" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dragondropweb/src" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -63,9 +284,6 @@
       </list>
     </option>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -77,35 +295,46 @@
       <option name="presentableId" value="Default" />
       <updated>1517438925884</updated>
       <workItem from="1517438928787" duration="48000" />
+      <workItem from="1535659096294" duration="643000" />
+      <workItem from="1535660878084" duration="2341000" />
+      <workItem from="1542321641414" duration="1925000" />
+      <workItem from="1542326477828" duration="1652000" />
+      <workItem from="1542742271060" duration="4374000" />
+      <workItem from="1542834071470" duration="2714000" />
+      <workItem from="1543261072719" duration="5653000" />
+      <workItem from="1543608753953" duration="4447000" />
+      <workItem from="1543946890432" duration="4337000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48000" />
+    <option name="totallyTimeSpent" value="36247000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="2560" height="1414" extended-state="0" />
+    <frame x="1679" y="0" width="1922" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297953" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24970461" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Atlassian " active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21823932" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3297953" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Atlassian " order="9" />
+      <window_info anchor="bottom" id="Statistic" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49973643" visible="true" weight="0.32795697" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5002636" side_tool="true" weight="0.32795697" />
+      <window_info anchor="bottom" id="TypeScript" order="13" weight="0.32903227" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,15 +343,265 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
-  </component>
   <component name="atlassian-ide-plugin-workspace-issues">
     <option name="view">
       <JiraViewConfigurationBean>
         <option name="viewFilterId" value="" />
       </JiraViewConfigurationBean>
     </option>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/dragondropweb/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="86" column="29" selection-start-line="86" selection-start-column="29" selection-end-line="86" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/home/home.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="58" column="3" selection-start-line="58" selection-start-column="3" selection-end-line="58" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/download-latest/download-latest.component.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/download-latest/download-latest.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/download-instructions/download-instructions.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/download-instructions/download-instructions.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="15" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/home/home.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/dragondrop-documentation/dragondrop-documentation.component.spec.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/download-latest/download-latest.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/download-instructions/download-instructions.component.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/node_modules/@angular/router/router.metadata.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7039" selection-start-column="7039" selection-end-column="7039" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/environments/environment.vagrant.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/environments/environment.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/app.component.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/about/about.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/app-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/assets/background.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/server/static/documentation/test.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/directions-dialog/directions-dialog.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/server/static/documentation/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="19" lean-forward="true" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/home/home.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="6" lean-forward="true" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/server/static/documentation/angular.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/directions-dialog/directions-dialog.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="56" lean-forward="true" selection-start-column="56" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/dragondrop-documentation/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/dragondrop-documentation/dragondrop-documentation.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/server/static/documentation/Debug.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/server/static/documentation/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/server/static/documentation/Particles.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/about/about.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/about/about.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/server/static/documentation/phaser.js.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/server/routes/download.route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/dragondrop-documentation/dragondrop-documentation.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/dragondrop-documentation/dragondrop-documentation.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/dragondropweb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/favicon.ico">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/angular.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="874">
+          <caret line="86" column="45" selection-start-line="86" selection-start-column="45" selection-end-line="86" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/test.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dragondropweb/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="71" lean-forward="true" selection-start-line="42" selection-start-column="71" selection-end-line="42" selection-end-column="71" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

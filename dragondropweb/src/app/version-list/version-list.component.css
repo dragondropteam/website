@@ -4,11 +4,7 @@
 
 .example-container {
   display: flex;
-  flex-direction: column;
-  height: calc(100% - 64px);
-  width: 100%;
-  justify-content: center;
-  align-content: center;
+  height: 100%;
   background: url("../../assets/6.jpg") no-repeat;
   background-size: cover;
 }
@@ -19,3 +15,15 @@
   width: 80%;
   margin: auto;
 }
+
+.routes {
+  margin: 1em;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.platform {
+  margin: 1em;
+}
+
+

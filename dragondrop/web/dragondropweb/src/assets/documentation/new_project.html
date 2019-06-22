@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Project</title>
+    <link rel="stylesheet" href="angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .projectpath {
+            width: 70%;
+        }
+
+        #path{
+            width: 90%;
+        }
+
+        .createProject{
+            width: 80%;
+        }
+    </style>
+</head>
+<body ng-app="DragonDrop" ng-cloak layout="row" ng-controller="projects-controller">
+
+    <md-sidenav
+        class="md-sidenav-left"
+        md-component-id="left"
+        md-is-locked-open="true"
+        md-whiteframe="4"
+        flex="25">
+
+        <md-toolbar class="md-theme-indigo">
+            <h1 class="md-toolbar-tools">Project Types</h1>
+        </md-toolbar>
+
+        <md-content layout-padding >
+            <md-radio-group ng-model="projectType">
+                <md-radio-button ng-repeat="project in projects" ng-value="project.tag" aria-label="{{project.display}}" ng-if="project.enabled == true">
+                    {{project.display}}
+                </md-radio-button>
+            </md-radio-group>
+        </md-content>
+
+        <!--<md-button class="md-icon-button md-accent" layout="end end">-->
+            <!--<md-icon md-svg-icon="img/ic_add_circle_outline_black_24px.svg"></md-icon>-->
+        <!--</md-button>-->
+    </md-sidenav>
+
+    <md-content flex="75" layout="column" layout-align="center center" style="background-image: url('29.jpg');">
+        <form name="project" style="width: 60%; background: white" layout="column" layout-align="center center" md-whiteframe="5">
+            <h1 class="md-body-5">Name Your Project!</h1>
+            <md-input-container class="createProject">
+                <label for="projectName">Project Name</label>
+                <input required name="projectName" id="projectName" ng-pattern="/^[A-Za-z]([\w\s]|$)+$/" ng-model="projectName" type="text" md-maxlength="100" minlength="5"/>
+                <div ng-messages="project.projectName.$error" ng-show="project.projectName.$dirty">
+                    <div ng-message="required">This is required</div>
+                    <div ng-message="pattern">Can only contain A-Z, a-z, 1-9, _ and spaces must start with a letter</div>
+                    <div ng-message="minlength">Must be at least 5 characters</div>
+                    <div ng-message="md-maxlength">Must be less then 100 characters</div>
+                </div>
+            </md-input-container>
+            <md-button layout-align="center center" ng-click="createProject()" id="createProject" class="md-raised md-primary createProject" type="submit">Create Project <md-icon>create</md-icon></md-button>
+            <div layout="row" layout-align="center center" id="path">
+                <md-input-container class="projectpath">
+                    <label for="projectPath">Path</label>
+                    <input id="projectPath" ng-model="projectPath" type="text"/>
+                </md-input-container>
+                <md-button ng-click="browse()" type="submit" class="md-raised md-primary">Browse <md-icon>search</md-icon></md-button>
+            </div>
+        </form>
+
+    </md-content>
+
+    <!-- This fixes issues with Electron http://stackoverflow.com/questions/32621988/electron-jquery-is-not-defined -->
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="angular.min.js"></script>
+    <script src="angular-animate.min.js"></script>
+    <script src="angular-aria.min.js"></script>
+    <script src="angular-messages.min.js"></script>
+
+
+    <!-- Angular Material Library -->
+    <script src="angular-material.min.js"></script>
+
+    <!-- JQuery -->
+    <script src="jquery-3.2.1.min.js"></script>
+    <!-- Insert this line after script imports -->
+     <script>if (window.module) module = window.module;</script>
+
+    <script>
+        const electron = require('electron');
+        const {ipcRenderer} = require('electron');
+        const path = require('path');
+        var defaultPath = path.join(electron.remote.app.getPath('documents'), "DragonDropProjects");
+        const fs = require('fs-extra');
+        const {dialog} = require('electron').remote;
+        const {BrowserWindow} = require('electron').remote;
+
+        var pathChangedManually = false;
+        var project = {path: defaultPath, name: null};
+        var type = 'wink';
+        var app = angular.module('DragonDrop', ['ngMaterial', 'ngMessages']);
+        app.controller('projects-controller', function($scope){
+            const projectTypes = require('../project_types/project_types');
+            $scope.projects = projectTypes.getProjectTypes();
+            $scope.project = project;
+            $scope.projectType = 'wink';
+            $scope.projectPath = defaultPath;
+
+            $scope.createProject = () => {
+
+                if(!$scope.projectName){
+                    return;
+                }
+
+                project.name = $scope.projectName.replace(/\s/g, '_');
+
+                if(project.name.toLowerCase() === "untitled"){
+                    alert('Project must be named');
+                    return;
+                }
+
+                if(!(/^[A-Za-z]\w+$/.test(project.name))){
+                    alert('Project name must start with a character and use only A-Z a-z 0-9 _ and -');
+                    return;
+                }
+
+                if (fs.existsSync(path.join(project.path, `${project.name}.drop`))) {
+                    const selection = dialog.showMessageBox({
+                        type: 'question',
+                        buttons: ['Cancel', 'Overwrite'],
+                        defaultId: 0,
+                        title: 'File Already Exists',
+                        message: 'File Already Exists:\nOverwrite file?\nThis cannot be undone!'
+                    });
+                    if (selection === 0) {
+                        return;
+                    }
+                    else{
+                      try{
+                          fs.removeSync(path.join(project.path, `${project.name}.drop`));
+                      }catch(err){
+                        //If we could not overwrite the folder it is not safe to use it for the new project show the
+                        //user an error and abort
+                        console.error(err);
+                        dialog.showMessageBox(BrowserWindow.getFocusedWindow(), {
+                          type: 'error',
+                          title: 'Dragon Drop Error',
+                            message: 'Could not overwrite project.\nMake sure it is not still open.'
+                        });
+                        return;
+                    }
+                  }
+                }
+
+                ipcRenderer.sendSync('create_new_project', project, $scope.projectType);
+            };
+            $scope.browse = () => {
+                const folderPath = dialog.showOpenDialog({title: 'Select Project Path', defaultPath: defaultPath, properties: ['openDirectory']});
+                if(folderPath){
+                    //The result is an array even if we do not explicitly allow for the use of multiselect so just grab the first element
+                    defaultPath = folderPath[0];
+                    var clean = $('#projectName').val().replace(/\s/g, '_');
+                    var newPath = path.join(defaultPath, clean);
+                    project.path = newPath;
+                    $('#projectPath').val(newPath);
+                }
+            };
+        });
+
+    </script>
+</body>
+</html>

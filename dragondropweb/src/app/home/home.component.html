@@ -4,12 +4,11 @@
 
 <div class="content">
   <mat-card class="latest">
-    <h1 class="header">Get the Latest DragonDrop</h1>
+    <h1 class="header">DragonDrop</h1>
+    <h2 class="header">3.0.0 Now Available!</h2>
     <img class="dragon" src="../../assets/background.png">
     <div class="routes">
-      <a *ngIf="isPlatformAvailable('windows')" mat-raised-button href="/download/latest/windows"><i class="fab fa-windows fa-lg"></i> Windows </a>
-      <a *ngIf="isPlatformAvailable('macos')" mat-raised-button href="/download/latest/macos"><i class="fab fa-apple fa-lg"></i> macOS </a>
-      <a *ngIf="isPlatformAvailable('linux')" mat-raised-button href="/download/latest/linux"><i class="fab fa-linux fa-lg"></i> Linux </a>
+      <a mat-raised-button  href="https://github.com/dragondropteam/desktop/releases/latest">Download</a>
     </div>
   </mat-card>
 </div>

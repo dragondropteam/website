@@ -4,7 +4,7 @@
 
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs/Rx';
 import {Release, ReleaseFile} from './release/release.model';
 
 @Injectable()
@@ -14,15 +14,19 @@ export class ReleaseService {
   constructor(private httpClient: HttpClient) {
   }
 
+  deleteRelease(id): Observable<Release> {
+    return this.httpClient.delete<Release>(`${this.releaseURL}/${id}`);
+  }
+
   getReleases(): Observable<any> {
     return this.httpClient.get(this.releaseURL);
   }
 
   getRelease(id: String) {
-    return this.httpClient.get(`${this.releaseURL}/${id}`);
+    return this.httpClient.get<Release>(`${this.releaseURL}/${id}`);
   }
 
-  createRelease(release: any): Observable<Release> {
+   createRelease(release: any): Observable<Release> {
     return this.httpClient.post<Release>(this.releaseURL, release);
   }
 
@@ -33,12 +37,15 @@ export class ReleaseService {
   }
 
   downloadFile(release: Release, file: ReleaseFile) {
-    console.log(`${this.releaseURL}/${release._id}/files/${file._id}`);
     return this.httpClient.get(`${this.releaseURL}/${release._id}/files/${file._id}`);
   }
 
   getFileDownload(release: Release, file: ReleaseFile): String {
     return `/download/release/${release._id}/${file._id}`;
+  }
+
+  getDownload(file: String) {
+    return `/download/file/${file}`;
   }
 
   getLatestRelease() {
@@ -47,5 +54,21 @@ export class ReleaseService {
 
   updateRelease(release: Release) {
     return this.httpClient.put<Release>(this.releaseURL, release);
+  }
+
+  getFiles(release: Release) {
+    return this.httpClient.get<File[]>(`${this.releaseURL}/version/${release.version}/files`);
+  }
+
+  getWindowsDownload(release: Release) {
+    return this.getDownload(`Dragon Drop Setup ${release.version}.exe`);
+  }
+
+  getMacDownload(release: Release) {
+    return this.getDownload(`Dragon Drop-${release.version}.dmg`);
+  }
+
+  getLinuxDownload(release: Release) {
+    return this.getDownload(`DragonDrop-${release.version}-x86_64.AppImage`);
   }
 }

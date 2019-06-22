@@ -1,0 +1,5793 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>DragonDrop Point</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cosmo.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">DragonDrop</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Phaser<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Animation.html">Animation</a></li><li><a href="Body.html">Body</a></li><li><a href="Camera.html">Camera</a></li><li><a href="Circle.html">Circle</a></li><li><a href="Collision.html">Collision</a></li><li><a href="Debug.html">Debug</a></li><li><a href="DeviceButton.html">DeviceButton</a></li><li><a href="Dynamics.html">Dynamics</a></li><li><a href="GameObject.html">GameObject</a></li><li><a href="Graphics.html">Graphics</a></li><li><a href="Groups.html">Groups</a></li><li><a href="InputHandler.html">InputHandler</a></li><li><a href="Keyboard.html">Keyboard</a></li><li><a href="Math.html">Math</a></li><li><a href="Mouse.html">Mouse</a></li><li><a href="Particles.html">Particles</a></li><li><a href="PhaserList.html">PhaserList</a></li><li><a href="PhaserText.html">PhaserText</a></li><li><a href="Point.html">Point</a></li><li><a href="Pointer.html">Pointer</a></li><li><a href="Random.html">Random</a></li><li><a href="Rectangle.html">Rectangle</a></li><li><a href="Setup.html">Setup</a></li><li><a href="Sound.html">Sound</a></li><li><a href="Sprite_Image.html">Sprite/Image</a></li><li><a href="Startup.html">Startup</a></li><li><a href="States.html">States</a></li><li><a href="Timer.html">Timer</a></li><li><a href="Util.html">Util</a></li><li><a href="World.html">World</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="namespaces.list_.html" class="dropdown-toggle" data-toggle="dropdown">Arduino<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Advanced%2520I_O.html">Advanced I/O</a></li><li><a href="Analog%2520I_O.html">Analog I/O</a></li><li><a href="Arduino%2520String.html">Arduino String</a></li><li><a href="Character.html">Character</a></li><li><a href="Constants.html">Constants</a></li><li><a href="Digital%2520I_O.html">Digital I/O</a></li><li><a href="EEPROM.html">EEPROM</a></li><li><a href="Serial.html">Serial</a></li><li><a href="Servo.html">Servo</a></li><li><a href="Time.html">Time</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="namespaces.list__.html" class="dropdown-toggle" data-toggle="dropdown">Wink Bots<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Required%2520Blocks.html">Required Blocks</a></li><li><a href="Wink%2520Eyes.html">Wink Eyes</a></li><li><a href="Wink%2520Input.html">Wink Input</a></li><li><a href="Wink%2520IR%2520Communication.html">Wink IR Communication</a></li><li><a href="Wink%2520Left%2520Eye.html">Wink Left Eye</a></li><li><a href="Wink%2520Motors.html">Wink Motors</a></li><li><a href="Wink%2520Right%2520Eye.html">Wink Right Eye</a></li><li><a href="Wink%2520Sensors.html">Wink Sensors</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="namespaces.list_____.html" class="dropdown-toggle" data-toggle="dropdown">Ringo Bots<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Ringo%2520Calculation.html">Ringo Calculation</a></li><li><a href="Ringo%2520Fun%2520Stuff%2520Eyes.html">Ringo Fun Stuff Eyes</a></li><li><a href="Ringo%2520Input.html">Ringo Input</a></li><li><a href="Ringo%2520Motors.html">Ringo Motors</a></li><li><a href="Ringo%2520Movement.html">Ringo Movement</a></li><li><a href="Ringo%2520Navigation.html">Ringo Navigation</a></li><li><a href="Ringo%2520Pixels.html">Ringo Pixels</a></li><li><a href="Ringo%2520Sensors.html">Ringo Sensors</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="namespaces.list______.html" class="dropdown-toggle" data-toggle="dropdown">Deprecated Blocks<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="DeprecatedBlocks.html">DeprecatedBlocks</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	<h1 class="page-title">Point</h1>
+<section>
+
+<header>
+    
+        <h2>
+        Point
+        </h2>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id=".point_create"><b><span class="type-signature"></span>point_create(x, y)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/point_create.JPG" width="350"> <br></p>
+<p>Returns a point from the given x/y values.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>x value for the point</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>y value for the point</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>new Phaser.Point(x, y)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".point_get_element"><b><span class="type-signature"></span>point_get_element(element, point)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/point_get_element.JPG" width="350"> <br></p>
+<p>Returns the x or y value of the point.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>element</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>which value to return</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>point</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>point to get the value from</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>point.element
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".point_set_element"><b><span class="type-signature"></span>point_set_element(element, point, value)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/point_set_element.JPG" width="350"> <br></p>
+<p>Assigns the x or y value of the point to a number.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>element</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>which value to set</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>point</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>point to set the value for</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>value to set the element to</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>point.element = value;
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".point_set_magnitude"><b><span class="type-signature"></span>point_set_magnitude(point, value)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/point_set_magnitude.JPG" width="350"> <br></p>
+<p>Sets the magnitude of the point to a number.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#setMagnitude" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>point</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>point to set the magnitude for</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>value to set the magnitude to</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>point.setMagnitude(value);
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_add"><b><span class="type-signature"></span>points_add(pointA, pointB)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_add.JPG" width="350"> <br></p>
+<p>Adds the coordinates of two points and returns a new point with the result.<br><br><a href = "https://photonstorm.github.io/phaser-ce/Phaser.Point.html#.add" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>pointA</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>first point to add</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pointB</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>second point to add</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>Phaser.Point.add(pointA, pointB)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_add_member"><b><span class="type-signature"></span>points_add_member(point, x, y)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_add_member.JPG" width="350"> <br></p>
+<p>Adds the given x and y values to the point.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#add" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>point</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>point to add values to</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>x value to add to the point</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>y value to add to the point</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>point.add(x, y);
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_angle_between"><b><span class="type-signature"></span>points_angle_between(pointA, pointB)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_angle_between.JPG" width="350"> <br></p>
+<p>Calculates the angle between two points and returns the result.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#.angle" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>pointA</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>first angle to calculate</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pointB</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>second angle to calculate</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>Phaser.Point.angle(pointA, pointB)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_ceil"><b><span class="type-signature"></span>points_ceil(point)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_ceil.JPG" width="350"> <br></p>
+<p>Applies Math.ceil() to the x and y values of the point.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#ceil" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>point</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>point to change the values of</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>point.ceil();
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_centroid"><b><span class="type-signature"></span>points_centroid(array)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_centroid.JPG" width="350"> <br></p>
+<p>Returns a new point with the centroid of the list of points.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#_centroid" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>array</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>list of points to calculate the centroid from</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>Phaser.Point.centroid(array)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_clamp"><b><span class="type-signature"></span>points_clamp(point, min, max)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_clamp.JPG" width="350"> <br></p>
+<p>Clamps the point object values to be between the given minimum and maximum.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#clamp" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>point</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>point to clamp</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>min</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the minimum value to clamp the point to</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>max</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the maximum value to clamp the point to</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>point.clamp(min, max);
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_clamp_x"><b><span class="type-signature"></span>points_clamp_x(point, min, max)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_clamp_x.JPG" width="350"> <br></p>
+<p>Clamp the point object x value to be between the given minimum and maximum.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#clampX" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>point</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>point to clamp</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>min</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the minimum value to clamp the value to</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>max</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the maximum value to lcmap the value to</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>point.clampX(min, max);
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_clamp_y"><b><span class="type-signature"></span>points_clamp_y(point, min, max)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_clamp_y.JPG" width="350"> <br></p>
+<p>Clamp the point object y value to be between the given minimum and maximum.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#clampY" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>point</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>point to clamp</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>min</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the minimum value to clamp the value to</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>max</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the maximum value to lcmap the value to</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>point.clampY(min, max);
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_clone"><b><span class="type-signature"></span>points_clone(point)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_clone.JPG" width="350"> <br></p>
+<p>Returns a new point with the same properties as the original point.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#clone" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>point</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>point to clone</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>point.clone()
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_copy_from"><b><span class="type-signature"></span>points_copy_from(source, target)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_copy_from.JPG" width="350"> <br></p>
+<p>Copies values from one point to another, overwriting the original values.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#copyFrom" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>source</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>point to get the values from</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>point to copy the values to</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>target.copyFrom(source);
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_cross"><b><span class="type-signature"></span>points_cross(pointA, pointB)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_cross.JPG" width="350"> <br></p>
+<p>Calculates the cross product of two points and returns the result.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#cross" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>pointA</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>left-hand side</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pointB</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>right-hand side</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>pointA.cross(pointB)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_distance"><b><span class="type-signature"></span>points_distance(pointA, pointB)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_distance.JPG" width="350"> <br></p>
+<p>Calculates the distance between two points and returns the result.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#.distance" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>pointA</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>first angle to calculate</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pointB</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>second angle to calculate</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>Phaser.Point.distance(pointA, pointB)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_divide"><b><span class="type-signature"></span>points_divide(pointA, pointB)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_divide.JPG" width="350"> <br></p>
+<p>Divides the coordinates of two points and returns a new point with the result.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#.divide" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>pointA</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>first point to divide</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pointB</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>second point to divide</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>Phaser.Point.divide(pointA, pointB)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_divide_member"><b><span class="type-signature"></span>points_divide_member(point, x, y)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_divide_member.JPG" width="350"> <br></p>
+<p>Divides the point values by the given x and y values.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#divide" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>point</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>point to divide</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>x value to divide the point by</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>y value to divide the point by</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>point.divide(x, y);
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_dot"><b><span class="type-signature"></span>points_dot(pointA, pointB)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_dot.JPG" width="350"> <br></p>
+<p>Calculates the dot product of two points and returns the result.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#dot" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>pointA</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>left-hand side</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pointB</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>right-hand side</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>pointA.dot(pointB)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_equals"><b><span class="type-signature"></span>points_equals(pointA, pointB)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_equals.JPG" width="350"> <br></p>
+<p>Returns true/false if one point has the same x/y values as another.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#.equals" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>pointA</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>first point to check</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pointB</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>second point to check</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>Phaser.Point.equals(pointA, pointB)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_floor"><b><span class="type-signature"></span>points_floor(point)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_floor.JPG" width="350"> <br></p>
+<p>Applies Math.floor() to the x and y values of the point.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#floor" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>point</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>point to change the values of</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>point.floor();
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_get_magnitude"><b><span class="type-signature"></span>points_get_magnitude(point)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_get_magnitude.JPG" width="350"> <br></p>
+<p>Returns the length of the point object.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#getMagnitude" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>point</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>point to get the magnitude of</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>point.getMagnitude()
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_get_magnitude_squared"><b><span class="type-signature"></span>points_get_magnitude_squared(point)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_get_magnitude_squared.JPG" width="350"> <br></p>
+<p>Returns the length squared of the point object.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#getMagnitudeSq" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>point</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>point to get the magnitude squared of</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>point.getMagnitudeSq()
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_interpolate"><b><span class="type-signature"></span>points_interpolate(pointA, pointB, f)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_interpolate.JPG" width="350"> <br></p>
+<p>Interpolates the two points based on the percent value between 0 and 1.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#.interpolate" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>pointA</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>first point</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pointB</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>second point</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>f</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the level of interpolation between the two points</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>Phaser.Point.interpolate(pointA, pointB, f)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_invert"><b><span class="type-signature"></span>points_invert(point)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_invert.JPG" width="350"> <br></p>
+<p>Inverts the x and y values of the point.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#invert" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>point</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>point to invert</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>point.invert();
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_is_zero"><b><span class="type-signature"></span>points_is_zero(point)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_is_zero.JPG" width="350"> <br></p>
+<p>Returns true/false if the point has the values 0,0.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#isZero" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>point</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>point to check</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>point.isZero()
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_limit"><b><span class="type-signature"></span>points_limit(point, max)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_limit.JPG" width="350"> <br></p>
+<p>Alters the point so it's magnitude is no more than the given maximum value.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#limit" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>point</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>point to change</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>max</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the value to set the maximum to</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>point.limit(max);
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_multiply"><b><span class="type-signature"></span>points_multiply(pointA, pointB)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_multiply.JPG" width="350"> <br></p>
+<p>Multiplies the coordinates of two points and returns a new point with the result.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#.multiply" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>pointA</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>first point to multiply</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pointB</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>second point to multiply</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>Phaser.Point.multiply(pointA, pointB)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_multiply_member"><b><span class="type-signature"></span>points_multiply_member(point, x, y)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_multiply_member.JPG" width="350"> <br></p>
+<p>Multiplies the point values by the given x and y values.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#multiply" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>point</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>point to multiply</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>x value to multiply the point by</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>y value to multiply the point by</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>point.multiply(x, y);
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_negate"><b><span class="type-signature"></span>points_negate(pointA)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_negate.JPG" width="350"> <br></p>
+<p>Creates a new point with negative values of the original point.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#.negative" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>pointA</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>point to get the values from</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>Phaser.Point.negative(pointA)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_normalize"><b><span class="type-signature"></span>points_normalize(pointA)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_normalize.JPG" width="350"> <br></p>
+<p>Returns a new point of the normalized values of the original.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#.normalize" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>pointA</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>point to normalize</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>Phaser.Point.normalize(pointA)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_perpendicular"><b><span class="type-signature"></span>points_perpendicular(pointA)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_perpendicular.JPG" width="350"> <br></p>
+<p>Returns a new point with the perpendicular vector to the original point.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#.perp" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>pointA</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>point to get the vector from</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>Phaser.Point.perp(pointA)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_set_to_polar"><b><span class="type-signature"></span>points_set_to_polar(point, degrees, radius)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_set_to_polar.JPG" width="350"> <br></p>
+<p>Sets the x and y values of hte point based on the given polar coordinate.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#setToPolar" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>point</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>point to change the values of</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>degrees</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>degrees of the polar coordinate</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>radius</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>radius of the polar coordinate</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>point.setToPolar(degrees, radius, true);
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_subtract"><b><span class="type-signature"></span>points_subtract(pointA, pointB)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_subtract.JPG" width="350"> <br></p>
+<p>Subtracts the coordinates of two points and returns a new point with the result.<br><br><a href = "https://photonstorm.github.io/phaser-ce/Phaser.Point.html#.subtract" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>pointA</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>first point to subtract</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pointB</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>second point to subtract</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>Phaser.Point.subtract(pointA, pointB)
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".points_subtract_member"><b><span class="type-signature"></span>points_subtract_member(point, x, y)</b></h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p><img src="img/blocks/points_subtract_member.JPG" width="350"> <br></p>
+<p>Subtracts the given x and y values from the point.<br><br><a href = "http://dragondropteam.github.io/phaser_ce/Phaser.Point.html#subtract" target = "_blank"> Check out the third party documentation for a more in depth explanation.</a></p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5><b>Parameters:</b></h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>point</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>point to subtract values from</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>x value to subtract from the point</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>y value to subtract from the point</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5><b>Code Equivalent:</b></h5>
+    
+            
+<div class="param-desc">
+    <pre><code>point.subtract(x, y);
+</code></pre>
+</div>
+
+
+
+
+        
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+	<span class="copyright">
+	© 2018 DigiPen, All Rights Reserved.
+	</span>
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
+	
+		on Mon May 6th 2019
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>
