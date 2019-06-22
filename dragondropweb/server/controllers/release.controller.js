@@ -31,12 +31,24 @@ function list(params) {
   return Release.list(params);
 }
 
-function remove(params) {
-  return load(params).then(release => release.remove());
+function remove(req, res) {
+  load(req.params)
+    .then(release => {
+      if(release) {
+        release.remove();
+        res.status(201).json(release);
+        return;
+      }
+
+      res.status(404).send()
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).send()
+    });
 }
 
 function addFile(req, res, next) {
-  console.log(req.file);
   load(req.params)
     .then(release => {
       release.files.unshift({
@@ -46,7 +58,7 @@ function addFile(req, res, next) {
       });
       return release.save();
     })
-    .then(release => res.json(release.files[0]))
+    .then(release => res.json(release))
     .catch(err => {
       next(err);
     })
@@ -68,7 +80,6 @@ function getLatestRelease() {
   return Release.getLatestRelease();
 }
 function getLatest(req, res, next, platform = "windows") {
-  console.log('getLatest');
   Release.getPlatformLatest(platform)
     .then(release => {
       res.status(200).json(release);

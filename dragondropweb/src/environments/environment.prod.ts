@@ -3,5 +3,6 @@
  */
 
 export const environment = {
-  production: true
+  production: true,
+  authCallback: 'http://dragondrop.digipen.edu/callback'
 };

@@ -6,8 +6,27 @@ const express = require('express');
 const router = express.Router();
 const releaseController = require('../controllers/release.controller');
 
-router.get('/healthcheck', (req, res) => {
-  res.send('OK');
+const Minio = require('minio');
+const config = require('../config/config.dev');
+
+const minioClient = new Minio.Client({
+  endPoint: config.objectStore.endpoint,
+  port: config.objectStore.port,
+  secure: false,
+  accessKey: config.objectStore.accessKey,
+  secretKey: config.objectStore.secretKey
+});
+
+router.get('/file/:file', (req, res) => {
+  minioClient.getObject(config.objectStore.releaseBucket, req.params.file, (error, stream) => {
+    if(error){
+      console.error(error);
+      res.status(404).send(error);
+      return;
+    }
+
+    stream.pipe(res);
+  })
 });
 
 router.route('/latest')
@@ -20,7 +39,6 @@ router.get('/latest/:platform', (req, res, next) => {
 });
 
 router.get('/release/:id/:fileID', (req, res) => {
-  console.log('/release/:id/:fileID');
   const id = req.params.id;
   const fileID = req.params.fileID;
   releaseController.getFile(id, fileID)

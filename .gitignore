@@ -1,0 +1,6 @@
+
+dragondropweb/\.vagrant/
+
+*.log
+*.swp
+dragondrop-website/node_modules/

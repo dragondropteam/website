@@ -5,6 +5,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ReleaseService} from '../release.service';
 import {Release} from '../release/release.model';
+import {DirectionsDialogComponent} from '../directions-dialog/directions-dialog.component';
+import {MatDialog} from '@angular/material';
+
 
 @Component({
   selector: 'app-download-latest',
@@ -15,7 +18,7 @@ export class DownloadLatestComponent implements OnInit {
 
   release: Release;
 
-  constructor(private releaseService: ReleaseService) {
+  constructor(private releaseService: ReleaseService, private dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -28,12 +31,12 @@ export class DownloadLatestComponent implements OnInit {
   }
 
   isPlatformAvailable(platform) {
-    let exists = false;
-    this.release.files.forEach(file => {
-      if (file.platform === platform) {
-        exists = true;
-      }
+    return true;
+  }
+
+  directionsDialogPopup(platform) {
+    this.dialog.open(DirectionsDialogComponent, {
+      data: platform
     });
-    return exists;
   }
 }

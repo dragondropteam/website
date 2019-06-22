@@ -1,7 +1,6 @@
 <!--
   ~ Copyright (c) 2018. DigiPen Institute of Technology
   -->
-
 <div class="example-container">
   <mat-table class="mat-table  mat-elevation-z8" [dataSource]="dataSource">
 
@@ -27,18 +26,22 @@
     <ng-container matColumnDef="platforms">
       <mat-header-cell *matHeaderCellDef> Files</mat-header-cell>
       <mat-cell *matCellDef="let element">
-        <mat-chip-list>
-          <mat-chip color="primary" selected="true" *ngIf="isPlatformAvailable(element, 'windows')">Windows</mat-chip>
-          <mat-chip color="primary" selected="true" *ngIf="isPlatformAvailable(element, 'macos')">macOS</mat-chip>
-          <mat-chip color="primary" selected="true" *ngIf="isPlatformAvailable(element, 'linux')">Linux</mat-chip>
+        <mat-chip-list class="routes">
+          <a class="platform" download mat-raised-button [href]="releaseService.getWindowsDownload(element)" (click)="directionsDialogPopup('windows')"><i
+          class="fab fa-windows fa-lg"></i> Windows </a>
+          <a class="platform" download mat-raised-button [href]="releaseService.getMacDownload(element)" (click)="directionsDialogPopup('mac')"><i
+            class="fab fa-apple fa-lg"></i> macOS </a>
+          <a class="platform" download mat-raised-button [href]="releaseService.getLinuxDownload(element)" (click)="directionsDialogPopup('linux')"><i
+            class="fab fa-linux fa-lg"></i> Linux </a>
         </mat-chip-list>
       </mat-cell>
     </ng-container>
+    <router-outlet></router-outlet>
 
     <ng-container matColumnDef="more">
       <mat-header-cell *matHeaderCellDef>More</mat-header-cell>
       <mat-cell *matCellDef="let element">
-        <button mat-button color="primary" (click)="editRelease(element)">More</button>
+        <button mat-button color="primary" [routerLink]="getRouterLink(element)">More</button>
       </mat-cell>
     </ng-container>
 

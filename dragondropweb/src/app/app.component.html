@@ -2,28 +2,33 @@
   ~ Copyright (c) 2018. DigiPen Institute of Technology
   -->
 
-<nav class="menu">
-  <img class="dragon" src="../../assets/background.png">
-  <a mat-button class="menu-item" routerLink="">Home</a>
-  <a mat-button class="menu-item" routerLink="release">Download</a>
-  <button
-    mat-button
-    class="menu-item"
-    *ngIf="!auth.isAuthenticated()"
-    (click)="auth.login()">
-    Log In
-  </button>
+<div class="app">
+  <nav class="menu">
+    <img class="dragon" src="../../assets/background.png">
+    <a mat-button class="menu-item" routerLink="">Home</a>
+    <a mat-button class="menu-item" routerLink="about">About</a>
+    <a mat-button class="menu-item" href="https://github.com/dragondropteam/desktop/releases">Download</a>
+    <a mat-button class="menu-item" routerLink="instructions">Instructions</a>
+    <a mat-button class="menu-item" routerLink="documentation">Documentation</a>
+<!--    <button
+      mat-button
+      class="menu-item"
+      *ngIf="!auth.isAuthenticated()"
+      routerLink="login">
+      Log In
+    </button>
 
-  <button
-    mat-button
-    class="menu-item"
-    *ngIf="auth.isAuthenticated()"
-    (click)="auth.logout()">
-    Log Out
-  </button>
+    <button
+      mat-button
+      class="menu-item"
+      *ngIf="auth.isAuthenticated()"
+      (click)="auth.logout()">
+      Log Out
+    </button>
 
-  <a mat-button class="admin" routerLink="admin">Admin</a>
+    <a mat-button class="admin" routerLink="admin" *ngIf="auth.isAdmin()">Admin</a>-->
 
-</nav>
-<router-outlet></router-outlet>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
 <footer></footer>
