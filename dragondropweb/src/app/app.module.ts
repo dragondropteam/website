@@ -54,6 +54,8 @@ import {UserService} from './user.service';
 import { CreateUserDialogComponent } from './create-user-dialog/create-user-dialog.component';
 import { AboutComponent } from './about/about.component';
 import { DragondropDocumentationComponent } from './dragondrop-documentation/dragondrop-documentation.component';
+import { HelpButtonComponent } from './help-button/help-button.component';
+import { RecoveryInstructionsComponent } from './recovery-instructions/recovery-instructions.component';
 
 
 export function tokenGetter() {
@@ -84,7 +86,9 @@ export function tokenGetter() {
     AdminUserTableComponent,
     CreateUserDialogComponent,
     AboutComponent,
-    DragondropDocumentationComponent
+    DragondropDocumentationComponent,
+    HelpButtonComponent,
+    RecoveryInstructionsComponent
   ],
   entryComponents: [
     NewReleaseDialogComponent,
