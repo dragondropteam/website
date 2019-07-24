@@ -20,6 +20,9 @@ import {AdminPermissionsComponent} from './admin-permissions/admin-permissions.c
 import {AdminUserTableComponent} from './admin-user-table/admin-user-table.component';
 import {AboutComponent} from "./about/about.component";
 import {DragondropDocumentationComponent} from "./dragondrop-documentation/dragondrop-documentation.component";
+import {HelpButtonComponent} from './help-button/help-button.component';
+import {RecoveryInstructionsComponent} from './recovery-instructions/recovery-instructions.component';
+
 
 const routes: Routes = [{
   path: '',
@@ -59,9 +62,15 @@ const routes: Routes = [{
 }, {
   path: 'instructions',
   component: DownloadInstructionsComponent
-},{
+}, {
   path: 'documentation',
   component: DragondropDocumentationComponent
+}, {
+  path: 'recovery',
+  component: RecoveryInstructionsComponent
+}, {
+  path: 'helpButton',
+  component: HelpButtonComponent
 }, {
   path: 'about',
   component: AboutComponent
