@@ -9,11 +9,50 @@
         <mat-tab-group>
             <mat-tab>
                 <mat-horizontal-stepper>
+                    <mat-step label="Recover Corrupted Project">
+                        <p>
+                            Our team is actively working on mitigating the chances of projects getting corrupted. However, great things take time, so in the meantime, there's an easy way to find the backup of your projects! Projects get backed up into the temp directory every few minutes, so no major changes should ever be lost!
+                        </p>
+                        <img src="../../assets/dragonhands.png">
+                        <div>
+                            <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+                        </div>
+                    </mat-step>
                     <mat-step label="Step 1">
                         <p>
-                            <a href="http://wwwprod5.digipen.edu/release" target="_blank">Download</a> the correct DragonDrop for your operating system.
+                            Press the Windows button in the bottom left and type 'Run'. Press Enter.
                         </p>
-                        <img src="../../assets/download-instructions/windows/step1.PNG" height="70%" width="70%">
+                        <img src="../../assets/backup-pictures/1.PNG">
+                        <div>
+                            <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+                            <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+                        </div>
+                    </mat-step>
+                    <mat-step label="Step 2">
+                        <p>
+                            The Run application will open. Alternatively, you can press 'Windows Key + R' to open this. Type '%temp%' and press enter.
+                        </p>
+                        <img src="../../assets/backup-pictures/2.PNG">
+                        <div>
+                            <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+                            <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+                        </div>
+                    </mat-step>
+                    <mat-step label="Step 3">
+                        <p>
+                            This is the Windows temp directory! Depending on what programs you use on your computer, you might see a variety of things in here. This is where the backup of all DragonDrop projects are located. Find and double click on the folder that contains the backup of the project you are trying to recover. The date and time modified will correspond with when you were last working on it! 
+                        </p>
+                        <img src="../../assets/backup-pictures/4.JPG">
+                        <div>
+                            <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
+                            <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
+                        </div>
+                    </mat-step>
+                    <mat-step label="Step 4">
+                        <p>
+                            Double click on the DIGIBLOCKS file to open it.
+                        </p>
+                        <img src="../../assets/backup-pictures/5.JPG">
                         <div>
                             <button class="stepper" mat-raised-button color="primary" matStepperPrevious>Back</button>
                             <button class="stepper" mat-raised-button color="primary" matStepperNext>Next</button>
