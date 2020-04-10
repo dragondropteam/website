@@ -32,7 +32,7 @@
     "@auth0/angular-jwt": "2.0.0",
     "angular-froala-wysiwyg": "^2.7.5",
     "argon2": "^0.19.2",
-    "auth0-js": "^9.3.0",
+    "auth0-js": "^9.13.2",
     "body-parser": "^1.18.2",
     "codemirror": "^5.35.0",
     "core-js": "^2.4.1",
