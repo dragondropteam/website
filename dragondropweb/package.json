@@ -36,7 +36,7 @@
     "body-parser": "^1.18.2",
     "codemirror": "^5.35.0",
     "core-js": "^2.4.1",
-    "express": "^4.16.2",
+    "express": "^4.17.3",
     "express-formidable": "^1.0.0",
     "express-jwt": "^5.3.1",
     "font-awesome": "^4.7.0",
